@@ -19,3 +19,4 @@ Concevoir et spécifier la compétence IA retenue pour notre agent, sur la base 
      ```powershell
      node .agent/skills/skills-dev/scripts/validate-skills.cjs
      ```
+

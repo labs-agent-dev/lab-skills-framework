@@ -16,3 +16,4 @@ Expérimenter et comparer les 4 approches d'architecture de skills sur le cas pr
 3. **Consigner les Résultats :**
    - Rédiger un compte-rendu comparatif (vitesse, tokens, lisibilité, maintenabilité).
    - Préparer la démonstration en direct dans le navigateur pour le sprint formateur.
+
