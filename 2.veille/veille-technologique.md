@@ -1,41 +1,30 @@
-# Veille Technologique : L'Ingénierie des Skills IA
+# Veille Technologique : Recherche sur skills.sh & État de l'Art
 
-Ce document synthétise l'état de l'art du marché sur la conception et l'orchestration des compétences IA (Skills) pour les développeurs.
-
----
-
-## 1. Références et Écosystèmes Étudiés
-
-### 1.1 Anthropic (`claude-plugins-official`)
-- **Référence :** Dépôt officiel GitHub des plugins et skills Anthropic.
-- **Motifs Clés Identifiés :**
-  - Le motif `feature-dev` : développement guidé en plusieurs phases sans coder prématurément.
-  - Le motif `plugin-dev` : gouvernance des compétences, validation par checklists et gabarit normé en 10 rubriques.
-  - Le motif `pr-review-toolkit` : contrôle qualité binaire (PASS / FAIL).
-- **Leçon apprise :** L'encapsulation des ressources dans `<skill>/resources/` (principe de divulgation progressive) évite de polluer le prompt initial.
-
-### 1.2 Standards Ouverts : `agentskills.io`
-- Spécification indépendante définissant le format standard des compétences IA.
-- Structure canonique : Frontmatter YAML (`name`, `description`, `version`) + fichier `SKILL.md` avec instructions outillées.
-- Règle de description à la 3ème personne précisant les conditions d'activation et d'exclusion.
-
-### 1.3 Comparatif des Outils Agents Ciblés
-
-| Outil Agent | Contexte d'Utilisation | Mode d'Intégration des Skills |
-| :--- | :--- | :--- |
-| **Claude Code** | Terminal / CLI | Exécution de commandes directes, lecture de fichiers et de tests. |
-| **Google Antigravity** | IDE Graphique | Panneau de chat agentique, lecture des règles permanentes (`.agent/rules/`) et des compétences d'équipe (`.agent/skills/`). |
-| **GitHub Copilot** | Éditeur de Code | Suggestions au fil de l'eau, chat contextuel et intégration native. |
+Ce document résume notre recherche de compétences existantes sur le site **`skills.sh`** et sur les dépôts communautaires pour nos 4 approches d'architecture.
 
 ---
 
-## 2. Analyse Comparative des Modèles de Granularité
+## 1. Recherche de Compétences sur `skills.sh`
 
-Nous avons comparé 3 hypothèses pour organiser nos compétences :
+Nous avons recherché sur `skills.sh` et GitHub s'il existe déjà des skills prêts à l'emploi pour nos 4 approches :
 
-| Hypothèse | Description | Avantages | Inconvénients | Verdict |
-| :--- | :--- | :--- | :--- | :---: |
-| **1. Un skill par Technologie** *(ex: HTML, CSS, PHP, Laravel, Alpine)* | Découpage fin par langage | Précision technique élevée | Trop de dispersion, risque de conflits entre compétences lors de l'assemblage | ⚠️ Trop fragmenté |
-| **2. Un skill par Phase du Workflow** *(ex: Analyse, Conception, Réalisation, Tests)* | Découpage par étape du projet | Aligné sur le cycle de vie logiciel | Le skill de réalisation doit connaître toutes les technos en même temps | ⚠️ Manque de précision |
-| **3. Architecture Hybride Dédiée par Lab** *(Recommandé)* | 2 Méta-Skills (`lab-dev`, `plugin-dev`) + 1 Skill Technique Dédié par sujet de Lab (`lab-skill-engineering`, `lab-crud-laravel`) | Équilibre parfait : contexte ciblé, règles claires, apprentissage progressif | Nécessite un outillage initial rigoureux | ✅ **RECRUTÉ (ADR)** |
+| Approche Étudiée | Mots-Clés Cherchés sur `skills.sh` | Skills Existants Trouvés | Constat Immédiat |
+| :--- | :--- | :--- | :--- |
+| **1. Par Technologie** | `html`, `tailwind`, `alpinejs` | `tailwind-helper`, `html-boilerplate` | Précis sur le langage, mais ignore les conventions de notre projet. |
+| **2. Par Layer (Couche)** | `mvc`, `controller`, `frontend-ui` | `mvc-scaffolder`, `api-controller` | Découpe bien les couches, mais oblige l'agent à basculer souvent de skill. |
+| **3. Par Workflow** | `wireframe`, `testing`, `development` | `code-reviewer`, `spec-generator` | Très bon pour guider les étapes, mais moins fort pour écrire le code complet. |
+| **4. Un Seul Skill** | `fullstack`, `feature-dev` | `feature-dev` (officiel Anthropic) | Très polyvalent, mais le fichier de prompt est lourd en mémoire (tokens). |
 
+---
+
+## 2. Ce qu'on Apprend des Compétences Existantes
+
+1. **Les forces des skills trouvés :**
+   - Ils fournissent de bonnes syntaxes de base pour Tailwind et HTML.
+   - Ils montrent comment bien structurer un fichier `SKILL.md`.
+2. **Les faiblesses des skills trouvés :**
+   - **Non adaptés à notre stack :** beaucoup utilisent React ou Bootstrap au lieu d'Alpine.js et Preline UI.
+   - **Pas de règles d'équipe :** ils ne connaissent pas nos règles permanentes (`.agent/rules/`).
+3. **Notre stratégie d'équipe :**
+   - D'abord tester les skills trouvés **sans modification** pour voir leurs limites.
+   - Ensuite **adapter ces skills à notre stack et à nos règles** pour obtenir un code parfait pour notre projet fil rouge.

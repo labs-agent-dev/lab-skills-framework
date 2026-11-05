@@ -1,33 +1,30 @@
-# Todo List : Lab Ingénierie des Skills (`lab-skills-v2`)
+# Todo List : Lab Ingénierie des Skills IA
 
-Ce fichier permet de suivre pas à pas la réalisation de notre Lab actuel à travers ses 5 sous-dossiers.
+Suivi simple des 5 étapes pour réaliser notre lab et préparer la soutenance devant le formateur.
 
 ---
 
-## 1.besoin/ - Cadrage du Besoin & Contexte
-- [x] Identifier le problème : comment découper et orchestrer les compétences IA pour le projet fil rouge.
-- [x] Définir le rôle dans le prototype : outiller l'équipe pour accélérer le développement des briques techniques.
-- [x] Compléter le fichier `1.besoin/contexte-et-besoin.md` selon le template officiel.
+## 1.besoin/ - Pourquoi ce Lab ?
+- [x] Expliquer la différence entre Plugin, Workflow et Skill.
+- [x] Définir le cas test commun : la Landing Page du Blog des Lauréats.
+- [x] Compléter le fichier `1.besoin/contexte-et-besoin.md`.
 
-## 2.veille/ - Veille Technologique & État de l'Art
-- [x] Étudier les dépôts officiels Anthropic (`claude-plugins-official`).
-- [x] Analyser les spécifications ouvertes `agentskills.io`.
-- [x] Comparer les outils agents : Claude Code, Google Antigravity, GitHub Copilot.
-- [x] Rédiger la synthèse dans `2.veille/veille-technologique.md`.
+## 2.veille/ - Que font les autres ?
+- [x] Chercher sur `skills.sh` les skills existants pour les 4 approches.
+- [x] Lister les compétences trouvées dans `2.veille/veille-technologique.md`.
 
-## 3.skill-technique/ - Compétence IA Spécialisée
-- [x] Rédiger la spécification du skill technique dans `3.skill-technique/spec-skill.md`.
-- [x] Concevoir le skill `lab-skill-engineering` avec `plugin-dev` (format normé 10 rubriques).
-- [x] Valider la conformité du skill avec le script `validate-skills.cjs`.
+## 3.skill-technique/ - Quel outil IA créer ?
+- [x] Définir la liste des skills génériques (Techno, Layer, Workflow, Développeur unique).
+- [x] Rédiger la spécification dans `3.skill-technique/spec-skill.md`.
 
-## 4.realisation/ - Réalisation Technique Concrète
-- [x] Formaliser la matrice de correspondance Stack x Workflow x Skills.
-- [x] Définir les règles de granularité (éviter le mega-monolithe et la micro-dispersion).
-- [x] Valider les fiches d'identité des compétences à créer pour les prochains labs.
+## 4.realisation/ - Ma réalisation concrète
+- [x] Tester les skills trouvés sur skills.sh sans modification (relever les limites).
+- [x] Adapter les skills à notre stack (Tailwind, Preline UI, Alpine.js) et nos règles.
+- [x] Coder la Landing Page du Blog des Lauréats dans `4.realisation/landing-page/`.
+- [x] Rédiger le comparatif dans `4.realisation/comparatif-test-skills.md`.
 
-## 5.rapport-et-presentation/ - Livrables pour le Formateur
-- [x] Rédiger le rapport technique officiel dans `5.rapport-et-presentation/Lab-Skill-Engineering.md`.
+## 5.rapport-et-presentation/ - Pour le Formateur
+- [x] Rédiger le rapport officiel compact dans `5.rapport-et-presentation/Lab-Skill-Engineering.md`.
 - [x] Remplir la page de garde dans `5.rapport-et-presentation/Presentation-Skill-Engineering.md`.
-- [x] Rédiger exactement **3 phrases simples de notes de l'orateur en français A1** pour chaque slide.
-- [x] Auditer et valider le lab avec `lab-dev` avant le sprint formateur.
-
+- [x] Vérifier les 3 phrases simples de notes en français A1 pour chaque slide.
+- [x] Valider le lab avant le passage en sprint devant le formateur.

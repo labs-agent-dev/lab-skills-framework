@@ -6,88 +6,85 @@
 
 | Information | Détail |
 | :--- | :--- |
-| **Titre du Lab** | Ingénierie des Compétences IA pour le Projet Fil Rouge |
+| **Titre du Lab** | Ingénierie des Compétences IA & Test de la Landing Page |
 | **Apprenant** | Équipe de Développement Solicode |
 | **Projet Fil Rouge** | Déploiement d'une Usine Logicielle Agentique |
-| **Prototype Technique** | Socle d'Architecture des Compétences IA |
-| **Stack Technique** | Antigravity, Claude Code, Copilot, Laravel, Alpine.js, Preline UI |
+| **Prototype Technique** | Organisation des Compétences IA pour le Développement |
+| **Stack Technique** | HTML5, Tailwind CSS, Alpine.js, Antigravity, Claude Code |
 | **Date du Sprint** | 5 Novembre 2026 |
 
 ---
 
-## Slide 1 : Présentation & Contexte
+## Slide 1 : Présentation & Cas Test Commun
 
 ### Contenu Visuel
 - **Sujet du Lab :** Ingénierie des Skills IA (Skill Engineering).
-- **Projet Fil Rouge :** Développer nos prototypes techniques en utilisant l'IA.
-- **Objectif du jour :** Définir la bonne organisation de nos compétences pour réussir nos futurs labs.
+- **Cas Test Commun :** Réalisation de la Landing Page du Blog des Lauréats.
+- **Objectif :** Trouver la meilleure façon d'organiser nos compétences pour notre projet fil rouge.
 
 > ### 🎙️ Notes du Présentateur (3 phrases simples en français A1)
-> 1. « Bonjour, aujourd'hui je vous présente notre lab sur l'ingénierie des skills IA. »
-> 2. « Ce lab est indispensable pour construire notre prototype de projet fil rouge. »
-> 3. « Notre objectif est de savoir comment organiser nos outils IA sans faire d'erreurs. »
+> 1. « Bonjour, aujourd'hui je vous présente notre lab sur les compétences IA. »
+> 2. « Nous avons testé nos compétences sur la landing page du blog des lauréats. »
+> 3. « Notre objectif est de savoir comment bien organiser nos outils IA. »
 
 ---
 
-## Slide 2 : Problème Technique & Position dans la Stack
+## Slide 2 : La Différence : Plugin, Workflow et Skill
 
 ### Contenu Visuel
-- **La question technique :** Comment découper nos compétences d'agents ?
-- **Les 3 options étudiées :**
-  - Option A : Un seul gros skill global (risque de saturation de la mémoire).
-  - Option B : Trop de petits skills par langage (risque de dispersion).
-  - Option C : Un skill technique dédié pour chaque brique de Lab (solution retenue).
-- **Position Stack :** Couche de gouvernance et d'assistance au développement.
+- **Skill (Compétence) :** Un outil précis pour une tâche (`tech-tailwind`, `tech-alpine`).
+- **Workflow (Flux) :** Une suite d'étapes ordonnées du début à la fin.
+- **Plugin (Module complet) :** Un paquet complet qui réunit skills, règles et workflows.
 
 > ### 🎙️ Notes du Présentateur (3 phrases simples en français A1)
-> 1. « Voici le problème technique que nous devions résoudre dans notre projet. »
-> 2. « Nous avons comparé plusieurs façons d'organiser nos compétences d'agents. »
-> 3. « Nous avons choisi de créer un skill technique dédié pour chaque sujet de lab. »
+> 1. « Il faut bien comprendre la différence entre ces trois mots. »
+> 2. « Un skill est un outil spécialisé, comme un marteau. »
+> 3. « Un workflow est une suite d'étapes et un plugin est la boîte complète. »
 
 ---
 
-## Slide 3 : Les Compétences IA Développées
+## Slide 3 : Comparatif des 4 Approches Testées
 
 ### Contenu Visuel
-- **Méta-Méthodologie :** `lab-dev` (gouverne les 5 sous-dossiers et la soutenance).
-- **Méta-Gouvernance :** `plugin-dev` (conçoit et valide les 10 rubriques normées).
-- **Skill du Lab Actuel :** `lab-skill-engineering` (porte les règles d'architecture et de granularité).
-- **Garantie de Qualité :** 100% de validation automatique par script (0 erreur).
+- **1. Par Technologie :** Précis par langage (`tech-html`, `tech-tailwind`, `tech-alpine`).
+- **2. Par Layer :** Découpage par couches logicielles (`layer-ui`, `layer-controller`).
+- **3. Par Workflow :** Découpage par étapes (`flow-conception`, `flow-dev`).
+- **4. Un Seul Skill :** Un développeur polyvalent (`fullstack-developer`).
+- **Décision d'Équipe :** Utiliser un skill technique dédié pour chaque brique de lab.
 
 > ### 🎙️ Notes du Présentateur (3 phrases simples en français A1)
-> 1. « Pour réaliser ce lab, nous avons structuré nos compétences en trois niveaux. »
-> 2. « Le skill lab-dev guide les étapes et vérifie la qualité de la présentation. »
-> 3. « Toutes nos compétences sont validées avec succès par notre script de contrôle. »
+> 1. « Chaque apprenant du groupe a testé une organisation différente. »
+> 2. « Nous avons comparé la vitesse, la mémoire et la simplicité du code. »
+> 3. « Nous avons choisi de créer un skill dédié pour chaque sujet de lab. »
 
 ---
 
-## Slide 4 : Démonstration Pratique (Démo Live)
+## Slide 4 : Démonstration en Direct (Démo Live)
 
 ### Contenu Visuel
-- **L'Arborescence en 5 Sous-Dossiers Concrets :**
-  - `1.besoin/` (Cadrage guidé)
-  - `2.veille/` (État de l'art)
-  - `3.skill-technique/` (Spécification de l'outil IA)
-  - `4.realisation/` (Matrice d'architecture et tests)
-  - `5.rapport-et-presentation/` (Rapport et Slides colocalisés)
-- **Le Test de Validation :** Exécution de `validate-skills.cjs` en direct.
+- **La Landing Page en Action :**
+  - En-tête avec navigation responsive (menu mobile Alpine.js).
+  - Section Hero valorisant la réussite de nos lauréats.
+  - Cartes profils des lauréats avec témoignages.
+  - Grille d'articles avec filtres instantanés au clic sans recharger la page.
+- **Test réussi :** Code propre, léger et 100% fonctionnel.
 
 > ### 🎙️ Notes du Présentateur (3 phrases simples en français A1)
-> 1. « Je vais maintenant faire la démonstration de notre arborescence en cinq dossiers. »
-> 2. « Vous voyez que le rapport et la présentation sont réunis dans le même dossier. »
-> 3. « Notre script de test confirme que tout fonctionne correctement sans aucune erreur. »
+> 1. « Je vais maintenant faire la démonstration en direct dans le navigateur. »
+> 2. « Vous voyez que les articles se filtrent directement au clic avec Alpine.js. »
+> 3. « Le code est propre, responsive et respecte notre charte graphique. »
 
 ---
 
 ## Slide 5 : Bilan & Mini-Défi du Formateur
 
 ### Contenu Visuel
-- **Compétences acquises :** Maîtrise du découpage des compétences et des standards Anthropic.
-- **Suite pour les prochains labs :** Création immédiate des skills `lab-crud-laravel`, `lab-alpinejs`, `lab-preline-ui`.
-- **Prêt pour le Sprint :** Disponible pour le mini-défi et les questions du formateur.
+- **Résultats obtenus :**
+  - Les compétences génériques sont prêtes pour tout le projet fil rouge.
+  - Les 5 sous-dossiers du lab sont complets et validés.
+- **Prêt pour le Sprint :** Disponible pour les questions et le mini-défi en direct.
 
 > ### 🎙️ Notes du Présentateur (3 phrases simples en français A1)
-> 1. « Grâce à ce lab, nous avons un modèle clair pour tous nos prochains labs. »
-> 2. « Nous pouvons maintenant créer les compétences techniques pour Laravel et Alpine. »
+> 1. « Grâce à ce lab, nos compétences sont prêtes pour tout le projet fil rouge. »
+> 2. « Nous avons prouvé que l'adaptation à notre stack donne un meilleur résultat. »
 > 3. « Je suis prêt à répondre à vos questions et à faire le mini-défi en direct. »
-
