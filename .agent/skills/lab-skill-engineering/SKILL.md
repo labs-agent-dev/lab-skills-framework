@@ -107,3 +107,4 @@ Rédiger le compte-rendu d'arbitrage à intégrer dans le document du lab pour l
    - Lab 2 : `lab-alpinejs` (Interactivité légère, état local).
    - Lab 3 : `lab-preline-ui` (Composants UI accessibles).
 3. Il fournit la fiche de spécification prête à être créée avec `plugin-dev` pour chaque lab.
+

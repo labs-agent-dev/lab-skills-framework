@@ -31,3 +31,4 @@ Créer un nouveau skill technique si et seulement si :
 2. **Réutilisabilité :** La brique sera utilisée plusieurs fois dans le prototype du projet fil rouge.
 3. **Autonomie :** L'apprenant doit pouvoir tester et valider cette brique indépendamment en sprint devant le formateur.
 4. **Volume de règles :** Il y a au moins 3 à 5 règles techniques spécifiques à respecter pour éviter les erreurs.
+

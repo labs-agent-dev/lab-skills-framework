@@ -68,3 +68,4 @@ Ce skill est l'expert technique dédié au Lab **[Nom du Lab]**. Sa mission est 
 **Prompt Apprenant :** *"Comment implémenter [Fonctionnalité] selon nos règles ?"*
 **Réponse Attendue :** L'agent fournit le snippet propre, commente les lignes clés et rappelle la règle technique appliquée.
 ```
+

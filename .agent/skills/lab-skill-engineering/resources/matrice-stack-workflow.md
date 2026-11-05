@@ -42,3 +42,4 @@ Ce document sert de référentiel technique au skill `lab-skill-engineering` pou
   - Évite les mega-prompts monolithiques qui saturent la fenêtre de contexte.
   - Permet à chaque apprenant de se concentrer sur une brique technique à la fois en sprint.
   - Garantit que chaque Lab possède son propre skill technique spécialisé.
+
