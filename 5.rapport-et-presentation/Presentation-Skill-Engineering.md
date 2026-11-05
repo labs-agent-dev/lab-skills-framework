@@ -1,4 +1,4 @@
-# Présentation du Lab : Ingénierie des Skills IA
+# Présentation du Lab : Conception des Skills IA
 
 ---
 
@@ -6,7 +6,7 @@
 
 | Information | Détail |
 | :--- | :--- |
-| **Titre du Lab** | Ingénierie des Compétences IA & Test de la Landing Page |
+| **Titre du Lab** | Conception des Skills IA & Test de la Landing Page |
 | **Apprenant** | Équipe de Développement Solicode |
 | **Projet Fil Rouge** | Déploiement d'une Usine Logicielle Agentique |
 | **Prototype Technique** | Organisation des Compétences IA pour le Développement |
@@ -15,17 +15,18 @@
 
 ---
 
-## Slide 1 : Présentation & Cas Test Commun
+## Slide 1 : Présentation & Objectifs du Lab
 
 ### Contenu Visuel
-- **Sujet du Lab :** Ingénierie des Skills IA (Skill Engineering).
+- **Sujet du Lab :** Conception des Skills IA.
+- **Objectif Principal :** Créer et bien organiser nos compétences IA pour développer notre projet fil rouge sans erreurs.
 - **Cas Test Commun :** Réalisation de la Landing Page du Blog des Lauréats.
-- **Objectif :** Trouver la meilleure façon d'organiser nos compétences pour notre projet fil rouge.
+- **4 Piliers :** Comprendre les concepts, Comparer 4 approches, Tester en pratique, Outiller la classe.
 
 > ### 🎙️ Notes du Présentateur (3 phrases simples en français A1)
-> 1. « Bonjour, aujourd'hui je vous présente notre lab sur les compétences IA. »
-> 2. « Nous avons testé nos compétences sur la landing page du blog des lauréats. »
-> 3. « Notre objectif est de savoir comment bien organiser nos outils IA. »
+> 1. « Bonjour, aujourd'hui je vous présente notre lab sur la conception des skills IA. »
+> 2. « Notre objectif est d'apprendre à bien organiser nos outils IA pour notre projet fil rouge. »
+> 3. « Nous avons testé nos compétences sur la landing page du blog des lauréats. »
 
 ---
 

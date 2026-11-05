@@ -1,4 +1,4 @@
-# Rapport Officiel : Lab Ingénierie des Skills IA
+# Rapport Officiel : Lab Conception des Skills IA
 
 Ce document résume nos travaux sur l'ingénierie des compétences IA pour le projet fil rouge.
 
@@ -7,7 +7,13 @@ Ce document résume nos travaux sur l'ingénierie des compétences IA pour le pr
 ## 1. Pourquoi ce Lab & Cas Pratique Test
 
 ### 1.1 Objectif
-Savoir comment organiser nos compétences IA pour développer notre projet fil rouge sans saturation de mémoire et sans conflits.
+> **Objectif Principal :** Apprendre à créer et bien organiser nos compétences IA (Skills) pour développer rapidement et sans erreurs notre Prototype de Projet Fil Rouge.
+
+**Les 4 Objectifs Précis :**
+1. **Comprendre les concepts :** Différencier Plugin, Workflow et Skill.
+2. **Trouver la meilleure organisation :** Comparer les 4 approches (Technologie, Layer, Workflow, Développeur unique).
+3. **Tester sur un cas pratique :** Réaliser la Landing Page du Blog des Lauréats avec Tailwind et Alpine.js.
+4. **Outiller la classe :** Fournir les compétences IA prêtes à l'emploi pour tous les futurs labs.
 
 ### 1.2 Le Cas Pratique Commun
 Tous les apprenants ont testé leurs compétences sur le même cas réel : la **Landing Page du Blog des Lauréats** (Navbar responsive, Hero section, profils de lauréats, articles avec filtres réactifs Alpine.js et Footer).

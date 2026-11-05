@@ -6,7 +6,8 @@ Ce dépôt contient les compétences IA (Skills) pour assister le développement
 - Chaque apprenant développe un **Projet Fil Rouge** pour valider ses compétences.
 - Pour construire ce projet, nous réalisons d'abord un **Prototype technique** par sprints.
 - Chaque sprint est présenté en direct devant le formateur.
-- Les **Labs** permettent de résoudre une problématique technique précise de notre stack (CRUD Laravel, dynamique Alpine.js, composants Preline UI, Ingénierie des Skills).
+- Les **Labs** permettent de résoudre une problématique technique précise de notre stack (CRUD Laravel, dynamique Alpine.js, composants Preline UI, Conception des Skills).
+- **Objectif du Lab actuel :** Apprendre à créer et bien organiser nos compétences IA (Skills) pour développer rapidement et sans erreurs notre Prototype de Projet Fil Rouge.
 
 ## 2. Approche Méthodologique
 - Nous analysons les compétences existantes dans la communauté (Anthropic, GitHub, agentskills.io).

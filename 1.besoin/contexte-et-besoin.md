@@ -1,6 +1,18 @@
-# Description du Besoin : Lab Ingénierie des Skills IA
+# Description du Besoin : Lab Conception des Skills IA
 
-Ce document explique le but de notre lab, la différence entre Plugin, Workflow et Skill, et présente le projet test de notre groupe.
+Ce document explique les objectifs de notre lab, la différence entre Plugin, Workflow et Skill, et présente le projet test de notre groupe.
+
+---
+
+## 🎯 Objectif du Lab
+
+> **Objectif Principal :** Apprendre à créer et bien organiser nos compétences IA (Skills) pour développer rapidement et sans erreurs notre Prototype de Projet Fil Rouge.
+
+### Les 4 Objectifs Précis du Lab :
+1. **Comprendre les concepts de base :** Faire la différence exacte entre un **Plugin** (la boîte complète), un **Workflow** (la suite d'étapes) et un **Skill** (l'outil spécialisé).
+2. **Trouver la meilleure organisation :** Comparer 4 approches (par Technologie, par Layer, par Workflow, ou un seul Skill Développeur) pour notre stack (Laravel, Alpine.js, Preline UI).
+3. **Tester sur un cas pratique réel :** Réaliser la **Landing Page du Blog des Lauréats** en testant les skills de `skills.sh` puis en les adaptant à nos règles.
+4. **Préparer la boîte à outils du Fil Rouge :** Donner à chaque apprenant de la classe les compétences IA prêtes à l'emploi pour réussir tous ses futurs labs et ses sprints devant le formateur.
 
 ---
 
