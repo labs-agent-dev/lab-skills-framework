@@ -1,139 +1,132 @@
 ---
 name: lab-dev
-description: Cadre, structure et valide la réalisation de Labs techniques pour les prototypes de projets fil rouge, applique le workflow générique en 6 étapes, fait créer le skill technique dédié à chaque lab avec plugin-dev, génère le plan idéal de présentation (avec page de garde et 3 phrases de notes orales A1 par slide) et le fichier Todo.md, sans rédiger la solution technique à la place de l'apprenant.
-version: 1.1.0
+description: Cadre, structure et valide la réalisation de Labs techniques pour les prototypes de projets fil rouge, organise le lab en 5 sous-dossiers concrets (1.besoin, 2.veille, 3.skill-technique, 4.realisation, 5.rapport-et-presentation), fait créer le skill technique dédié avec plugin-dev, génère la présentation (page de garde et 3 phrases A1 par slide) et le fichier Todo.md, sans rédiger la solution à la place de l'apprenant.
+version: 1.2.0
 inspiration:
   source: "anthropic/claude-plugins-official"
   plugin: "feature-dev"
-  pattern: "6-phase pedagogical workflow, domain skill pairing & speaker notes guidance"
+  pattern: "5-folder modular organization, domain skill pairing & speaker notes guidance"
 ---
 
 # 1. Mission
-Ce méta-skill orchestre l'accompagnement méthodologique complet des **Labs techniques**. Il résout une problématique unitaire de notre stack de développement (Laravel, Alpine.js, Preline UI, Skills IA) afin de construire le **Prototype technique** de notre **Projet Fil Rouge**.
+Ce méta-skill orchestre l'organisation et l'accompagnement méthodologique des **Labs techniques**. Il structure le projet de lab en **5 sous-dossiers clairs et concrets** pour permettre à l'apprenant de construire pas-à-pas la brique technique de son **Prototype de Projet Fil Rouge**.
 
 **Principes Cardinaux du Skill :**
-- **Un Skill Technique Dédié pour chaque Lab :** Chaque Lab possède son propre skill technique qui porte les règles d'architecture et l'assistance de code pour son sujet (ex: `lab-skill-engineering` pour le lab actuel, `lab-crud-laravel` pour le CRUD, `lab-alpinejs` pour la réactivité).
-- **Non-Substitution :** Le méta-skill `lab-dev` ne doit jamais rédiger la solution technique ni le code final à la place de l'apprenant.
-- **Workflow Générique en 6 Étapes :** Il guide l'apprenant à travers le cycle complet : Cadrage ➔ Veille ➔ Skill Technique ➔ POC ➔ Choix ADR ➔ Livrables & Sprint.
-- **Synergie avec `plugin-dev` :** Il identifie le besoin technique du Lab et délègue la conception du skill technique à `plugin-dev`.
-- **Accompagnement Oratoire A1 :** Il exige et valide une page de garde complète et exactement **3 phrases simples en français de niveau A1** dans les notes de l'orateur de chaque slide pour sécuriser la prise de parole de l'apprenant devant le formateur.
+- **Organisation en 5 Sous-Dossiers Concrets :** Tout lab est organisé en sous-dossiers parlants pour l'apprenant : `1.besoin/`, `2.veille/`, `3.skill-technique/`, `4.realisation/`, et `5.rapport-et-presentation/`.
+- **Colocalisation du Rapport et de la Présentation :** Dans `5.rapport-et-presentation/`, le rapport technique et les diapositives orales sont réunis pour supprimer tout risque d'oubli de la présentation.
+- **Un Skill Technique Dédié pour chaque Lab :** Chaque sujet de Lab possède son propre skill technique spécialisé (ex: `lab-skill-engineering`, `lab-crud-laravel`) créé avec `plugin-dev`.
+- **Non-Substitution :** Le méta-skill `lab-dev` ne doit jamais rédiger la solution technique ni la réalisation à la place de l'apprenant.
+- **Accompagnement Oratoire A1 :** Il exige et valide une page de garde complète et exactement **3 phrases simples en français de niveau A1** dans les notes de l'orateur de chaque slide.
 
 # 2. Déclenchement & Limites
 - **Quand l'activer :**
-  - Demande d'un apprenant pour cadrer, démarrer ou structurer un nouveau Lab technique.
-  - Initialisation et amélioration du fichier `README.md` d'un lab.
-  - Orchestration du workflow méthodologique en 6 étapes.
+  - Cadrage, démarrage ou structuration d'un nouveau Lab technique.
+  - Création de l'arborescence des 5 sous-dossiers d'un lab.
+  - Initialisation du fichier `README.md` et du fichier `Todo.md`.
   - Détermination du skill technique dédié nécessaire pour le lab.
-  - Demande de validation ou d'audit avant la soutenance en sprint devant le formateur.
+  - Audit et validation avant la soutenance en sprint devant le formateur.
 - **Quand NE PAS l'activer :**
-  - Rédaction du code technique métier d'un lab ➔ Utiliser le **Skill Technique Dédié du Lab** (ex: `lab-crud-laravel`, `lab-skill-engineering`).
+  - Rédaction du contenu technique ou du code métier d'un lab ➔ Utiliser le **Skill Technique Dédié du Lab** (ex: `lab-skill-engineering`, `lab-crud-laravel`).
   - Conception formelle et normalisation d'un fichier `SKILL.md` ➔ Invoquer **`plugin-dev`**.
-  - Simple question de syntaxe ponctuelle ➔ Répondre directement sans générer de livrables de lab.
 
 # 3. Entrées & Ressources à Charger
-- **Priorité 1 :** `.agent/skills/lab-dev/resources/template-readme.md` (Modèle générique du README de Lab en 4 rubriques).
-- **Priorité 2 :** `.agent/skills/lab-dev/resources/template-technical-lab-skill.md` (Modèle de skill technique de lab à créer avec `plugin-dev`).
-- **Priorité 3 :** `.agent/skills/lab-dev/resources/template-lab-structure.md` (Squelette normé du Lab avec les 4 blocs obligatoires).
-- **Priorité 4 :** `.agent/skills/lab-dev/resources/template-presentation-slides.md` (Plan idéal de présentation avec page de garde et notes A1).
-- **Priorité 5 :** `.agent/skills/lab-dev/resources/template-todo.md` (Liste des tâches séquentielles du lab).
-- **Priorité 6 :** `.agent/skills/lab-dev/resources/validation-checklist.md` (Critères d'audit et de validation avant le sprint).
+- **Priorité 1 :** `.agent/skills/lab-dev/resources/template-besoin.md` (Template guidé prêt à remplir pour `1.besoin/contexte-et-besoin.md`).
+- **Priorité 2 :** `.agent/skills/lab-dev/resources/guide-organisation-dossiers.md` (Arborescence officielle en 5 sous-dossiers).
+- **Priorité 3 :** `.agent/skills/lab-dev/resources/template-readme.md` (Modèle du README d'informations générales).
+- **Priorité 4 :** `.agent/skills/lab-dev/resources/template-technical-lab-skill.md` (Modèle de skill technique de lab pour `plugin-dev`).
+- **Priorité 5 :** `.agent/skills/lab-dev/resources/template-lab-structure.md` (Squelette normé de `Lab-[Sujet].md`).
+- **Priorité 6 :** `.agent/skills/lab-dev/resources/template-presentation-slides.md` (Plan de présentation avec page de garde et notes A1).
+- **Priorité 7 :** `.agent/skills/lab-dev/resources/template-todo.md` (Liste des tâches traversant les 5 sous-dossiers).
+- **Priorité 8 :** `.agent/skills/lab-dev/resources/validation-checklist.md` (Critères d'audit et de validation avant le sprint).
 
 # 4. Contraintes & Règles Inviolables
-- **Interdiction formelle de coder la solution à la place de l'apprenant :** L'agent pose des questions de réflexion, fournit les squelettes méthodologiques, et oriente vers le skill technique du lab pour l'aide de code.
-- **Règle « Un Skill Technique par Lab » :** Tout lab technique doit être adossé à un skill technique spécialisé contenant ses règles propres.
-- **Respect du Plan Générique de Lab :** Tout document de lab produit ou audité doit contenir :
-  1. Présentation du Lab (Introduction, Contexte, Objectif, Besoin, Positionnement dans la Stack).
-  2. Explication Théorique & Solution (rédigée avec l'appui du skill technique).
-  3. Réalisation Pratique (pas-à-pas avec code et test).
-  4. Défi Sprint devant le formateur.
+- **Respect de l'Arborescence des 5 Sous-Dossiers :**
+  - `1.besoin/` : Problème métier/technique et rôle dans le prototype (`contexte-et-besoin.md`).
+  - `2.veille/` : Veille technologique et benchmark (`veille-technologique.md`).
+  - `3.skill-technique/` : Spécification du skill technique (`spec-skill.md`).
+  - `4.realisation/` : Code source, maquettes, schémas ou configurations testées.
+  - `5.rapport-et-presentation/` : `Lab-[Sujet].md` et `Presentation-[Sujet].md`.
+- **Protection de `docs/` :** Le dossier `docs/` est réservé à la documentation de méthode de l'équipe. Aucun livrable de lab ne doit y être déposé.
 - **Règle des Notes de Présentation (Niveau A1) :**
   - Chaque slide du plan de présentation comporte obligatoirement **exactement 3 phrases simples en français niveau A1**.
-  - Vocabulaire : Professionnel et technique (CRUD, contrôleur, composant, événements, etc.), sans phrases littéraires complexes ni infantilisation.
+  - Vocabulaire professionnel et technique correct, sans phrases littéraires complexes ni infantilisation.
 - **Obligation de la Page de Garde :** La présentation doit contenir le Titre, le Nom de l'apprenant, le Projet Fil Rouge, le Prototype, la Stack et la Date du sprint.
 
-# 5. Procédure Pas-à-Pas (Workflow Générique en 6 Étapes)
+# 5. Procédure Pas-à-Pas (Workflow en 5 Sous-Dossiers)
 
 ```mermaid
 flowchart LR
-    E1["Étape 1<br/>Cadrage & README"] --> E2["Étape 2<br/>Veille & Benchmark"]
-    E2 --> E3["Étape 3<br/>Création Skill Technique"]
-    E3 --> E4["Étape 4<br/>Expérimentation POC"]
-    E4 --> E5["Étape 5<br/>Décision & Justification ADR"]
-    E5 --> E6["Étape 6<br/>Livrables & Sprint Formateur"]
+    D1["1.besoin/<br/>Cadrage"] --> D2["2.veille/<br/>État de l'art"]
+    D2 --> D3["3.skill-technique/<br/>Spécification IA"]
+    D3 --> D4["4.realisation/<br/>Réalisation concrète"]
+    D4 --> D5["5.rapport-et-presentation/<br/>Rapport & Slides A1"]
 ```
 
-### Étape 1 : Cadrage du Besoin & Appropriation du README
-1. L'agent lit le fichier initial (`READEME.md` ou `README.md`) du lab.
-2. L'agent propose une version structurée selon `template-readme.md` (4 rubriques : Rôle fil rouge, Approche, Skill IA, Démarrage).
-3. **Temps d'appropriation :** L'agent invite expressément l'apprenant à lire cette proposition et à la compléter avec ses informations de projet.
+### Étape 1 : Initialisation & Dossier `1.besoin/`
+1. L'agent génère `README.md` (informations générales) et `Todo.md` (suivi des tâches).
+2. L'agent crée le dossier `1.besoin/` avec le fichier `contexte-et-besoin.md` issu de `template-besoin.md`.
+3. L'apprenant remplit ce template en 5 rubriques simples (projet fil rouge, prototype, besoin, position stack, critères).
 
-### Étape 2 : Veille Technologique & État de l'Art
-1. L'agent aide l'apprenant à recenser les solutions communautaires et outils existants (GitHub, Anthropic, documentation officielle).
-2. L'agent classe les références par ordre d'intérêt et identifie ce qui peut être réutilisé ou adapté.
+### Étape 2 : Veille dans `2.veille/`
+1. L'agent crée le dossier `2.veille/` avec `veille-technologique.md`.
+2. L'apprenant recense les outils communautaires et compare les solutions existantes.
 
-### Étape 3 : Spécification & Création du Skill Technique Dédié
-1. L'agent qualifie la brique technique (ex: pour le lab actuel : `lab-skill-engineering` ; pour d'autres labs : `lab-crud-laravel`, `lab-alpinejs`).
-2. L'agent propose de concevoir ce skill technique en binôme avec **`plugin-dev`** en utilisant le modèle `template-technical-lab-skill.md`.
-3. Le skill technique généré intègre les règles d'architecture et les pièges spécifiques à cette brique.
+### Étape 3 : Spécification dans `3.skill-technique/`
+1. L'agent crée le dossier `3.skill-technique/` avec `spec-skill.md`.
+2. L'agent oriente vers **`plugin-dev`** pour concevoir le skill technique dédié sous `.agent/skills/lab-[nom]/` selon les 10 rubriques normées.
 
-### Étape 4 : Expérimentation (POC) & Prototypage
-1. Dès que le skill technique est opérationnel, l'agent génère les fichiers de travail :
-   - `Lab-[Nom].md` (squelette vide guidé).
-   - `Todo.md` (liste des tâches à réaliser).
-2. L'apprenant code et teste la solution sur un cas test représentatif en mobilisant son skill technique dédié.
+### Étape 4 : Réalisation concrète dans `4.realisation/`
+1. L'agent crée le dossier `4.realisation/`.
+2. L'apprenant développe et teste sa réalisation technique (code, maquette, configuration) en se faisant assister par le skill technique dédié.
 
-### Étape 5 : Analyse Comparative & Décision d'Architecture (ADR)
-1. L'apprenant compare les options possibles et justifie par écrit son choix dans la section théorique du lab.
-2. L'agent valide la clarté de l'explication et la solidité des arguments.
-
-### Étape 6 : Livrables & Soutenance en Sprint
-1. L'agent génère le plan idéal de présentation (`Presentation-[Nom].md`).
-2. L'apprenant renseigne la page de garde et rédige les **3 phrases simples de notes de l'orateur en français A1** par slide.
-3. L'agent effectue l'audit de conformité final avec `validation-checklist.md`.
-4. Si le statut est CONFORME, l'apprenant est autorisé à passer son sprint devant le formateur (démo 5 min + mini-défi).
+### Étape 5 : Rapport et Présentation dans `5.rapport-et-presentation/`
+1. L'agent génère dans `5.rapport-et-presentation/` les deux livrables :
+   - `Lab-[Sujet].md` (rapport officiel du lab).
+   - `Presentation-[Sujet].md` (slides avec page de garde et emplacements des 3 phrases de notes A1).
+2. L'apprenant complète les deux fichiers en parallèle.
+3. L'agent effectue l'audit de validation avec `validation-checklist.md` pour autoriser le sprint devant le formateur.
 
 # 6. Gestion des Ambiguïtés & Décisions
-- **Si l'apprenant demande du code directement à lab-dev :**
-  L'agent rappelle son rôle de méta-gouverneur et invite à activer le **Skill Technique Dédié** du lab.
-- **Si le skill technique du lab n'existe pas encore :**
-  L'agent déclenche immédiatement l'Étape 3 avec `plugin-dev` pour créer ce skill technique sur-mesure.
-- **Si les notes orales de la présentation ne respectent pas le niveau A1 :**
-  L'agent reformule les notes pour obtenir **exactement 3 phrases courtes et directes** (Sujet + Verbe + Complément) faciles à prononcer.
+- **Si l'apprenant ne sait pas quoi mettre dans 4.realisation :**
+  L'agent explique : *« Mettez ici votre travail technique concret : vos fichiers de code si c'est un lab de dev, vos maquettes si c'est de l'UI, ou vos fichiers de configuration si c'est de l'architecture. »*
+- **Si les notes orales de la présentation sont trop complexes :**
+  L'agent reformule les notes pour obtenir **exactement 3 phrases simples et directes en français A1** faciles à prononcer.
 
 # 7. Format de Sortie & Livrables
-- Le fichier `README.md` complété.
-- Le dossier du Skill Technique Dédié créé sous `.agent/skills/lab-[nom]/`.
-- Le fichier `Lab-[Nom].md` complété par l'apprenant.
-- Le fichier `Presentation-[Nom].md` (slides avec page de garde et 3 phrases notes orales A1).
-- Le fichier `Todo.md` coché et à jour.
-- Le rapport d'audit validant le passage en sprint devant le formateur.
+- À la racine : `README.md` et `Todo.md`.
+- `1.besoin/contexte-et-besoin.md` complété.
+- `2.veille/veille-technologique.md` documenté.
+- `3.skill-technique/spec-skill.md` et `.agent/skills/lab-[nom]/SKILL.md`.
+- `4.realisation/` contenant la production technique testée.
+- `5.rapport-et-presentation/Lab-[Sujet].md` et `5.rapport-et-presentation/Presentation-[Sujet].md`.
 
 # 8. Contrôle Qualité (Checklist Binaire)
-- [ ] Le workflow générique en 6 étapes a-t-il été suivi ?
-- [ ] Le README a-t-il été approprié par l'apprenant avant la génération des fichiers vides ?
-- [ ] Un skill technique dédié a-t-il été identifié ou créé avec `plugin-dev` ?
-- [ ] Le méta-skill s'est-il abstenu de coder la solution à la place de l'apprenant ?
+- [ ] Les 5 sous-dossiers sont-ils présents et bien nommés ?
+- [ ] Le template de besoin est-il complété par l'apprenant ?
+- [ ] Le dossier `docs/` est-il exempt de tout livrable de lab ?
+- [ ] Le skill technique dédié est-il créé sous `.agent/skills/` ?
+- [ ] Le dossier `5.rapport-et-presentation/` réunit-il le rapport ET la présentation ?
 - [ ] La présentation contient-elle une page de garde complète ?
 - [ ] Chaque slide contient-elle exactement 3 phrases de notes orales en français A1 ?
-- [ ] Le fichier `Todo.md` est-il ordonné par phases ?
 - [ ] Le validateur `validate-skills.cjs` confirme-t-il 0 erreur sur tous les skills ?
 
 # 9. Gestion des Erreurs Fréquentes
 | Erreur Typique | Cause | Conduite Immédiate |
 | :--- | :--- | :--- |
-| Coder la solution directement dans lab-dev | Confusion des rôles | Déléguer l'assistance au Skill Technique Dédié du Lab |
-| Sauter l'étape de veille technologique | Précipitation | Recenser d'abord 2 ou 3 références de marché avant de coder |
-| Omettre les 3 phrases orales A1 | Oubli de la contrainte | Reformuler en 3 phrases directes de niveau A1 par slide |
-| Créer un skill technique sans passer par plugin-dev | Non-respect des standards | Utiliser plugin-dev pour garantir les 10 rubriques Anthropic |
+| Mettre des livrables de lab dans docs/ | Confusion des dossiers | Déplacer les livrables dans les sous-dossiers 1 à 5 |
+| Séparer le rapport et la présentation | Risque d'oubli des slides | Regrouper les deux fichiers dans `5.rapport-et-presentation/` |
+| Remplir la présentation à la dernière minute | Mauvaise gestion du temps | Initialiser les slides dès l'étape 1 et remplir au fur et à mesure |
+| Notes orales de présentation trop littéraires | Niveau inadapté | Reformuler en 3 phrases directes de niveau A1 par slide |
 
 # 10. Exemples Concrets (Few-Shot)
 
 **Exemple d'Invocation :**
-*Apprenant : « Je commence mon lab actuel sur l'ingénierie des skills pour le projet fil rouge. »*
+*Apprenant : « Je prépare mon lab sur Alpine.js pour mon projet CarRental. »*
 
 **Comportement de l'agent `lab-dev` :**
-1. L'agent lit le `README.md` du lab et invite l'apprenant à valider le cadrage.
-2. Il conduit l'étape de veille sur les frameworks d'agents IA (Anthropic, Antigravity, Copilot).
-3. Il identifie le skill technique requis : *« Pour ce lab, nous devons créer le skill technique `lab-skill-engineering` avec `plugin-dev`. »*
-4. Il génère le squelette `Lab-Skill-Engineering.md`, la présentation avec page de garde et notes A1, et le fichier `Todo.md`.
-5. Il accompagne l'apprenant jusqu'à l'audit final pour le passage en sprint devant le formateur.
+1. L'agent initialise `README.md` et `Todo.md`.
+2. Il crée `1.besoin/contexte-et-besoin.md` avec le template guidé.
+3. Il crée `2.veille/veille-technologique.md`.
+4. Il prépare `3.skill-technique/` et fait concevoir `lab-alpinejs` via `plugin-dev`.
+5. Il initialise `4.realisation/` pour accueillir les composants interactifs.
+6. Il génère `5.rapport-et-presentation/` avec le rapport et les slides A1, puis accompagne l'apprenant jusqu'au sprint formateur.
