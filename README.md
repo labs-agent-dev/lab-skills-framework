@@ -8,11 +8,11 @@
 ## 2. Architecture des Compétences
 | Skill | Type | Commande | Rôle |
 | :--- | :--- | :--- | :--- |
-| **`plugin-dev`** | Méta-Gouvernance | `/plugin-dev` | Conçoit, norme et valide tout skill IA (standard Anthropic, 10 rubriques). |
+| **`skills-dev`** | Méta-Gouvernance | `/skills-dev` | Conçoit, norme et valide tout skill IA (standard Anthropic, 10 rubriques). |
 | **`lab-dev`** | Méta-Méthodologie | `/lab-dev` | Structure les 5 sous-dossiers de lab, audite les slides A1 et autorise le sprint. |
 | **`lab-skill-engineering`** | Technique | `/lab-skill-engineering` | Cartographie et conçoit les compétences IA selon notre stack et workflow. |
 
 ## 3. Validation Rapide
 ```powershell
-node .agent/skills/plugin-dev/scripts/validate-skills.cjs
+node .agent/skills/skills-dev/scripts/validate-skills.cjs
 ```

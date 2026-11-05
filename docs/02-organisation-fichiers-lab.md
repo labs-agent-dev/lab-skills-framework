@@ -8,7 +8,7 @@
    - `3.skill-technique/` : Résultat final du lab — Spécification du skill de l'approche retenue (`spec-skill.md`).
    - `4.realisation/` : Expérimentation et tests comparatifs (code, maquettes ou configurations testées).
    - `5.rapport-et-presentation/` : `Lab-[Sujet].md` et `Presentation-[Sujet].md` (slides A1).
-3. **Outillage Agentique :** `.agent/skills/` (`plugin-dev`, `lab-dev`, skill technique du lab).
+3. **Outillage Agentique :** `.agent/skills/` (`skills-dev`, `lab-dev`, skill technique du lab).
 4. **Méthode d'Équipe :** `docs/` réservé exclusivement aux guides transversaux (aucun livrable de lab).
 
 ## 2. Arborescence Type

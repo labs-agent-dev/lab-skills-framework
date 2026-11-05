@@ -13,7 +13,7 @@ Ce skill expert conçoit l'architecture globale des compétences IA pour le proj
 
 # 2. Déclenchement & Limites
 - **Activer :** Conception de l'architecture des compétences IA, arbitrage de granularité (par tech, par couche, par flux ou skill unique).
-- **Ne PAS activer :** Cadrage méthodologique de lab (`lab-dev`), normalisation de `SKILL.md` (`plugin-dev`), ou rédaction de code métier.
+- **Ne PAS activer :** Cadrage méthodologique de lab (`lab-dev`), normalisation de `SKILL.md` (`skills-dev`), ou rédaction de code métier.
 
 # 3. Entrées & Ressources à Charger
 - `.agent/skills/lab-skill-engineering/resources/matrice-stack-workflow.md` (Matrice Stack x Workflow).
@@ -37,7 +37,7 @@ Ce skill expert conçoit l'architecture globale des compétences IA pour le proj
 
 # 7. Format de Sortie & Livrables
 - Matrice des compétences IA (`matrice-architecture-skills.md`).
-- Fiches de spécification prêtes pour `plugin-dev`.
+- Fiches de spécification prêtes pour `skills-dev`.
 - Rapport d'arbitrage (ADR).
 
 # 8. Contrôle Qualité (Checklist Binaire)
@@ -55,4 +55,4 @@ Ce skill expert conçoit l'architecture globale des compétences IA pour le proj
 
 # 10. Exemples Concrets (Few-Shot)
 *Apprenant : « Quelle architecture de skills pour Laravel, Alpine.js et Preline UI ? »*
-➔ `lab-skill-engineering` propose : méta-gouvernance (`lab-dev`, `plugin-dev`) + skills dédiés (`lab-crud-laravel`, `lab-alpinejs`, `lab-preline-ui`) et génère la matrice d'architecture.
+➔ `lab-skill-engineering` propose : méta-gouvernance (`lab-dev`, `skills-dev`) + skills dédiés (`lab-crud-laravel`, `lab-alpinejs`, `lab-preline-ui`) et génère la matrice d'architecture.
