@@ -32,8 +32,8 @@ Ce méta-skill cadre et valide l'organisation des **Labs techniques en 5 sous-do
 # 5. Procédure Pas-à-Pas
 1. **1.besoin/ :** Générer `README.md`, `Todo.md` et `contexte-et-besoin.md`.
 2. **2.veille/ :** Analyser les références du marché et consigner dans `veille-technologique.md`.
-3. **3.skill-technique/ :** Spécifier le skill technique dédié et le créer avec `plugin-dev`.
-4. **4.realisation/ :** Guider l'apprenant pour réaliser et tester le livrable concret (code, maquette).
+3. **4.realisation/ :** Tester et comparer les options sur le cas pratique étalon (code/maquette).
+4. **3.skill-technique/ :** Résultat final du lab — Retenir une seule approche et créer le skill avec `plugin-dev`.
 5. **5.rapport-et-presentation/ :** Générer le rapport et les slides A1, auditer avec la checklist et autoriser le sprint.
 
 # 6. Gestion des Ambiguïtés & Décisions

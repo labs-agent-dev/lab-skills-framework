@@ -5,8 +5,8 @@
 2. **Livrables Apprenant (5 Sous-Dossiers) :**
    - `1.besoin/` : Contexte du fil rouge et problème technique (`contexte-et-besoin.md`).
    - `2.veille/` : État de l'art et références (`veille-technologique.md`).
-   - `3.skill-technique/` : Spécification du skill dédié (`spec-skill.md`).
-   - `4.realisation/` : Code, maquettes, schémas ou configurations concrètes.
+   - `3.skill-technique/` : Résultat final du lab — Spécification du skill de l'approche retenue (`spec-skill.md`).
+   - `4.realisation/` : Expérimentation et tests comparatifs (code, maquettes ou configurations testées).
    - `5.rapport-et-presentation/` : `Lab-[Sujet].md` et `Presentation-[Sujet].md` (slides A1).
 3. **Outillage Agentique :** `.agent/skills/` (`plugin-dev`, `lab-dev`, skill technique du lab).
 4. **Méthode d'Équipe :** `docs/` réservé exclusivement aux guides transversaux (aucun livrable de lab).

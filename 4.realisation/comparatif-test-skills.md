@@ -12,7 +12,8 @@
 | **Vitesse** | ⚡⚡⚡ Rapide | ⚡⚡ Moyen | ⚡ Structuré | ⚡⚡⚡⚡ Direct |
 | **Pédagogie** | ⭐⭐⭐ Facile | ⭐⭐ Technique | ⭐⭐⭐⭐ Méthodique | ⭐⭐⭐ Simple |
 | **Tokens (Prompt)** | 🟢 Faible | 🟡 Moyen | 🟢 Faible | 🔴 Élevé |
-| **Usage Fil Rouge** | **Briques isolées** | **Back-end lourd** | **Apprentissage** | **Prototypage rapide** |
+| **Usage Fil Rouge** | **Briques isolées** | **Back-end lourd** | **Apprentissage & Guidage** | **Prototypage rapide** |
 
-## 3. Livrable Produit
-- [`landing-page-blog-laureats/index.html`](landing-page-blog-laureats/index.html) : Démo live 100 % responsive avec filtres d'articles instantanés via Alpine.js.
+## 3. Livrables du Testbench
+- [`landing-page-blog-laureats/index.html`](landing-page-blog-laureats/index.html) : Code testbench responsive avec filtres d'articles réactifs Alpine.js.
+- **Décision (ADR) :** Choix de l'**Approche par Phase de Flux de Travail** (`flow-*`), formalisée dans `3.skill-technique/spec-skill.md`.

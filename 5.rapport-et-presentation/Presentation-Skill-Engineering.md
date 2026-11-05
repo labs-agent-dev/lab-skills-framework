@@ -37,12 +37,12 @@
 
 ## Slide 3 : Comparatif des 4 Approches
 - **Les 4 Choix :** Par Technologie, Par Layer, Par Workflow, Un Seul Skill.
-- **Décision (ADR) :** Organisation hybride avec un skill technique dédié par sujet de lab.
+- **Décision Retenue (ADR) :** Approche par Phase de Flux de Travail (`flow-*`).
 
 > **🎙️ Notes de l'orateur (Français A1) :**
 > 1. « Chaque apprenant du groupe a testé une organisation différente. »
 > 2. « Nous avons comparé la vitesse, la mémoire et la simplicité du code. »
-> 3. « Nous avons choisi de créer un skill dédié pour chaque sujet de lab. »
+> 3. « Nous avons choisi l'approche par workflow pour bien guider chaque étape. »
 
 ---
 

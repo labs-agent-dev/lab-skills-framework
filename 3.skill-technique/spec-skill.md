@@ -1,14 +1,16 @@
-# Spécification Technique : Les 4 Approches de Skills
+# Résultat Final du Lab : Spécification du Skill Retenu
 
-## 1. Cartographie des 4 Approches
-| Approche | Skills Génériques Définis | Rôle Technique |
+À l'issue des tests comparatifs de `4.realisation/`, l'équipe retient l'**Approche par Phase de Flux de Travail (Workflow)** pour piloter méthodiquement le développement du projet fil rouge.
+
+## 1. Cartographie de l'Approche Retenue
+| Skill IA | Phase du Workflow | Rôle & Responsabilité |
 | :--- | :--- | :--- |
-| **1. Technologie** | `tech-html`, `tech-tailwind`, `tech-alpine`, `tech-laravel` | Une compétence spécialisée par langage ou framework. |
-| **2. Layer (Couche)** | `layer-ui-view`, `layer-controller`, `layer-service`, `layer-data` | Découpage calqué sur les couches de l'architecture logicielle. |
-| **3. Workflow (Flux)** | `flow-analyse`, `flow-conception`, `flow-dev`, `flow-test` | Découpage par étape chronologique de production. |
-| **4. Un Seul Skill** | `fullstack-developer` | Développeur polyvalent de bout en bout (motif `feature-dev`). |
+| **`flow-analyse`** | 1. Analyse | Cadre le besoin, formalise les user stories et les critères d'acceptation. |
+| **`flow-conception`** | 2. Conception | Sélectionne les composants UI (Preline) et structure l'architecture logicielle. |
+| **`flow-developpement`** | 3. Développement | Génère 100 % du code (Blade, Tailwind, Alpine.js) selon l'architecture. |
+| **`flow-test-qualite`** | 4. Qualité | Contrôle la réactivité, le responsive mobile et l'absence de régressions. |
 
 ## 2. Règles Inviolables
-1. **Noms 100 % Génériques :** Aucun nom lié à une page (les skills servent pour tout le projet fil rouge).
-2. **SSOT :** Les standards transversaux résident dans `.agent/rules/`.
-3. **Format Standard :** Respect strict des 10 rubriques normées validé par `plugin-dev`.
+1. **Pérennité Fil Rouge :** Compétences 100 % génériques pour l'ensemble du projet fil rouge.
+2. **SSOT :** Directives permanentes centralisées dans `.agent/rules/`.
+3. **Norme Anthropic :** Format standard des 10 rubriques validé avec `plugin-dev`.
