@@ -1,34 +1,17 @@
-# Contexte et Besoin : Lab Conception des Skills IA
+# Contexte et Besoin : Conception des Skills IA
 
-Ce document décrit le cadre de notre formation, la dualité entre Projet Fil Rouge et Projet Technique, et le besoin qui justifie la création de nos compétences IA.
+## 1. Contexte : Dualité Fil Rouge vs Prototype
+- **Projet Fil Rouge (100 % IA) :** Développé intégralement par l'IA. L'apprenant ne code pas à la main : l'IA génère 100 % du code en suivant notre architecture logicielle et la description de nos skills.
+- **Projet Technique (Prototype en Live Coding) :** Compris et maîtrisé par l'apprenant. Réalisé en direct devant le formateur **sans IA et sans prompt** pour certifier la compréhension du code.
 
----
+## 2. Problématique & 4 Choix d'Architecture
+Une IA générique produit du code désorganisé sans respecter notre stack ni notre architecture. Pour guider l'IA vers un code conforme, nous avons **4 choix d'organisation** :
+1. **Par Technologie :** un skill par outil (`tech-html`, `tech-tailwind`, `tech-alpine`, `tech-laravel`).
+2. **Par Layer :** un skill par couche logicielle (`layer-ui`, `layer-controller`, `layer-service`, `layer-data`).
+3. **Par Phase de Flux (Workflow) :** un skill par étape de travail (`flow-analyse`, `flow-conception`, `flow-dev`, `flow-test`).
+4. **Un Seul Skill :** un développeur polyvalent unique (`fullstack-developer`).
 
-## 1. Contexte du Projet
-
-### 1.1 Le Projet Fil Rouge : Développé à 100 % par l'IA
-- Chaque apprenant réalise individuellement un **Projet Fil Rouge** durant toute l'année de formation.
-- **L'objectif n'est pas de coder à la main ce projet : l'objectif est de développer 100 % du code par l'IA.**
-- L'IA doit générer l'ensemble de l'application en respectant fidèlement :
-  1. **Notre Architecture Logicielle** (découpage en couches, séparation des responsabilités, patterns de conception).
-  2. **La Description et les règles définies dans nos Skills IA**.
-- L'apprenant pilote l'IA comme un architecte logiciel qui guide son agent.
-
-### 1.2 Le Projet Technique : Compréhension & Live Coding (Sans IA)
-- **C'est dans le Projet Technique (le Prototype) que l'apprenant comprend et maîtrise le code en profondeur.**
-- Lors des sprints, l'apprenant réalise le prototype technique en **direct (live coding) devant le formateur SANS IA et SANS PROMPT**.
-- Ce live coding sans IA prouve que l'apprenant comprend parfaitement l'architecture, la syntaxe et le fonctionnement du code généré.
-
----
-
-## 2. Expression du Besoin
-
-### 2.1 La Problématique
-- Pour que l'IA soit capable de **générer 100 % du code du projet fil rouge** de manière autonome et fiable, une IA générique ne suffit pas : elle ignore notre stack (Laravel, Alpine.js, Preline UI) et produirait une architecture désorganisée.
-- L'IA a impérativement besoin d'être guidée par des **compétences formelles (Skills)** qui décrivent exactement comment architecturer et écrire le code.
-
-### 2.2 Le Besoin Concret du Lab
-Le besoin de ce lab est de :
-1. **Concevoir les Skills de notre Agent IA :** Décrire précisément notre architecture logicielle et nos règles techniques dans les skills pour que l'IA puisse générer 100 % du projet fil rouge sans dévier.
-2. **Maîtriser les briques de l'Agent :** Savoir quand utiliser un **Skill** (règle technique unitaire), un **Workflow** (suite d'étapes de génération) ou un **Plugin** (boîte d'outils complète).
-3. **Structurer les compétences :** Choisir la meilleure organisation de skills (par technologie, par couche logicielle ou par workflow) pour rendre l'IA ultra-précise et autonome.
+## 3. Besoin Concret du Lab
+1. **Concevoir les skills de l'agent :** Décrire notre architecture logicielle et nos règles pour que l'IA génère 100 % du fil rouge sans dévier.
+2. **Distinguer les concepts :** Savoir quand utiliser un **Skill**, un **Workflow** ou un **Plugin**.
+3. **Comparer les 4 choix :** Tester chaque organisation sur un cas pratique pour choisir la plus efficace.

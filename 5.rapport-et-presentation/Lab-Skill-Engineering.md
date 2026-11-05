@@ -1,63 +1,21 @@
 # Rapport Officiel : Lab Conception des Skills IA
 
-Ce document résume nos travaux sur l'ingénierie des compétences IA pour le projet fil rouge.
-
----
-
-## 1. Pourquoi ce Lab & Cas Pratique Test
-
-### 1.1 Objectif
-> **Objectif Principal :** Concevoir les compétences IA (Skills) pour développer le **Projet Fil Rouge à 100 % par l'IA** selon notre architecture logicielle, tout en permettant à l'apprenant de comprendre le code pour réussir son évaluation du **Projet Technique en live coding devant le formateur SANS IA et SANS PROMPT**.
-
-**Les 4 Objectifs Précis :**
-1. **Comprendre les concepts :** Différencier Plugin, Workflow et Skill.
-2. **Trouver la meilleure organisation :** Comparer les 4 approches (Technologie, Layer, Workflow, Développeur unique).
-3. **Tester sur un cas pratique :** Réaliser la Landing Page du Blog des Lauréats avec Tailwind et Alpine.js.
-4. **Outiller la classe :** Fournir les compétences IA prêtes à l'emploi pour tous les futurs labs.
-
-### 1.2 Le Cas Pratique Commun
-Tous les apprenants ont testé leurs compétences sur le même cas réel : la **Landing Page du Blog des Lauréats** (Navbar responsive, Hero section, profils de lauréats, articles avec filtres réactifs Alpine.js et Footer).
-
----
+## 1. Objectif & Règle Cardinale
+- **Projet Fil Rouge (100 % IA) :** Développé intégralement par l'IA selon notre architecture logicielle et la description des compétences inscrites dans nos skills.
+- **Projet Technique (Prototype en Live Coding) :** Maîtrisé par l'apprenant, évalué en direct devant le formateur **sans IA et sans prompt**.
+- **Cas Test Commun :** Landing Page du Blog des Lauréats (Preline UI, Alpine.js réactif).
 
 ## 2. Théorie & Choix d'Architecture (ADR)
-
-### 2.1 La Différence : Plugin, Workflow et Skill
-- **Skill :** L'outil unitaire spécialisé (`tech-tailwind`, `tech-alpine`).
-- **Workflow :** La suite d'étapes ordonnées (`flow-developpement`).
-- **Plugin :** La boîte complète prête à l'emploi (skills + règles + workflows).
-
-### 2.2 Comparatif des 4 Approches d'Architecture
-
-| Approche | Avantages | Limites | Décision d'Équipe |
-| :--- | :--- | :--- | :---: |
-| **1. Par Technologie** | Précis techniquement par langage. | Risque de conflits lors de l'assemblage. | Utile pour des briques isolées. |
-| **2. Par Layer (Couche)** | Respecte l'architecture logicielle. | Lourd pour des pages simples. | Idéal pour de gros projets back. |
-| **3. Par Workflow** | Guide bien le débutant pas-à-pas. | Moins fort pour coder vite. | Idéal en phase d'apprentissage. |
-| **4. Un Seul Skill Global** | Très rapide pour prototyper. | Fichier prompt lourd (beaucoup de tokens). | **Choisi pour le prototypage rapide.** |
-
-**Décision d'Architecture Retenue (ADR) :**
-Nous adoptons une **architecture hybride** :
-- Deux méta-skills de pilotage (`lab-dev` pour la méthode, `plugin-dev` pour les normes).
-- Un skill technique dédié par sujet de Lab pour coder la brique avec ses règles propres.
-
----
+- **Concepts :** **Skill** = outil unitaire (`tech-tailwind`) | **Workflow** = suite d'étapes (`flow-dev`) | **Plugin** = paquet complet.
+- **Décision d'Architecture (ADR) :** Organisation **hybride** :
+  - 2 méta-skills de gouvernance (`lab-dev` pour la méthode, `plugin-dev` pour les normes Anthropic).
+  - 1 skill technique dédié par sujet de Lab pour générer le code selon ses règles propres.
 
 ## 3. Réalisation Pratique (Les Deux Tests)
+- **Test 1 (Brut `skills.sh`) :** Code généré sans nos composants ni Alpine.js.
+- **Test 2 (Adapté) :** Intégration de nos règles Tailwind et de la réactivité Alpine.js. Résultat : page 100 % fonctionnelle dans `4.realisation/landing-page-blog-laureats/index.html`.
 
-### Test 1 : Avec les skills bruts de skills.sh (Sans modification)
-- Les skills communautaires génèrent une base, mais ignorent nos composants Preline UI et notre palette de couleurs.
-
-### Test 2 : Avec les skills adaptés à notre stack
-- Nous avons injecté nos règles d'accessibilité et d'interactivité Alpine.js.
-- Résultat : la Landing Page dans `4.realisation/landing-page-blog-laureats/index.html` est 100% fonctionnelle, responsive et dynamique.
-
----
-
-## 4. Défi Sprint devant le Formateur
-
-### Démonstration en Direct (5 minutes) :
-1. Montrer l'arborescence propre en 5 sous-dossiers.
-2. Ouvrir la Landing Page dans le navigateur et montrer le filtrage réactif des articles au clic.
-3. Expliquer la différence entre Plugin, Workflow et Skill.
-4. Réaliser le mini-défi en direct (ex: ajouter une nouvelle catégorie d'article ou modifier un style).
+## 4. Démonstration du Sprint (5 min sans IA)
+1. Présenter l'arborescence des 5 sous-dossiers.
+2. Démo du filtrage instantané des articles dans le navigateur.
+3. Réaliser le mini-défi de code en live coding direct devant le formateur.

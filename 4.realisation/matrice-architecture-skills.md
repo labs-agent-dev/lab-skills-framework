@@ -1,54 +1,32 @@
-# Réalisation Technique : Matrice et Architecture des Skills IA
+# Réalisation : Matrice d'Architecture des Skills IA
 
-Ce document constitue la réalisation technique concrète du Lab actuel sur l'ingénierie des compétences.
-
----
-
-## 1. Cartographie Complète des Compétences du Projet Fil Rouge
-
+## 1. Cartographie Multi-Niveaux
 ```mermaid
 graph TD
-    subgraph Niveau1 ["Niveau 1 : Méta-Gouvernance & Méthodologie"]
-        G1["plugin-dev (Normes Anthropic & Validation)"]
-        G2["lab-dev (Workflow en 5 Dossiers & Validation Sprint)"]
+    subgraph Méta ["Niveau 1 : Méta-Gouvernance"]
+        G1["plugin-dev (Normes Anthropic)"]
+        G2["lab-dev (Méthode 5 Dossiers)"]
     end
-
-    subgraph Niveau2 ["Niveau 2 : Skill d'Architecture IA (Lab Actuel)"]
-        S0["lab-skill-engineering (Analyse Stack & Workflow)"]
+    subgraph Architecture ["Niveau 2 : Skill d'Architecture"]
+        S0["lab-skill-engineering"]
     end
-
-    subgraph Niveau3 ["Niveau 3 : Skills Techniques des Futurs Labs"]
-        S1["lab-crud-laravel (Backend Eloquent, FormRequests, Migrations)"]
-        S2["lab-alpinejs (Frontend réactif, événements $dispatch)"]
-        S3["lab-preline-ui (Composants UI Tailwind & accessibilité)"]
+    subgraph Futur ["Niveau 3 : Skills Techniques Futurs"]
+        S1["lab-crud-laravel"]
+        S2["lab-alpinejs"]
+        S3["lab-preline-ui"]
     end
-
-    G1 --> S0
-    G2 --> S0
-    S0 --> S1
-    S0 --> S2
-    S0 --> S3
+    G1 & G2 --> S0 --> S1 & S2 & S3
 ```
 
----
-
-## 2. Définition des Rôles par Compétence
-
-| Compétence | Niveau | Rôle Opérationnel | Fichiers Gérés |
+## 2. Définition des Rôles
+| Skill | Niveau | Rôle Opérationnel | Périmètre |
 | :--- | :--- | :--- | :--- |
-| **`plugin-dev`** | Méta | Conçoit et valide les fichiers `SKILL.md` selon les 10 rubriques officielles. | `.agent/skills/*/SKILL.md` |
-| **`lab-dev`** | Méta | Structure les 5 sous-dossiers, fournit les templates et valide la soutenance devant le formateur. | `1.besoin/` à `5.rapport-et-presentation/` |
-| **`lab-skill-engineering`** | Technique (Actuel) | Détermine la granularité des compétences et guide la cartographie IA pour le prototype fil rouge. | `4.realisation/` & matrices |
-| **`lab-crud-laravel`** | Technique (Futur) | Porte les règles Eloquent, MVC et Form Requests pour coder la logique métier. | `app/Http/Controllers/`, `Models/` |
-| **`lab-alpinejs`** | Technique (Futur) | Porte les règles de réactivité locale, modals et filtres sans jQuery. | `resources/views/`, `x-data` |
-| **`lab-preline-ui`** | Technique (Futur) | Porte les règles d'intégration des composants Tailwind accessibles. | Composants UI Blade |
+| **`plugin-dev`** | Méta | Conçoit et valide les `SKILL.md` (10 rubriques). | `.agent/skills/*/SKILL.md` |
+| **`lab-dev`** | Méta | Cadre les 5 dossiers, Todo.md et slides A1. | `1.besoin/` à `5.rapport-et-presentation/` |
+| **`lab-skill-engineering`** | Technique (Actuel) | Cartographie les compétences pour le fil rouge. | `4.realisation/` |
+| **`lab-crud-laravel`** | Technique (Futur) | Génère le backend Laravel (Eloquent, FormRequests). | Controllers, Models |
+| **`lab-alpinejs`** | Technique (Futur) | Frontend réactif (états, modals, filtres). | `x-data`, vues Blade |
+| **`lab-preline-ui`** | Technique (Futur) | Intégration de composants Tailwind accessibles. | Composants Blade UI |
 
----
-
-## 3. Résultats des Tests de Validation Déterministe
-Le script `validate-skills.cjs` a été exécuté avec succès :
-- `lab-dev` : **100% CONFORME** (YAML + Inspiration Anthropic + 10 rubriques).
-- `lab-skill-engineering` : **100% CONFORME** (YAML + Inspiration Anthropic + 10 rubriques).
-- `plugin-dev` : **100% CONFORME** (YAML + Inspiration Anthropic + 10 rubriques).
-- Erreurs bloquantes : **0**.
-
+## 3. Contrôle Qualité
+- Script `validate-skills.cjs` : **100 % conforme (0 erreur)** sur `lab-dev`, `lab-skill-engineering` et `plugin-dev`.
