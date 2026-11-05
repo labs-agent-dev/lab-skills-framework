@@ -3,11 +3,11 @@
 Ce dépôt contient les compétences IA (Skills) pour assister le développement des prototypes techniques de nos projets fil rouge.
 
 ## 1. Rôle dans le Projet Fil Rouge
-- Chaque apprenant développe un **Projet Fil Rouge** pour valider ses compétences.
-- Pour construire ce projet, nous réalisons d'abord un **Prototype technique** par sprints.
-- Chaque sprint est présenté en direct devant le formateur.
+- Chaque apprenant réalise individuellement un **Projet Fil Rouge** durant son année de formation.
+- **Objectif du Projet Fil Rouge : Développé à 100 % par l'IA.** L'IA doit générer l'ensemble de l'application en respectant notre architecture logicielle et la description des compétences définies dans nos skills.
+- **Rôle du Projet Technique (Prototype) : Compréhension & Live Coding.** L'apprenant y apprend et comprend le code en profondeur. Lors de chaque sprint, il réalise le prototype en **live coding direct devant le formateur SANS IA et SANS PROMPT**.
 - Les **Labs** permettent de résoudre une problématique technique précise de notre stack (CRUD Laravel, dynamique Alpine.js, composants Preline UI, Conception des Skills).
-- **Objectif du Lab actuel :** Apprendre à créer et bien organiser nos compétences IA (Skills) pour développer rapidement et sans erreurs notre Prototype de Projet Fil Rouge.
+- **Objectif du Lab actuel :** Concevoir les compétences IA (Skills) de notre agent pour que l'IA développe 100 % du code du projet fil rouge selon notre architecture, tout en préparant l'apprenant à maîtriser le code pour son évaluation en direct.
 
 ## 2. Approche Méthodologique
 - Nous analysons les compétences existantes dans la communauté (Anthropic, GitHub, agentskills.io).

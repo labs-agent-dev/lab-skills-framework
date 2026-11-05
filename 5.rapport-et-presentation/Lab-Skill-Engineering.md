@@ -7,7 +7,7 @@ Ce document résume nos travaux sur l'ingénierie des compétences IA pour le pr
 ## 1. Pourquoi ce Lab & Cas Pratique Test
 
 ### 1.1 Objectif
-> **Objectif Principal :** Apprendre à créer et bien organiser nos compétences IA (Skills) pour développer rapidement et sans erreurs notre Prototype de Projet Fil Rouge.
+> **Objectif Principal :** Concevoir les compétences IA (Skills) pour développer le **Projet Fil Rouge à 100 % par l'IA** selon notre architecture logicielle, tout en permettant à l'apprenant de comprendre le code pour réussir son évaluation du **Projet Technique en live coding devant le formateur SANS IA et SANS PROMPT**.
 
 **Les 4 Objectifs Précis :**
 1. **Comprendre les concepts :** Différencier Plugin, Workflow et Skill.

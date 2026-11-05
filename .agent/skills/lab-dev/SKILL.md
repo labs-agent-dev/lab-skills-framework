@@ -1,21 +1,23 @@
 ---
 name: lab-dev
 description: Cadre, structure et valide la réalisation de Labs techniques pour les prototypes de projets fil rouge, organise le lab en 5 sous-dossiers concrets (1.besoin, 2.veille, 3.skill-technique, 4.realisation, 5.rapport-et-presentation), fait créer le skill technique dédié avec plugin-dev, génère la présentation (page de garde et 3 phrases A1 par slide) et le fichier Todo.md, sans rédiger la solution à la place de l'apprenant.
-version: 1.2.0
+version: 1.3.0
 inspiration:
   source: "anthropic/claude-plugins-official"
   plugin: "feature-dev"
-  pattern: "5-folder modular organization, domain skill pairing & speaker notes guidance"
+  pattern: "5-folder modular organization, domain skill pairing, no-AI live coding & speaker notes guidance"
 ---
 
 # 1. Mission
-Ce méta-skill orchestre l'organisation et l'accompagnement méthodologique des **Labs techniques**. Il structure le projet de lab en **5 sous-dossiers clairs et concrets** pour permettre à l'apprenant de construire pas-à-pas la brique technique de son **Prototype de Projet Fil Rouge**.
+Ce méta-skill orchestre l'organisation et l'accompagnement méthodologique des **Labs techniques**. Il structure le projet de lab en **5 sous-dossiers concrets** pour permettre de concevoir les compétences IA (Skills) capables de **développer 100 % du code du Projet Fil Rouge par l'IA** selon notre architecture logicielle, tout en préparant l'apprenant à comprendre et maîtriser le code pour son évaluation du **Projet Technique en live coding devant le formateur SANS IA ET SANS PROMPT**.
 
 **Principes Cardinaux du Skill :**
+- **Dualité Fil Rouge vs Projet Technique :**
+  - **Projet Fil Rouge :** Développé à **100 % par l'IA**, guidée par notre architecture logicielle et la description inscrite dans nos skills.
+  - **Projet Technique (Prototype) :** L'apprenant y apprend et comprend le code, puis le réalise en **live coding direct devant le formateur SANS IA ET SANS PROMPT**.
 - **Organisation en 5 Sous-Dossiers Concrets :** Tout lab est organisé en sous-dossiers parlants pour l'apprenant : `1.besoin/`, `2.veille/`, `3.skill-technique/`, `4.realisation/`, et `5.rapport-et-presentation/`.
 - **Colocalisation du Rapport et de la Présentation :** Dans `5.rapport-et-presentation/`, le rapport technique et les diapositives orales sont réunis pour supprimer tout risque d'oubli de la présentation.
 - **Un Skill Technique Dédié pour chaque Lab :** Chaque sujet de Lab possède son propre skill technique spécialisé (ex: `lab-skill-engineering`, `lab-crud-laravel`) créé avec `plugin-dev`.
-- **Non-Substitution :** Le méta-skill `lab-dev` ne doit jamais rédiger la solution technique ni la réalisation à la place de l'apprenant.
 - **Accompagnement Oratoire A1 :** Il exige et valide une page de garde complète et exactement **3 phrases simples en français de niveau A1** dans les notes de l'orateur de chaque slide.
 
 # 2. Déclenchement & Limites
@@ -47,6 +49,7 @@ Ce méta-skill orchestre l'organisation et l'accompagnement méthodologique des 
   - `4.realisation/` : Code source, maquettes, schémas ou configurations testées.
   - `5.rapport-et-presentation/` : `Lab-[Sujet].md` et `Presentation-[Sujet].md`.
 - **Protection de `docs/` :** Le dossier `docs/` est réservé à la documentation de méthode de l'équipe. Aucun livrable de lab ne doit y être déposé.
+- **Règle Cardinale du Sprint (Live Coding sans IA) :** Lors de l'évaluation en sprint devant le formateur, la réalisation ou l'adaptation du prototype se fait obligatoirement en **live coding direct SANS IA et SANS PROMPT**. L'agent IA et ses skills assistent la préparation du projet fil rouge durant l'année, mais le sprint valide la compétence autonome de l'apprenant.
 - **Règle des Notes de Présentation (Niveau A1) :**
   - Chaque slide du plan de présentation comporte obligatoirement **exactement 3 phrases simples en français niveau A1**.
   - Vocabulaire professionnel et technique correct, sans phrases littéraires complexes ni infantilisation.

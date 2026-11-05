@@ -50,10 +50,11 @@ Pour chaque slide (Slides 1 à 5) :
 - [ ] **Skill IA :** Rôle du skill technique mentionné.
 - [ ] **Tests :** Procédure de vérification dans le navigateur / console.
 
-### 2.4 Bloc 4 : Défi Sprint
+### 2.4 Bloc 4 : Défi Sprint & Live Coding
 - [ ] Protocole de démo prêt (5 min).
-- [ ] Mini-défi anticipé.
-- [ ] Intégration fil rouge expliquée.
+- [ ] **Live Coding SANS IA :** L'apprenant est capable de coder en direct devant le formateur SANS IA et SANS PROMPT.
+- [ ] Mini-défi anticipé et maîtrisable sans béquille IA.
+- [ ] Intégration dans le projet fil rouge expliquée.
 
 ---
 
