@@ -5,7 +5,7 @@ Ce document sert de référentiel technique au skill `lab-skill-engineering` pou
 ---
 
 ## 1. Notre Stack Technique de Référence
-- **Backend :** Laravel 11 / PHP 8.2+ (Routing, Controllers, Eloquent ORM, FormRequests, Migrations).
+- **Backend :** Laravel 12 / PHP 8.2+ (Routing, Controllers, Eloquent ORM, FormRequests, Migrations).
 - **Frontend Réactif :** Alpine.js (Directives `x-data`, `x-show`, `x-on`, `$dispatch`, gestion d'état léger).
 - **Interface & Design :** Tailwind CSS + Preline UI (Composants UI prêts à l'emploi, responsive, accessibilité).
 - **Base de Données :** MySQL / MariaDB (Modélisation relationnelle, clés étrangères, index).

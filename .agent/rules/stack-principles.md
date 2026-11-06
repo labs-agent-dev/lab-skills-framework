@@ -1,7 +1,7 @@
 # Principes Directeurs de notre Stack Logicielle
 
 ## 1. Stack Technique de Référence
-- **Backend :** PHP 8.2+ / Laravel 11 (Architecture en couches, séparation stricte Contrôleurs / Actions / Modèles Eloquent).
+- **Backend :** PHP 8.2+ / Laravel 12 (Dernière version majeure - Architecture en couches, séparation stricte Contrôleurs / Actions / Modèles Eloquent).
 - **Frontend :** HTML5, Tailwind CSS, Preline UI, Alpine.js réactif (`x-data`, `x-bind`, `x-on`).
 - **Agentique :** Standard Anthropic (`SKILL.md` en 10 rubriques), Google Antigravity & GitHub Copilot.
 

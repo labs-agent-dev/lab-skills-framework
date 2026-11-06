@@ -3,7 +3,7 @@
 ## Phase 1 : Cadrage Commun (Besoin & Veille - Assisté par lab-dev)
 - [x] **Concepts :** Différencier Plugin, Subagent, Workflow et Skill.
 - [x] **Règles Transversales :** Configurer `.agent/rules/` (`persona.md`, `lab-rules.md`, `stack-principles.md`).
-- [x] **Besoin :** Cadrer `1.besoin/contexte-et-besoin.md` (dualité 100% IA par AgentDev vs Live coding & 4 approches).
+- [x] **Besoin :** Cadrer `1.besoin/contexte-et-besoin.md` (outillage d'AgentDev, 4 pistes exploratoires et ouverture sur démarche alternative).
 - [x] **Veille :** Explorer les références, `claude-plugins-official` et `skills.sh` dans `2.veille/veille-technologique.md`.
 - [x] **Consignes 3 & 4 :** Initialiser les README de travail dans `3.skill-technique/` et `4.realisation/`.
 

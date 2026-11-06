@@ -11,7 +11,7 @@
 | **Apprenant** | [Nom de l'Apprenant / Équipe Solicode] |
 | **Agent Final** | **AgentDev** (Développe 100 % du Projet Fil Rouge selon notre architecture) |
 | **Prototype Sprint** | Live coding direct devant le formateur SANS IA et SANS PROMPT |
-| **Stack Technique** | HTML5, Tailwind CSS, Alpine.js, Laravel 11 |
+| **Stack Technique** | HTML5, Tailwind CSS, Alpine.js, Laravel 12 |
 
 ---
 
