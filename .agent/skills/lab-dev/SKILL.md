@@ -1,7 +1,7 @@
 ---
 name: lab-dev
-description: Cadre, structure et valide la réalisation de Labs techniques pour les prototypes de projets fil rouge, organise le lab en 5 sous-dossiers concrets (1.besoin, 2.veille, 3.skill-technique, 4.realisation, 5.rapport-et-presentation), fait créer le skill technique dédié avec skill-creator, génère la présentation (page de garde et 3 phrases A1 par slide à compléter) et le fichier Todo.md, sans rédiger la solution à la place de l'apprenant.
-version: 1.5.0
+description: Cadre, structure et valide la réalisation de Labs techniques pour les prototypes de projets fil rouge, organise le lab en 5 sous-dossiers concrets (1.besoin, 2.veille, 3.spec-skill, 4.realisation, 5.rapport-et-presentation), orchestre les skills de flux (w-veille, w-spec-skill, w-rapport) et le skill technique dédié, génère la présentation (page de garde et 3 phrases A1 par slide à compléter) et le fichier Todo.md, sans rédiger la solution à la place de l'apprenant.
+version: 1.6.0
 inspiration:
   source: "anthropic/claude-plugins-official"
   plugin: "feature-dev"
@@ -37,7 +37,7 @@ Ce méta-skill cadre et valide l'organisation des **Labs techniques en 5 sous-do
 1. **Porte 0 - README Obligatoire :** Si le `README.md` racine n'existe pas ou n'est pas renseigné (titre, sujet, objectif), `lab-dev` fournit le template et s'arrête en exigeant qu'il soit complété avant de poursuivre.
 2. **Porte 1 - Validation du Workflow :** `lab-dev` présente le flux de travail des étapes et attend la validation explicite du concepteur.
 3. **Pédagogie & Non-Substitution :** `lab-dev` ne code jamais le cas pratique et ne rédige JAMAIS le contenu narratif des diapositives.
-4. **Dossiers 3 et 4 Vides avec README :** `4.realisation/` et `3.skill-technique/` sont initialisés avec un `README.md` décrivant les consignes du travail à réaliser par l'apprenant.
+4. **Dossiers 3 et 4 Vides avec README :** `4.realisation/` et `3.spec-skill/` sont initialisés avec un `README.md` décrivant les consignes du travail à réaliser par l'apprenant.
 5. **Nomenclature Stricte :** Le préfixe `lab-*` est strictement réservé aux répertoires de labs. Les compétences techniques ne doivent jamais porter le préfixe `lab-*`.
 6. **Sprint sans IA :** L'évaluation finale se déroule en direct devant le formateur sans IA ni prompt.
 7. **Présentation A1 :** Exactement **3 phrases simples de notes en français A1** par slide, laissées sous forme d'amorces ou de placeholders `[À compléter]`.
@@ -49,7 +49,7 @@ Ce méta-skill cadre et valide l'organisation des **Labs techniques en 5 sous-do
    - Créer `1.besoin/contexte-et-besoin.md` (gabarit cadré).
    - Créer `2.veille/veille-technologique.md` (tableau d'analyse et pistes de recherche).
    - Créer `4.realisation/README.md` (consignes du testbench étalon).
-   - Créer `3.skill-technique/README.md` (consignes de spécification du skill final).
+   - Créer `3.spec-skill/README.md` (consignes de spécification du skill final).
    - Créer `5.rapport-et-presentation/` (`Lab-[Sujet].md` et `Presentation-[Sujet].md` avec page de garde et 3 notes A1/slide à compléter).
 4. **Étape 3 (Assistance Ponctuelle) :** Sur demande de l'apprenant, auditer les notes A1 ou vérifier la complétion des zones.
 5. **Étape 4 (Audit Sprint) :** Exécuter la checklist de validation binaire avant de valider l'éligibilité au passage devant le formateur.
@@ -68,7 +68,7 @@ Ce méta-skill cadre et valide l'organisation des **Labs techniques en 5 sous-do
 # 8. Contrôle Qualité (Checklist Binaire)
 - [ ] Le fichier racine `README.md` est-il présent et complété ?
 - [ ] Les 5 sous-dossiers sont-ils présents et conformes ?
-- [ ] `3.skill-technique/` et `4.realisation/` contiennent-ils leurs README de consignes ?
+- [ ] `3.spec-skill/` et `4.realisation/` contiennent-ils leurs README de consignes ?
 - [ ] Les diapositives respectent-elles le format page de garde + 3 notes orales A1 à compléter ?
 - [ ] Aucun skill technique ne porte-t-il le préfixe interdit `lab-*` ?
 - [ ] Le validateur `validate-skills.cjs` confirme-t-il 0 erreur ?

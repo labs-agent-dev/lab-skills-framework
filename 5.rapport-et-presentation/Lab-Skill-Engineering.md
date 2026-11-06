@@ -1,6 +1,6 @@
 # Rapport de Lab : Framework & Architecture des Skills IA
 
-> **Consigne à l'Apprenant :** Ce document est le rapport officiel de votre lab. Complétez les sections annotées `[À compléter]` à partir de vos expérimentations réelles dans `4.realisation/` et du skill conçu dans `3.skill-technique/`.
+> **Consigne à l'Apprenant :** Ce document est le rapport officiel de votre lab. Complétez les sections annotées `[À compléter]` à partir de vos expérimentations réelles dans `4.realisation/` et du skill conçu dans `3.spec-skill/`.
 
 ---
 

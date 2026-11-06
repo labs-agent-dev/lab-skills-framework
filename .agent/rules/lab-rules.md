@@ -4,7 +4,7 @@
 Tout lab technique est strictement structuré selon 5 sous-dossiers :
 1. `1.besoin/` : Problématique métier/technique et rôle dans le prototype (`contexte-et-besoin.md`).
 2. `2.veille/` : Benchmark de l'existant, analyse critique (`veille-technologique.md`).
-3. `3.skill-technique/` : Résultat final du lab — Spécification du skill (`spec-skill.md`).
+3. `3.spec-skill/` : Résultat final du lab — Spécification technique du skill (`spec-skill.md`).
 4. `4.realisation/` : Code d'expérimentation, testbench étalon et tests comparatifs.
 5. `5.rapport-et-presentation/` : `Lab-[Sujet].md` et `Presentation-[Sujet].md` (Slides A1).
 
