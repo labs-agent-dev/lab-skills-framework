@@ -41,8 +41,8 @@ Ce méta-skill cadre et valide l'organisation des **Labs techniques en 5 sous-do
 1. **Étape 0 (Vérification README) :** Inspecter `README.md`. Si absent/incomplet, créer le gabarit et inviter le concepteur à le renseigner.
 2. **Étape 1 (Workflow & Todo) :** Générer ou mettre à jour `Todo.md` détaillant les jalons individuels. Faire valider le flux.
 3. **Étape 2 (Scaffolding 5 Dossiers) :**
-   - Créer `1.besoin/contexte-et-besoin.md` (gabarit cadré).
-   - Créer `2.veille/veille-technologique.md` (tableau d'analyse et pistes de recherche).
+   - Créer `1.besoin/besoin.md` (gabarit cadré).
+   - Créer `2.veille/README.md` et `2.veille/veille-technologique.md` (diaporama Marp et pistes de recherche).
    - Créer `4.realisation/README.md` (consignes du testbench étalon).
    - Créer `3.spec-skill/README.md` (consignes de spécification du skill final).
    - Créer `5.rapport-et-presentation/` (`Lab-[Sujet].md` et `Presentation-[Sujet].md` avec page de garde et 3 notes A1/slide à compléter).

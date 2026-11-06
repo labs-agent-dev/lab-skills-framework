@@ -1,27 +1,49 @@
-# Veille Technologique : Références & Choix de skills.sh
+---
+marp: true
+theme: tech
+paginate: true
+header: "Lab Skills Framework — Veille Technologique"
+footer: "Solicode / AgentDev"
+---
 
-## 1. Références du Marché Comparées
-| Référence | Type | Apport Principal |
+<!-- _class: lead -->
+# Veille Technologique
+## Architecture & Organisation des Skills IA
+**Lab :** `lab-skills-framework`  
+**Étape 2 du Workflow** | Présentation Marp
+
+---
+
+## 1. Contexte & Problématique de la Veille
+- **Objectif :** Trouver et analyser les architectures de compétences IA existantes pour outiller **`AgentDev`**.
+- **Double Enjeu d'Apprentissage :**
+  - *Réponse directe :* Identifier des skills immédiatement transposables.
+  - *Montée en compétences :* Comprendre les patterns d'ingénierie agentique pour concevoir nos propres briques conformes à notre stack (PHP 8.2+ / Laravel 12, Alpine.js, Tailwind CSS).
+
+---
+
+## 2. Gisements de Référence Identifiés
+| Référence | Type de Source | Apport Technique Principal |
 | :--- | :--- | :--- |
-| **`skills.sh`** | Registre ouvert de skills | Large catalogue communautaire : idéal pour explorer et comparer rapidement. |
-| **`claude-plugins-official`** *(Anthropic)* | Dépôt GitHub officiel | Patterns de référence (`feature-dev`) et standard des 10 rubriques normées. |
-| **`agentskills.io`** | Standard ouvert | Spécification formelle du format `SKILL.md` et interopérabilité. |
-| **Docs Agents** *(Antigravity, Claude Code)* | Guides éditeurs | Règles d'exécution et gestion de contexte en conditions réelles. |
+| **[GitHub Topics: coding-agent](https://github.com/topics/coding-agent)** | Carrefour Open-Source | Dépôts communautaires majeurs, architectures multi-agents et patterns d'agents développeurs. |
+| **[skills.sh](https://skills.sh)** | Registre Communautaire | Large catalogue ouvert pour observer les granularités et tester des compétences brutes. |
+| **`claude-plugins-official`** | Dépôt Officiel Anthropic | Patterns de gouvernance (`feature-dev`, `plugin-dev`) et standard des 10 rubriques normées. |
+| **Docs Écosystème Officiel** | Laravel 12, Alpine.js | Règles d'architecture strictes et APIs de référence à respecter sans dérive. |
 
-## 2. Justification du Choix : skills.sh
-Nous avons retenu **`skills.sh`** comme référence principale pour :
-1. **La richesse :** Catalogue public vaste avec exemples immédiatement exploitables.
-2. **La diversité :** Présence des 4 approches (technologie, couche, workflow, skill global).
-3. **L'accessibilité :** Facilité d'analyse et de test pour les apprenants.
+---
 
-## 3. Exploration sur skills.sh pour nos 4 Approches
-| Approche | Recherche | Compétences Candidates | Constat Technique |
+## 3. Exploration Comparative sur skills.sh
+| Approche | Recherche | Compétences Candidates | Constat Critique |
 | :--- | :--- | :--- | :--- |
-| **1. Technologie** | `html`, `tailwind`, `alpinejs` | `tailwind-helper`, `html-boilerplate` | Syntaxe CSS correcte, mais ignore nos composants d'école. |
-| **2. Layer** | `mvc`, `controller`, `ui-view` | `mvc-scaffolder`, `api-controller` | Bonne séparation, mais charge trop de fichiers pour une vue. |
-| **3. Workflow** | `wireframe`, `testing`, `dev` | `code-reviewer`, `spec-generator` | Structure bien les phases, mais ne produit pas le code complet. |
-| **4. Un Seul Skill** | `fullstack`, `feature-dev` | `feature-dev` (Anthropic) | Très complet et autonome, mais consomme beaucoup de tokens. |
+| **1. Technologie** | `tailwind`, `alpinejs` | `tailwind-helper`, `html-boilerplate` | Syntaxe CSS correcte mais ignore nos composants et templates d'école. |
+| **2. Layer** | `mvc`, `controller`, `ui-view` | `mvc-scaffolder`, `api-controller` | Découpage net mais dispersion de contexte pour de simples vues interactives. |
+| **3. Workflow** | `wireframe`, `testing`, `dev` | `code-reviewer`, `spec-generator` | Structure bien les phases, mais incapable de produire le code complet. |
+| **4. Un Seul Skill** | `fullstack`, `feature-dev` | `feature-dev` (Anthropic) | Très complet et autonome, mais consommation excessive de tokens. |
 
-## 4. Décision d'Équipe
-1. **Test 1 (Brut) :** Évaluer les skills communautaires de `skills.sh` sans modification sur le cas test.
-2. **Test 2 (Adapté) :** Adapter les compétences à notre stack (Preline UI, Alpine.js) et à nos règles d'architecture pour le projet fil rouge.
+---
+
+## 4. Synthèse & Hypothèses pour l'Étape 3 (`4.realisation/`)
+- **Constat :** Aucun skill public brut ne répond parfaitement à notre stack combinée (Laravel 12 + Alpine.js + Preline UI).
+- **Hypothèse 1 (Test Brut) :** Tester une brique issue de `skills.sh` sans adaptation pour mesurer les écarts sur le cas étalon.
+- **Hypothèse 2 (Test Adapté / Hybride) :** Initialiser notre skill technique dédié avec un socle minimal de règles et l'enrichir de façon itérative.
+- **Suite du flux :** Expérimenter ces deux hypothèses sur le banc d'essai de la Landing Page Lauréats.

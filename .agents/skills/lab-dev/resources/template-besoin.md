@@ -1,26 +1,18 @@
-# Contexte et Besoin : [Titre du Lab]
+# Expression du Besoin : [Titre du Lab / Brique Technique]
 
-> **Consigne à l'apprenant :** Complétez ce document pour définir le cadre de votre projet et exprimer clairement le problème technique à résoudre. Utilisez des phrases courtes et précises.
-
----
-
-## 1. Contexte du Projet
-
-### 1.1 Le Projet Fil Rouge
-- **Mon projet fil rouge :** [Nom et description simple de votre application complète].
-- **Déroulement :** [Projet individuel développé en sprints durant toute l'année avec l'assistance de l'agent IA].
-
-### 1.2 Le Prototype en Live Coding
-- **La brique évaluée aujourd'hui :** [Nom de la fonctionnalité ou du module à réaliser].
-- **Règle du sprint :** [Cette brique sera réalisée en direct devant le formateur en live coding SANS IA et SANS PROMPT pour valider mon autonomie technique].
+> **Consigne à l'apprenant :** Complétez ce document pour exprimer le problème technique à résoudre et le besoin concret d'outillage pour le lab. Le contexte global du projet est déjà fixé dans les règles transversales (`.agents/rules/`) : ne le répétez pas ici.
 
 ---
 
-## 2. Expression du Besoin
+## 1. Problématique Technique
+- **Le problème technique rencontré :** [Décrire le problème précis que cette brique ou technologie doit résoudre dans le prototype].
+- **Risques de dérive sans encadrement :** [Expliquer pourquoi l'agent AgentDev ou le codeur risque de dévier de notre stack (Laravel 12, Alpine.js, Tailwind CSS) sans règles claires].
 
-### 2.1 La Problématique
-- **Le problème technique rencontré :** [Quel problème précis cette technologie ou brique doit résoudre dans le prototype].
-- **Pourquoi l'assistance IA est nécessaire en amont :** [Pourquoi concevoir un skill ou des règles pour préparer ce développement sans erreurs].
+## 2. Pistes d'Architecture Exploratoires
+- **Pistes ou hypothèses initiales :** [Décrire les options étudiées pour structurer cette brique technique (ex: composant réactif, layer contrôleur/service, skill dédié ou solution existante)].
+- **Ouverture sur démarche alternative :** Le résultat du lab n'est pas restreint à une liste fermée : l'expérimentation peut aboutir à une autre démarche ou à une approche hybride adaptée à nos contraintes.
 
-### 2.2 Le Besoin Concret du Lab
-- [Décrire en 2 ou 3 points simples ce que ce lab doit produire : comprendre un mécanisme, créer un skill technique dédié, préparer le live coding].
+## 3. Besoin Concret du Lab
+1. **Comprendre et maîtriser la brique :** [Décrire le mécanisme technique fondamental à comprendre pour le sprint en live coding direct devant le formateur].
+2. **Concevoir la compétence IA :** [Spécifier et outiller le skill technique pour guider AgentDev sur le projet fil rouge sans dérive].
+3. **Tester et arbitrer la solution optimale :** [Définir le banc d'essai et les critères pour valider la démarche retenue via un ADR].

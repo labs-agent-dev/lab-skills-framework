@@ -15,8 +15,8 @@ flowchart LR
 - **Capitalisation & Sprint :** Rapport + Slides A1 (`5.rapport-et-presentation/`) et évaluation live coding sans IA.
 
 ## 2. Démarche en 5 Phases Pas-à-Pas
-1. **Phase 1 (Besoin) :** Cadrer le problème dans `1.besoin/contexte-et-besoin.md` (assisté par `lab-dev`).
-2. **Phase 2 (Veille) :** Recenser les références du marché dans `2.veille/veille-technologique.md` (assisté par `w-veille`).
+1. **Phase 1 (Besoin) :** Cadrer le problème dans `1.besoin/besoin.md` (assisté par `lab-dev`).
+2. **Phase 2 (Veille) :** Recenser les références du marché et produire le diaporama Marp dans `2.veille/veille-technologique.md` (assisté par `w-veille`).
 3. **Phase 3 (Expérimentation) :** Tester et comparer les options sur le cas pratique dans `4.realisation/` (skill technique itératif).
 4. **Phase 4 (Spécification Technique du Skill) :** Retenir la démarche, rédiger `spec-skill.md` dans `3.spec-skill/` et finaliser le skill avec `w-spec-skill`.
 5. **Phase 5 (Rapport & Soutenance) :** Finaliser `5.rapport-et-presentation/` avec `w-rapport` et passer le sprint sans IA devant le formateur.

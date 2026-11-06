@@ -2,10 +2,10 @@
 
 ## Phase 1 : Cadrage Commun (Besoin & Veille - Assisté par lab-dev)
 - [x] **Concepts :** Différencier Plugin, Subagent, Workflow et Skill.
-- [x] **Règles Transversales :** Configurer `.agent/rules/` (`persona.md`, `lab-rules.md`, `stack-principles.md`).
-- [x] **Besoin :** Cadrer `1.besoin/contexte-et-besoin.md` (outillage d'AgentDev, 4 pistes exploratoires et ouverture sur démarche alternative).
-- [x] **Veille :** Explorer les références, `claude-plugins-official` et `skills.sh` dans `2.veille/veille-technologique.md`.
-- [x] **Consignes 3 & 4 :** Initialiser les README de travail dans `3.spec-skill/` et `4.realisation/`.
+- [x] **Règles Transversales :** Configurer `.agents/rules/` (`persona.md`, `lab-rules.md`, `stack-principles.md`, `skills-display.md`).
+- [x] **Besoin :** Cadrer `1.besoin/besoin.md` (expression du problème, 4 pistes exploratoires et démarche alternative).
+- [x] **Veille :** Explorer les références (GitHub Topics `coding-agent`, `skills.sh`), initialiser `2.veille/README.md` et le diaporama Marp `2.veille/veille-technologique.md`.
+- [x] **Consignes 2, 3 & 4 :** Initialiser les README de travail dans `2.veille/`, `3.spec-skill/` et `4.realisation/`.
 
 ## Phase 2 : Expérimentation & Tests Comparatifs (À Réaliser dans `4.realisation/`)
 - [ ] **Testbench :** Monter la Landing Page du Blog des Lauréats (Tailwind CSS, Alpine.js).
@@ -17,7 +17,7 @@
 - [ ] **Spécification :** Rédiger `spec-skill.md` pour l'approche retenue (résultat final : `architecture-skills`).
 - [ ] **Validation du skill :** Valider la conformité via `skill-creator` :
   ```powershell
-  node .agent/skills/skill-creator/scripts/validate-skills.cjs
+  node .agents/skills/skill-creator/scripts/validate-skills.cjs
   ```
 
 ## Phase 4 : Soutenance Sprint Formateur (À Compléter dans `5.rapport-et-presentation/`)

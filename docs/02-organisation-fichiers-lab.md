@@ -3,12 +3,12 @@
 ## 1. Règle des 4 Espaces de Travail
 1. **Pilotage (Racine) :** `README.md` (contexte général) et `Todo.md` (suivi des tâches).
 2. **Livrables Apprenant (5 Sous-Dossiers) :**
-   - `1.besoin/` : Contexte du fil rouge et problème technique (`contexte-et-besoin.md`).
-   - `2.veille/` : État de l'art et références (`veille-technologique.md`).
+   - `1.besoin/` : Problématique technique et expression du besoin (`besoin.md`).
+   - `2.veille/` : État de l'art, références et diaporama Marp (`veille-technologique.md`).
    - `3.spec-skill/` : Spécification technique du skill de l'approche retenue (`spec-skill.md`).
    - `4.realisation/` : Expérimentation et tests comparatifs (code, maquettes ou configurations testées).
    - `5.rapport-et-presentation/` : `Lab-[Sujet].md` et `Presentation-[Sujet].md` (slides A1).
-3. **Outillage Agentique :** `.agent/skills/` (`lab-dev`, skills de flux `w-*`, skill technique du lab).
+3. **Outillage Agentique :** `.agents/skills/` (`lab-dev`, skills de flux `w-*`, skill technique du lab).
 4. **Méthode d'Équipe :** `docs/` réservé exclusivement aux guides transversaux (aucun livrable de lab).
 
 ## 2. Arborescence Type
@@ -16,8 +16,10 @@
 mon-lab/
 ├── README.md
 ├── Todo.md
-├── 1.besoin/contexte-et-besoin.md
-├── 2.veille/veille-technologique.md
+├── 1.besoin/besoin.md
+├── 2.veille/
+│   ├── README.md
+│   └── veille-technologique.md (Marp)
 ├── 3.spec-skill/spec-skill.md
 ├── 4.realisation/[code ou livrable testé]
 ├── 5.rapport-et-presentation/

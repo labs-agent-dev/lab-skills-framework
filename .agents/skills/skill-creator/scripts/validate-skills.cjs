@@ -67,12 +67,24 @@ if (!fs.existsSync(catalogPath)) {
 if (!fs.existsSync(skillsDir)) {
     console.warn(`⚠️ AVERTISSEMENT : Le dossier de skills n'existe pas : ${skillsDir}`);
 } else {
+    let installedSkills = [];
+    const lockPath = path.join(process.cwd(), 'skills-lock.json');
+    if (fs.existsSync(lockPath)) {
+        try {
+            const lockData = JSON.parse(fs.readFileSync(lockPath, 'utf8'));
+            if (lockData.skills) installedSkills = Object.keys(lockData.skills);
+        } catch (e) {}
+    }
+
     const skills = fs.readdirSync(skillsDir)
         .filter(f => {
             try { return fs.statSync(path.join(skillsDir, f)).isDirectory(); } catch { return false; }
         });
 
-    console.log(`ℹ️ ${skills.length} skill(s) trouvé(s) dans ${skillsDir}\n`);
+    console.log(`ℹ️ ${skills.length} skill(s) trouvé(s) dans ${skillsDir}`);
+    if (installedSkills.length > 0) {
+        console.log(`📦 ${installedSkills.length} skill(s) installé(s) externe(s) détecté(s) (exclus de la normalisation locale : ${installedSkills.join(', ')})\n`);
+    }
 
     const requiredRubrics = [
         '# 1. Mission',
@@ -88,6 +100,10 @@ if (!fs.existsSync(skillsDir)) {
     ];
 
     skills.forEach(skillName => {
+        if (installedSkills.includes(skillName)) {
+            console.log(`⏩ [${skillName}] : Skill externe installé via skills-lock.json (non soumis aux 10 rubriques locales).`);
+            return;
+        }
         const skillFile = path.join(skillsDir, skillName, 'SKILL.md');
         if (!fs.existsSync(skillFile)) {
             console.error(`❌ ERREUR [${skillName}] : Fichier SKILL.md manquant !`);
