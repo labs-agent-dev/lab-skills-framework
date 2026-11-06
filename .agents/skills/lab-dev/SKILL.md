@@ -1,11 +1,6 @@
 ---
 name: lab-dev
 description: Cadre, structure et valide la réalisation de Labs techniques pour les prototypes de projets fil rouge, organise le lab en 5 sous-dossiers concrets (1.besoin, 2.veille, 3.spec-skill, 4.realisation, 5.rapport-et-presentation), orchestre les skills de flux (w-veille, w-spec-skill, w-rapport) et le skill technique dédié, génère la présentation (page de garde et 3 phrases A1 par slide à compléter) et le fichier Todo.md, sans rédiger la solution à la place de l'apprenant.
-version: 1.6.0
-inspiration:
-  source: "anthropic/claude-plugins-official"
-  plugin: "feature-dev"
-  pattern: "5-folder modular organization, workflow gating, no-AI live coding & pedagogical scaffolding"
 ---
 
 # 1. Mission

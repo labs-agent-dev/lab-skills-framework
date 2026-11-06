@@ -1,11 +1,6 @@
 ---
 name: w-rapport
 description: Guide l'apprenant dans la capitalisation et la préparation de la soutenance d'un lab (étape 5 du workflow dans 5.rapport-et-presentation/), structure le rapport technique Lab-[Sujet].md, calibre les diapositives Presentation-[Sujet].md avec page de garde obligatoire et exactement 3 phrases simples A1 par slide, et prépare le live coding direct sans IA devant le formateur.
-version: 1.0.0
-inspiration:
-  source: "anthropic/claude-plugins-official"
-  plugin: "feature-dev"
-  pattern: "sprint presentation scaffolding, oral notes A1 calibration & live coding certification preparation"
 ---
 
 # 1. Mission

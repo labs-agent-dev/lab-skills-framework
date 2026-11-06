@@ -112,7 +112,7 @@ if (!fs.existsSync(skillsDir)) {
         }
 
         const yamlHeader = content.substring(3, endOfYaml);
-        const requiredYamlKeys = ['name:', 'description:', 'version:', 'inspiration:'];
+        const requiredYamlKeys = ['name:', 'description:'];
         const missingYamlKeys = requiredYamlKeys.filter(k => !yamlHeader.includes(k));
 
         if (missingYamlKeys.length > 0) {
@@ -133,7 +133,7 @@ if (!fs.existsSync(skillsDir)) {
         if (missingRubrics.length > 0) {
             console.warn(`⚠️ AVERTISSEMENT [${skillName}] : Rubriques manquantes : ${missingRubrics.join(', ')}`);
         } else {
-            console.log(`✅ Skill [${skillName}] : Conforme (YAML + Inspiration Anthropic + 10 rubriques).`);
+            console.log(`✅ Skill [${skillName}] : Conforme (YAML standard + 10 rubriques).`);
         }
     });
 }

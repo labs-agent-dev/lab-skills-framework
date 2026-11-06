@@ -1,11 +1,6 @@
 ---
 name: skill-creator
 description: Gouverne, conçoit, crée et valide les skills IA selon le standard d'Anthropic (10 rubriques normées), garantit le respect strict de SSOT et DRY, et assure la validation déterministe pour l'agent AgentDev.
-version: 1.5.0
-inspiration:
-  source: "anthropic/claude-plugins-official"
-  plugin: "plugin-dev"
-  pattern: "skill scaffolding, trigger tuning & continuous refinement"
 ---
 
 # 1. Mission

@@ -1,11 +1,6 @@
 ---
 name: w-spec-skill
 description: Guide l'apprenant dans la spécification technique du skill (étape 4 du workflow d'un lab dans 3.spec-skill/), formalise la décision d'architecture (ADR) consécutive aux tests de 4.realisation/, assiste la rédaction de spec-skill.md et pilote la finalisation du skill dans .agent/skills/ selon le standard Anthropic en collaboration avec skill-creator.
-version: 1.0.0
-inspiration:
-  source: "anthropic/claude-plugins-official"
-  plugin: "feature-dev"
-  pattern: "architecture decision record (ADR), technical skill specification & 10-rubric Anthropic compliance"
 ---
 
 # 1. Mission

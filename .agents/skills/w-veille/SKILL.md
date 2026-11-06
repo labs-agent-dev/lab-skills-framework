@@ -1,11 +1,6 @@
 ---
 name: w-veille
 description: Guide l'apprenant dans la réalisation de la veille technologique pour un lab technique (étape 2 du workflow), structure le benchmark des solutions existantes (skills.sh, dépôts officiels Anthropic, documentations Laravel 12, Alpine.js, Tailwind CSS, Preline UI) et génère la grille d'analyse dans 2.veille/veille-technologique.md sans rédiger l'analyse à la place de l'apprenant.
-version: 1.0.0
-inspiration:
-  source: "anthropic/claude-plugins-official"
-  plugin: "feature-dev"
-  pattern: "state-of-the-art benchmark scaffolding, source verification & critical comparison"
 ---
 
 # 1. Mission

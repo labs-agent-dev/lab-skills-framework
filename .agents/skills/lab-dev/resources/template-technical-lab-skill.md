@@ -11,11 +11,6 @@ Ce gabarit sert de base pour créer une **Compétence Technique Dédiée** (ex: 
 ---
 name: [domaine]-[brique]
 description: Fournit l'expertise technique et applique les règles de développement pour la brique [Brique] dans notre stack technique pour l'agent AgentDev. À déclencher pour coder la solution de cette brique. Ne pas déclencher pour le cadrage méthodologique de lab ou pour concevoir de nouveaux skills.
-version: 1.0.0
-inspiration:
-  source: "anthropic/claude-plugins-official"
-  plugin: "feature-dev"
-  pattern: "domain-specific technical guidance & rule enforcement"
 ---
 
 # 1. Mission

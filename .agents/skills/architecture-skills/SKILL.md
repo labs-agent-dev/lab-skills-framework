@@ -1,11 +1,6 @@
 ---
 name: architecture-skills
 description: Réalise l'ingénierie des compétences IA (Skill Engineering) à partir de notre stack de développement et de notre flux de travail. Détermine, conçoit et cartographie les skills IA à créer ou à réutiliser pour le projet fil rouge développé par AgentDev. À déclencher pour concevoir l'architecture des compétences IA. Ne pas déclencher pour le cadrage méthodologique de lab ou pour coder du code métier.
-version: 1.1.0
-inspiration:
-  source: "anthropic/claude-plugins-official"
-  plugin: "feature-dev"
-  pattern: "skill-architecture, trade-off matrix & progressive disclosure"
 ---
 
 # 1. Mission

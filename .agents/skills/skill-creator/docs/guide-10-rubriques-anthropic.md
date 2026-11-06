@@ -23,18 +23,12 @@ Tout skill débute obligatoirement par un en-tête YAML délimité par `---` :
 ---
 name: [nom-en-kebab-case]
 description: [Description à la 3e personne décrivant le rôle précis et les déclencheurs clés]
-version: 1.0.0
-inspiration:
-  source: "anthropic/claude-plugins-official"
-  plugin: "[plugin-source-ex-feature-dev-ou-plugin-dev]"
-  pattern: "[motif-architectural-utilise]"
 ---
 ```
 
 ### Règles d'or du Frontmatter :
 - **`name` :** Minuscules et tirets uniquement (`kebab-case`). Aucun préfixe `lab-*` (réservé aux répertoires de labs).
 - **`description` :** Rédigée obligatoirement à la 3e personne du singulier (*« Conçoit... »*, *« Valide... »*). Doit expliciter quand activer et quand ne pas activer.
-- **`inspiration` :** Indique la source formelle de référence chez Anthropic garantissant la traçabilité architecturale.
 
 ---
 
