@@ -16,3 +16,9 @@
 ```powershell
 node .agent/skills/skills-dev/scripts/validate-skills.cjs
 ```
+
+
+
+## Références 
+
+- https://github.com/anthropics/claude-plugins-official
