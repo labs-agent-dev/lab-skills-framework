@@ -7,43 +7,71 @@ footer: "Solicode / AgentDev"
 ---
 
 <!-- _class: lead -->
-# État de l'Art & Benchmark
-## Architecture & Organisation des Skills IA
-**Lab :** `lab-skills-framework`  
-**Étape 2 du Workflow** | Présentation Marp
+# État de l'Art & Étude Comparative
+## Benchmark des Solutions d'Architecture de Skills IA
+**Lab :** `lab-skills-framework` | **Étape 2 du Workflow**  
+**Agent Final :** `AgentDev` (Projet Fil Rouge 100 % IA)  
+**Prototype :** Live coding direct sans IA devant le formateur  
+*Promotion Solicode 2026*
 
 ---
 
-## 1. Contexte & Problématique du Benchmark
-- **Objectif :** Trouver et analyser les architectures de compétences IA existantes pour outiller **`AgentDev`**.
-- **Double Enjeu d'Apprentissage :**
-  - *Réponse directe :* Identifier des skills immédiatement transposables.
-  - *Montée en compétences :* Comprendre les patterns d'ingénierie agentique pour concevoir nos propres briques conformes à notre stack (PHP 8.2+ / Laravel 12, Alpine.js, Tailwind CSS).
+## 1. Problématique & Objectifs du Benchmark
+
+- **Constat Initial :** Un modèle d'IA généraliste produit du code désorganisé qui s'éloigne de notre stack (PHP 8.2+ / Laravel 12, Alpine.js réactif, Tailwind CSS, Preline UI) et mélange la logique métier aux templates.
+- **Mission du Benchmark :** 
+  - Cartographier comment la communauté open-source structure les compétences d'agents de code.
+  - Évaluer les approches candidates avant d'écrire la moindre ligne de code.
+- **Cas d'Usage Étalon Commun :** 
+  - CRUD des Catégories avec notre stack (PHP 8.2+ / Laravel 12, Alpine.js réactif, Tailwind CSS, Preline UI).
 
 ---
 
-## 2. Gisements de Référence Identifiés
-| Référence | Type de Source | Apport Technique Principal |
+## 2. Gisements de Référence Clés
+
+| Référence | Nature de la Source | Apport Technique pour le Lab |
 | :--- | :--- | :--- |
-| **[GitHub Topics: coding-agent](https://github.com/topics/coding-agent)** | Carrefour Open-Source | Dépôts communautaires majeurs, architectures multi-agents et patterns d'agents développeurs. |
-| **[skills.sh](https://skills.sh)** | Registre Communautaire | Large catalogue ouvert pour observer les granularités et tester des compétences brutes. |
-| **`claude-plugins-official`** | Dépôt Officiel Anthropic | Patterns de gouvernance (`feature-dev`, `plugin-dev`) et standard des 10 rubriques normées. |
-| **Docs Écosystème Officiel** | Laravel 12, Alpine.js | Règles d'architecture strictes et APIs de référence à respecter sans dérive. |
+| **[GitHub Topics: coding-agent](https://github.com/topics/coding-agent)** | Carrefour Open-Source | Dépôts communautaires majeurs, architectures multi-agents et patterns d'agents de code. |
+| **[skills.sh](https://skills.sh) / agentskills.io** | Registres Ouverts | Catalogue de compétences unitaires : observation des granularités et tests de prompts. |
+| **`claude-plugins-official` (Anthropic)** | Dépôt Officiel | Patterns de référence (`feature-dev`, `plugin-dev`), gating et 10 rubriques normées. |
+| **Documentation Officielle de Stack** | Laravel 12, Alpine.js | Source unique de vérité pour garantir la conformité des APIs et de la syntaxe. |
 
 ---
 
-## 3. Exploration Comparative sur skills.sh
-| Approche | Recherche | Compétences Candidates | Constat Critique |
-| :--- | :--- | :--- | :--- |
-| **1. Technologie** | `tailwind`, `alpinejs` | `tailwind-helper`, `html-boilerplate` | Syntaxe CSS correcte mais ignore nos composants et templates d'école. |
-| **2. Layer** | `mvc`, `controller`, `ui-view` | `mvc-scaffolder`, `api-controller` | Découpage net mais dispersion de contexte pour de simples vues interactives. |
-| **3. Workflow** | `wireframe`, `testing`, `dev` | `code-reviewer`, `spec-generator` | Structure bien les phases, mais incapable de produire le code complet. |
-| **4. Un Seul Skill** | `fullstack`, `feature-dev` | `feature-dev` (Anthropic) | Très complet et autonome, mais consommation excessive de tokens. |
+## 3. Grille d'Analyse Comparative des 4 Pistes Initiales
+
+| Piste Candidate | Exemples Testés | Adéquation Stack | Impact Tokens | Maintenabilité & Limites |
+| :--- | :--- | :---: | :---: | :--- |
+| **1. Par Technologie** | `tailwind-helper`, `alpine-components` | ⚠️ Moyenne | 🟢 Faible | ⚠️ Fragmentée *(trop de micro-skills à coordonner)* |
+| **2. Par Layer** | `mvc-scaffolder`, `api-controller` | 🟢 Bonne | 🟡 Moyen | ⚠️ Lourde *(dispersion pour une simple vue)* |
+| **3. Par Workflow** | `code-reviewer`, `spec-generator` | ⚠️ Partielle | 🟢 Faible | 🟢 Excellente *(mais ne garantit pas la stack)* |
+| **4. Mono-Skill** | `feature-dev`, `fullstack-agent` | 🟢 Bonne | 🔴 Élevé | 🔴 Risquée *(méga-prompt, hallucinations fréquentes)* |
+
+- **Constat clé :** Aucune piste prise isolément n'est parfaite. Un compromis architectural s'impose entre structure de workflow et compétences techniques spécialisées.
 
 ---
 
-## 4. Synthèse & Hypothèses pour l'Étape 3 (`4.realisation/`)
-- **Constat :** Aucun skill public brut ne répond parfaitement à notre stack combinée (Laravel 12 + Alpine.js + Preline UI).
-- **Hypothèse 1 (Test Brut) :** Tester une brique issue de `skills.sh` sans adaptation pour mesurer les écarts sur le cas étalon.
-- **Hypothèse 2 (Test Adapté / Hybride) :** Initialiser notre skill technique dédié avec un socle minimal de règles et l'enrichir de façon itérative.
-- **Suite du flux :** Expérimenter ces deux hypothèses sur le banc d'essai de la Landing Page Lauréats.
+## 4. Double Démarche Pédagogique : Voie A vs Voie B
+
+En concertation avec le formateur, l'analyse des références arbitre entre deux voies :
+
+- **Voie A (Réponse Directe — Prêt-à-l'emploi) :**
+  - *Observation :* Aucun skill public brut sur `skills.sh` ne couvre exactement notre stack hybride (Laravel 12 + Alpine.js + Preline UI) sans dérive.
+  - *Conclusion :* La réutilisation brute à 100 % est insuffisante.
+- **Voie B (Assimilation des Fondamentaux — Sur-Mesure) :**
+  - *Observation :* En comprenant les patterns d'Anthropic et le découpage modulaire, nous pouvons forger une compétence adaptée.
+  - *Conclusion :* **Orientation vers une démarche hybride** (méta-gouvernance + skill technique dédié par brique).
+
+---
+
+## 5. Synthèse & Hypothèses pour l'Étape 3 (`4.realisation/`)
+
+Le banc d'essai étalon (CRUD des catégories) va départager deux hypothèses concrètes :
+
+1. **Test 1 (Approche Brute `skills.sh`) :**
+   - Générer le code avec les compétences brutes non modifiées.
+   - Mesurer les écarts de conformité et le volume de code spaghetti généré.
+2. **Test 2 (Skill Dédié avec Socle Minimal de Règles) :**
+   - Initialiser notre compétence technique avec les règles d'or (Alpine.js réactif, Tailwind propre).
+   - Enrichir le skill itérativement au cours des tests.
+- **Métriques ciblées :** Vitesse d'inférence (s), tokens consommés, conformité stack et aisance lors du sprint en live coding sans IA.
