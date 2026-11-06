@@ -41,7 +41,12 @@ flowchart TD
 Chaque lab mobilise des gisements documentaires adaptés à son sujet technique, articulés autour de 4 piliers majeurs :
 
 ### Pilier 1 : Dépôts Open-Source & GitHub Topics
-- **Carrefour mondial :** [`https://github.com/topics/coding-agent`](https://github.com/topics/coding-agent) (agents de développement, compétences et architectures outillées) ou topics spécifiques au sujet du lab (ex: `laravel`, `alpinejs`, `tailwindcss`).
+- **Carrefour mondial des Topics GitHub :** 
+  - [`https://github.com/topics/coding-standards`](https://github.com/topics/coding-standards) : standards de code, règles d'ingénierie et bonnes pratiques logicielles.
+  - [`https://github.com/topics/coding-agent`](https://github.com/topics/coding-agent) : agents de développement, compétences et architectures multi-agents.
+  - [`https://github.com/topics/agent-skills`](https://github.com/topics/agent-skills) : bibliothèques de compétences prêtes pour les agents de code.
+  - Topics spécifiques au sujet du lab (ex: `laravel`, `alpinejs`, `tailwindcss`, `cursor-rules`).
+- **Cas d'école remarquable :** Le standard ouvert [`HoangNguyen0403/agent-skills-standard`](https://github.com/HoangNguyen0403/agent-skills-standard) qui structure les compétences d'agents par niveaux de priorité P0 (architecture, Eloquent, sécurité) et P1 (testing, API).
 - **Objectif :** Examiner les dépôts vivants, les commits récents, les discussions d'architectes et la structure des projets réels.
 
 ### Pilier 2 : Catalogues & Registres de Compétences IA

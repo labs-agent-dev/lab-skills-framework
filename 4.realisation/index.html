@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testbench — Blog des Lauréats | Solicode</title>
-    <!-- Tailwind CSS (CDN pour banc d'essai autonome) -->
+    <title>CRUD des Catégories — Banc d'Essai Hybride Modulaire (Laravel P0 + Alpine.js)</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Alpine.js (CDN réactivité légère sans compilation) -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
                         brand: {
                             50: '#eef2ff',
                             100: '#e0e7ff',
+                            500: '#6366f1',
                             600: '#4f46e5',
                             700: '#4338ca',
                         }
@@ -24,261 +24,384 @@
             }
         }
     </script>
+    <!-- Alpine.js 3.x CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
-<body class="h-full flex flex-col font-sans text-slate-800 antialiased" x-data="{ mobileMenuOpen: false }">
+<body class="h-full flex flex-col font-sans text-slate-800 antialiased" x-data="categoryCrud()" x-init="initData()">
 
-    <!-- En-tête / Barre de navigation responsive -->
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <!-- Logo & Titre Banc d'Essai -->
-                <div class="flex items-center space-x-3">
-                    <span class="inline-flex items-center justify-center h-10 w-10 rounded-lg bg-indigo-600 text-white font-bold text-lg shadow-sm">
-                        S
-                    </span>
-                    <div>
-                        <span class="text-lg font-bold text-slate-900 tracking-tight">Blog des Lauréats</span>
-                        <span class="hidden sm:inline-block ml-2 px-2 py-0.5 text-xs font-medium bg-indigo-50 text-indigo-700 rounded-full border border-indigo-200">Testbench Étalon</span>
-                    </div>
+    <!-- Barre de Navigation Supérieure -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-indigo-200">
+                    SD
                 </div>
-
-                <!-- Navigation Desktop -->
-                <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-                    <a href="#hero" class="hover:text-indigo-600 transition">Accueil</a>
-                    <a href="#laureats" class="hover:text-indigo-600 transition">Lauréats</a>
-                    <a href="#articles" class="hover:text-indigo-600 transition">Articles & Retours</a>
-                    <a href="#metrics" class="text-indigo-600 font-semibold">Banc d'Essai</a>
-                </nav>
-
-                <!-- Bouton Menu Mobile (Alpine.js) -->
-                <div class="md:hidden flex items-center">
-                    <button type="button" @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 rounded-md text-slate-500 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Menu principal">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                            <path x-show="mobileMenuOpen" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
+                <div>
+                    <h1 class="text-lg font-bold text-slate-900 leading-tight">Gestion des Catégories</h1>
+                    <p class="text-xs text-slate-500">Banc d'Essai : Approche Hybride Modulaire (Laravel 12 P0 + Alpine.js)</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Menu Mobile Déroulant (Alpine.js réactif) -->
-        <div x-show="mobileMenuOpen" x-cloak @click.away="mobileMenuOpen = false" class="md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-4 space-y-1">
-            <a href="#hero" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Accueil</a>
-            <a href="#laureats" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Lauréats</a>
-            <a href="#articles" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Articles & Retours</a>
-            <a href="#metrics" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-indigo-600 font-semibold hover:bg-indigo-50">Banc d'Essai</a>
+            <div class="flex items-center space-x-3">
+                <span class="inline-flex items-center gap-x-1.5 py-1 px-3 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    <span class="w-1.5 h-1.5 inline-block rounded-full bg-emerald-500"></span>
+                    Test 2 Validé
+                </span>
+                <span class="text-xs text-slate-400 font-mono">Promotion Solicode 2026</span>
+            </div>
         </div>
     </header>
 
     <!-- Contenu Principal -->
-    <main class="flex-grow">
-
-        <!-- Hero Section -->
-        <section id="hero" class="py-12 md:py-16 bg-gradient-to-b from-indigo-50/50 to-transparent border-b border-slate-200/60">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 mb-4">
-                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
-                    Promotion 2026 — Insertion & Réalisations
-                </span>
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-                    Parcours & Réalisations de nos <span class="text-indigo-600">Lauréats</span>
-                </h1>
-                <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-slate-600">
-                    Cas d'usage étalon commun (testbench) pour comparer la génération de code réactif par différentes architectures de skills IA.
-                </p>
-            </div>
-        </section>
-
-        <!-- Section 1 : Profils Phares des Lauréats -->
-        <section id="laureats" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-slate-200">
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Cartes d'Indicateurs (KPIs) -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
                 <div>
-                    <h2 class="text-2xl font-bold text-slate-900">Lauréats à l'Honneur</h2>
-                    <p class="text-sm text-slate-500 mt-1">Découvrez leurs parcours d'insertion et leurs projets clés.</p>
+                    <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Total Catégories</p>
+                    <p class="text-2xl font-bold text-slate-900 mt-1" x-text="categories.length"></p>
+                </div>
+                <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg">
+                    📁
                 </div>
             </div>
-
-            <!-- Grille de Profils -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Profil 1 -->
-                <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between hover:shadow-md transition">
-                    <div>
-                        <div class="flex items-center gap-4">
-                            <div class="h-12 w-12 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-lg">
-                                YA
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-slate-900">Youssef Amrani</h3>
-                                <p class="text-xs text-slate-500">Développeur Fullstack @ TechCorp</p>
-                            </div>
-                        </div>
-                        <p class="mt-4 text-sm text-slate-600 leading-relaxed">
-                            « Grâce au projet fil rouge et à l'architecture en couches sous Laravel, j'ai pu décrocher mon CDI dès la fin de ma formation. »
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                        <span>Spécialité : Laravel & Alpine.js</span>
-                        <span class="text-indigo-600 font-medium">Promo 2025</span>
-                    </div>
-                </article>
-
-                <!-- Profil 2 -->
-                <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between hover:shadow-md transition">
-                    <div>
-                        <div class="flex items-center gap-4">
-                            <div class="h-12 w-12 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-lg">
-                                SB
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-slate-900">Salma Benjelloun</h3>
-                                <p class="text-xs text-slate-500">Frontend Specialist @ DevStudio</p>
-                            </div>
-                        </div>
-                        <p class="mt-4 text-sm text-slate-600 leading-relaxed">
-                            « La maîtrise d'Alpine.js pour gérer l'interactivité sans framework lourd m'a permis de bâtir des interfaces ultra-rapides et accessibles. »
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                        <span>Spécialité : Tailwind & UI Design</span>
-                        <span class="text-indigo-600 font-medium">Promo 2025</span>
-                    </div>
-                </article>
-
-                <!-- Profil 3 -->
-                <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between hover:shadow-md transition">
-                    <div>
-                        <div class="flex items-center gap-4">
-                            <div class="h-12 w-12 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-lg">
-                                KE
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-slate-900">Karim El Idrissi</h3>
-                                <p class="text-xs text-slate-500">Ingénieur Logiciel Assisté par IA</p>
-                            </div>
-                        </div>
-                        <p class="mt-4 text-sm text-slate-600 leading-relaxed">
-                            « Comprendre le code en profondeur pour le soutenir en live coding sans IA devant le formateur a forgé ma véritable autonomie technique. »
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                        <span>Spécialité : Agentique & Architecture</span>
-                        <span class="text-indigo-600 font-medium">Promo 2026</span>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Section 2 : Grille d'Articles Filtrable (Interactivité Alpine.js Étalon) -->
-        <section id="articles" class="py-12 bg-white border-t border-b border-slate-200" 
-                 x-data="{ 
-                     activeCategory: 'all',
-                     articles: [
-                         { id: 1, title: 'Bâtir une API REST robuste avec Laravel 12', category: 'backend', author: 'Youssef A.', readTime: '5 min' },
-                         { id: 2, title: 'Maîtriser la réactivité Alpine.js sans surcoût de bundle', category: 'frontend', author: 'Salma B.', readTime: '4 min' },
-                         { id: 3, title: 'Comment structurer ses compétences IA selon le standard Anthropic', category: 'agentic', author: 'Karim E.', readTime: '7 min' },
-                         { id: 4, title: 'Découplage strict entre Contrôleurs et Actions Eloquent', category: 'backend', author: 'Youssef A.', readTime: '6 min' },
-                         { id: 5, title: 'Composants Preline UI réutilisables et accessibilité ARIA', category: 'frontend', author: 'Salma B.', readTime: '5 min' },
-                         { id: 6, title: 'Réussir son sprint d\'évaluation en direct sans IA', category: 'agentic', author: 'Équipe Pédagogique', readTime: '3 min' }
-                     ],
-                     get filteredArticles() {
-                         if (this.activeCategory === 'all') return this.articles;
-                         return this.articles.filter(a => a.category === this.activeCategory);
-                     }
-                 }">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- En-tête & Filtres -->
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-                    <div>
-                        <h2 class="text-2xl font-bold text-slate-900">Articles & Retours d'Expérience</h2>
-                        <p class="text-sm text-slate-500 mt-1">Filtrage réactif en temps réel propulsé par Alpine.js (<code class="text-indigo-600">x-data</code>, <code class="text-indigo-600">x-for</code>).</p>
-                    </div>
-
-                    <!-- Boutons de Filtre -->
-                    <div class="inline-flex rounded-lg border border-slate-200 bg-slate-50 p-1 text-xs font-medium">
-                        <button type="button" @click="activeCategory = 'all'" 
-                                :class="activeCategory === 'all' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'"
-                                class="px-3 py-1.5 rounded-md transition">
-                            Tous (<span x-text="articles.length"></span>)
-                        </button>
-                        <button type="button" @click="activeCategory = 'backend'" 
-                                :class="activeCategory === 'backend' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'"
-                                class="px-3 py-1.5 rounded-md transition">
-                            Backend Laravel
-                        </button>
-                        <button type="button" @click="activeCategory = 'frontend'" 
-                                :class="activeCategory === 'frontend' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'"
-                                class="px-3 py-1.5 rounded-md transition">
-                            Frontend Alpine
-                        </button>
-                        <button type="button" @click="activeCategory = 'agentic'" 
-                                :class="activeCategory === 'agentic' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'"
-                                class="px-3 py-1.5 rounded-md transition">
-                            Ingénierie Agentique
-                        </button>
-                    </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                <div>
+                    <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Catégories Actives</p>
+                    <p class="text-2xl font-bold text-emerald-600 mt-1" x-text="categories.filter(c => c.status === 'active').length"></p>
                 </div>
-
-                <!-- Grille d'Articles Rendu Dynamique -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <template x-for="article in filteredArticles" :key="article.id">
-                        <article class="border border-slate-200 rounded-xl p-5 hover:border-indigo-300 transition flex flex-col justify-between bg-slate-50/50">
-                            <div>
-                                <div class="flex items-center justify-between text-xs font-medium text-slate-500 mb-2">
-                                    <span class="uppercase tracking-wider px-2 py-0.5 rounded bg-white border border-slate-200" 
-                                          x-text="article.category"></span>
-                                    <span x-text="article.readTime"></span>
-                                </div>
-                                <h3 class="font-bold text-slate-900 text-base leading-snug" x-text="article.title"></h3>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-500">
-                                <span>Auteur : <strong class="text-slate-700" x-text="article.author"></strong></span>
-                                <span class="text-indigo-600 font-semibold cursor-pointer hover:underline">Lire →</span>
-                            </div>
-                        </article>
-                    </template>
+                <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-lg">
+                    ✅
                 </div>
             </div>
-        </section>
-
-        <!-- Section 3 : Tableau d'Évaluation du Testbench -->
-        <section id="metrics" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-indigo-900 rounded-2xl text-white p-8 shadow-sm">
-                <div class="max-w-3xl">
-                    <span class="text-xs uppercase tracking-wider text-indigo-300 font-semibold">Protocole de Mesure</span>
-                    <h2 class="text-2xl font-bold mt-1">Critères d'Évaluation du Testbench</h2>
-                    <p class="text-indigo-200 text-sm mt-2">
-                        Ce banc d'essai permet de mesurer objectivement l'efficacité des différentes approches de skills lors de la réalisation dans <code class="text-white bg-indigo-800 px-1.5 py-0.5 rounded">4.realisation/</code>.
-                    </p>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                <div>
+                    <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Articles Rattachés (withCount)</p>
+                    <p class="text-2xl font-bold text-slate-900 mt-1" x-text="categories.reduce((acc, c) => acc + c.posts_count, 0)"></p>
                 </div>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-indigo-800 text-center">
-                    <div class="p-3 bg-indigo-800/40 rounded-xl">
-                        <div class="text-2xl font-extrabold text-white">1. Vitesse</div>
-                        <div class="text-xs text-indigo-200 mt-1">Temps d'inférence (s)</div>
-                    </div>
-                    <div class="p-3 bg-indigo-800/40 rounded-xl">
-                        <div class="text-2xl font-extrabold text-white">2. Tokens</div>
-                        <div class="text-xs text-indigo-200 mt-1">Conso. entrée/sortie</div>
-                    </div>
-                    <div class="p-3 bg-indigo-800/40 rounded-xl">
-                        <div class="text-2xl font-extrabold text-white">3. Stack</div>
-                        <div class="text-xs text-indigo-200 mt-1">Conformité Tailwind/Alpine</div>
-                    </div>
-                    <div class="p-3 bg-indigo-800/40 rounded-xl">
-                        <div class="text-2xl font-extrabold text-white">4. Sprint</div>
-                        <div class="text-xs text-indigo-200 mt-1">Live coding sans IA</div>
-                    </div>
+                <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-lg">
+                    📝
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- Barre d'Action & Filtres -->
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex flex-1 items-center gap-3">
+                <!-- Recherche en Direct -->
+                <div class="relative flex-1 max-w-md">
+                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                        🔍
+                    </span>
+                    <input 
+                        type="text" 
+                        x-model="searchQuery" 
+                        placeholder="Rechercher par nom ou slug..." 
+                        class="block w-full pl-9 pr-3 py-2 border border-slate-300 rounded-xl text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                    >
+                </div>
+                <!-- Filtre par Statut -->
+                <select 
+                    x-model="filterStatus" 
+                    class="py-2 px-3 border border-slate-300 rounded-xl text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+                >
+                    <option value="all">Tous les statuts</option>
+                    <option value="active">Actives uniquement</option>
+                    <option value="inactive">Inactives uniquement</option>
+                </select>
+            </div>
+            <!-- Bouton Création -->
+            <div>
+                <button 
+                    @click="openCreateModal()" 
+                    class="inline-flex items-center gap-x-2 py-2 px-4 rounded-xl text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm shadow-indigo-200 transition-all hover:shadow-md"
+                >
+                    <span>➕</span>
+                    <span>Nouvelle Catégorie</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Tableau des Catégories -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-slate-200 text-left text-sm">
+                    <thead class="bg-slate-50 text-slate-500 font-semibold uppercase text-xs">
+                        <tr>
+                            <th scope="col" class="px-6 py-3.5">ID</th>
+                            <th scope="col" class="px-6 py-3.5">Catégorie & Slug</th>
+                            <th scope="col" class="px-6 py-3.5">Description</th>
+                            <th scope="col" class="px-6 py-3.5 text-center">Articles Rattachés</th>
+                            <th scope="col" class="px-6 py-3.5">Statut</th>
+                            <th scope="col" class="px-6 py-3.5 text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <template x-for="cat in filteredCategories" :key="cat.id">
+                            <tr class="hover:bg-slate-50/75 transition-colors">
+                                <td class="px-6 py-4 font-mono text-xs text-slate-400" x-text="'#' + cat.id"></td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-slate-900" x-text="cat.name"></div>
+                                    <div class="text-xs text-slate-400 font-mono" x-text="'/' + cat.slug"></div>
+                                </td>
+                                <td class="px-6 py-4 text-slate-600 max-w-xs truncate" x-text="cat.description || '—'"></td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700" x-text="cat.posts_count + ' posts'"></span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <template x-if="cat.status === 'active'">
+                                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Actif
+                                        </span>
+                                    </template>
+                                    <template x-if="cat.status === 'inactive'">
+                                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Inactif
+                                        </span>
+                                    </template>
+                                </td>
+                                <td class="px-6 py-4 text-right space-x-2">
+                                    <button 
+                                        @click="openEditModal(cat)" 
+                                        class="text-indigo-600 hover:text-indigo-800 font-medium text-xs py-1 px-2 rounded-lg hover:bg-indigo-50 transition-colors"
+                                    >
+                                        ✏️ Modifier
+                                    </button>
+                                    <button 
+                                        @click="confirmDelete(cat)" 
+                                        class="text-rose-600 hover:text-rose-800 font-medium text-xs py-1 px-2 rounded-lg hover:bg-rose-50 transition-colors"
+                                    >
+                                        🗑️ Supprimer
+                                    </button>
+                                </td>
+                            </tr>
+                        </template>
+                        <template x-if="filteredCategories.length === 0">
+                            <tr>
+                                <td colspan="6" class="px-6 py-12 text-center text-slate-400 text-sm">
+                                    Aucune catégorie ne correspond aux critères de recherche.
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
     </main>
 
-    <!-- Pied de Page -->
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
-        <p>Banc d'Essai Étalon — Formation Ingénierie Logicielle Assistée par IA | Solicode 2026</p>
-    </footer>
+    <!-- Modal d'Ajout / Édition Alpine.js -->
+    <div 
+        x-cloak 
+        x-show="modalOpen" 
+        class="fixed inset-0 z-50 overflow-y-auto" 
+        aria-labelledby="modal-title" 
+        role="dialog" 
+        aria-modal="true"
+    >
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Backdrop -->
+            <div 
+                x-show="modalOpen" 
+                x-transition:enter="ease-out duration-300" 
+                x-transition:enter-start="opacity-0" 
+                x-transition:enter-end="opacity-100" 
+                x-transition:leave="ease-in duration-200" 
+                x-transition:leave-start="opacity-100" 
+                x-transition:leave-end="opacity-0" 
+                @click="modalOpen = false" 
+                class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
+            ></div>
 
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <!-- Modal Panel -->
+            <div 
+                x-show="modalOpen" 
+                x-transition:enter="ease-out duration-300" 
+                x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" 
+                x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" 
+                x-transition:leave="ease-in duration-200" 
+                x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" 
+                x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" 
+                class="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-slate-200"
+            >
+                <div class="px-6 pt-6 pb-4">
+                    <h3 class="text-lg font-bold text-slate-900" id="modal-title" x-text="isEditing ? 'Modifier la Catégorie' : 'Nouvelle Catégorie'"></h3>
+                    <p class="text-xs text-slate-500 mt-1">Conforme aux règles de validation StoreCategoryRequest (Laravel P0).</p>
+
+                    <form @submit.prevent="saveCategory" class="mt-5 space-y-4">
+                        <!-- Champ Nom -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Nom de la Catégorie *</label>
+                            <input 
+                                type="text" 
+                                x-model="form.name" 
+                                @input="if(!isEditing) form.slug = slugify(form.name)" 
+                                placeholder="ex. Développement Frontend" 
+                                required 
+                                class="w-full px-3 py-2 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            >
+                        </div>
+                        <!-- Champ Slug -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Slug URL *</label>
+                            <input 
+                                type="text" 
+                                x-model="form.slug" 
+                                placeholder="ex. developpement-frontend" 
+                                required 
+                                class="w-full px-3 py-2 border border-slate-300 rounded-xl text-sm font-mono text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            >
+                        </div>
+                        <!-- Champ Description -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Description</label>
+                            <textarea 
+                                x-model="form.description" 
+                                rows="3" 
+                                placeholder="Courte description de la thématique..." 
+                                class="w-full px-3 py-2 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            ></textarea>
+                        </div>
+                        <!-- Statut -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Statut</label>
+                            <select 
+                                x-model="form.status" 
+                                class="w-full px-3 py-2 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+                            >
+                                <option value="active">Active (Visible en ligne)</option>
+                                <option value="inactive">Inactive (Brouillon)</option>
+                            </select>
+                        </div>
+
+                        <!-- Boutons d'Action -->
+                        <div class="pt-4 flex items-center justify-end space-x-3 border-t border-slate-100">
+                            <button 
+                                type="button" 
+                                @click="modalOpen = false" 
+                                class="px-4 py-2 border border-slate-300 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
+                            >
+                                Annuler
+                            </button>
+                            <button 
+                                type="submit" 
+                                class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-semibold shadow-sm transition-colors"
+                            >
+                                Enregistrer
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Alpine.js -->
+    <div 
+        x-cloak 
+        x-show="toast.visible" 
+        x-transition:enter="ease-out duration-300" 
+        x-transition:enter-start="opacity-0 translate-y-2" 
+        x-transition:enter-end="opacity-100 translate-y-0" 
+        x-transition:leave="ease-in duration-200" 
+        x-transition:leave-start="opacity-100 translate-y-0" 
+        x-transition:leave-end="opacity-0 translate-y-2" 
+        class="fixed bottom-5 right-5 z-50 bg-slate-900 text-white py-3 px-5 rounded-2xl shadow-xl flex items-center space-x-3 text-sm"
+    >
+        <span class="text-emerald-400">✔</span>
+        <span x-text="toast.message"></span>
+    </div>
+
+    <!-- Script de Logique Alpine.js -->
+    <script>
+        function categoryCrud() {
+            return {
+                categories: [],
+                searchQuery: '',
+                filterStatus: 'all',
+                modalOpen: false,
+                isEditing: false,
+                form: {
+                    id: null,
+                    name: '',
+                    slug: '',
+                    description: '',
+                    status: 'active'
+                },
+                toast: {
+                    visible: false,
+                    message: ''
+                },
+                initData() {
+                    // Jeu de données étalon conforme au modèle Eloquent avec withCount('posts')
+                    this.categories = [
+                        { id: 1, name: 'Intelligence Artificielle & Agents', slug: 'ia-agents', description: 'Développement d’agents autonomes et ingénierie de compétences.', posts_count: 8, status: 'active' },
+                        { id: 2, name: 'Frameworks PHP & Laravel', slug: 'php-laravel', description: 'Architecture MVC, Eloquent optimisé et APIs modernes.', posts_count: 14, status: 'active' },
+                        { id: 3, name: 'Frontend Réactif & Alpine.js', slug: 'alpinejs-reactive', description: 'Composants légers, gestion d’état et intégration Blade.', posts_count: 6, status: 'active' },
+                        { id: 4, name: 'Design Systems & Tailwind CSS', slug: 'design-systems', description: 'Composants Preline UI, utilitaires et mise en page responsive.', posts_count: 11, status: 'active' },
+                        { id: 5, name: 'Méthodologie & Qualité SDLC', slug: 'methodologie-sdlc', description: 'Tests unitaires, benchmarking et standards d’équipe.', posts_count: 0, status: 'inactive' }
+                    ];
+                },
+                get filteredCategories() {
+                    return this.categories.filter(cat => {
+                        const matchesSearch = cat.name.toLowerCase().includes(this.searchQuery.toLowerCase()) || 
+                                              cat.slug.toLowerCase().includes(this.searchQuery.toLowerCase());
+                        const matchesStatus = this.filterStatus === 'all' || cat.status === this.filterStatus;
+                        return matchesSearch && matchesStatus;
+                    });
+                },
+                slugify(text) {
+                    return text.toString().toLowerCase()
+                        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                        .replace(/[^a-z0-9 -]/g, '')
+                        .trim().replace(/\s+/g, '-').replace(/-+/g, '-');
+                },
+                openCreateModal() {
+                    this.isEditing = false;
+                    this.form = { id: null, name: '', slug: '', description: '', status: 'active' };
+                    this.modalOpen = true;
+                },
+                openEditModal(category) {
+                    this.isEditing = true;
+                    this.form = { ...category };
+                    this.modalOpen = true;
+                },
+                saveCategory() {
+                    if (this.isEditing) {
+                        const index = this.categories.findIndex(c => c.id === this.form.id);
+                        if (index !== -1) {
+                            this.categories[index] = { ...this.categories[index], ...this.form };
+                            this.showToast('Catégorie mise à jour avec succès.');
+                        }
+                    } else {
+                        const newId = this.categories.length > 0 ? Math.max(...this.categories.map(c => c.id)) + 1 : 1;
+                        this.categories.unshift({
+                            ...this.form,
+                            id: newId,
+                            posts_count: 0
+                        });
+                        this.showToast('Nouvelle catégorie créée avec succès.');
+                    }
+                    this.modalOpen = false;
+                },
+                confirmDelete(category) {
+                    if (confirm(`Confirmez-vous la suppression de la catégorie « ${category.name} » ?`)) {
+                        this.categories = this.categories.filter(c => c.id !== category.id);
+                        this.showToast(`Catégorie « ${category.name} » supprimée.`);
+                    }
+                },
+                showToast(msg) {
+                    this.toast.message = msg;
+                    this.toast.visible = true;
+                    setTimeout(() => { this.toast.visible = false; }, 3000);
+                }
+            }
+        }
+    </script>
 </body>
 </html>
-

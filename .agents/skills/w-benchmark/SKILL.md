@@ -25,8 +25,8 @@ Le skill **`w-benchmark`** encadre l'Étape 2 du flux de travail d'un lab techni
 - Guide méthodologique : `docs/04-guide-benchmark-solutions.md`.
 - Principes de stack : `.agents/rules/stack-principles.md` (règles globales d'architecture).
 - Gisements en ligne universels :
-  - GitHub Topics adapté au sujet (ex: `https://github.com/topics/coding-agent`, `https://github.com/topics/laravel`, etc.).
-  - Catalogues open-source et registres de composants / skills (`skills.sh`, etc.).
+  - GitHub Topics adaptés au sujet (ex: `https://github.com/topics/coding-standards`, `https://github.com/topics/coding-agent`, `https://github.com/topics/agent-skills`, `https://github.com/topics/laravel`, etc.).
+  - Catalogues open-source et registres de composants / skills (`skills.sh`, `agentskills.io`, standards ouverts comme `HoangNguyen0403/agent-skills-standard`).
   - Documentations officielles de la technologie étudiée dans le lab.
 
 # 4. Contraintes & Règles Inviolables
@@ -40,7 +40,7 @@ Le skill **`w-benchmark`** encadre l'Étape 2 du flux de travail d'un lab techni
 # 5. Procédure Pas-à-Pas (Universelle pour Tout Lab)
 1. **Étape 1 (Analyse du Besoin) :** Lire `1.besoin/besoin.md` pour extraire les mots-clés techniques et les contraintes de stack du lab actif.
 2. **Étape 2 (Sourcing Ciblé & Orientation) :**
-   - Identifier 2 à 4 solutions, briques ou approches existantes sur GitHub et les catalogues spécialisés.
+   - Explorer activement les GitHub Topics et registres ouverts pour identifier 2 à 4 solutions ou patterns réels (au-delà des simples amorces indicatives).
    - Fournir dans le chat un paragraphe méthodologique expliquant les termes de recherche employés et comment l'apprenant/formateur peut élargir la recherche.
 3. **Étape 3 (Arbitrage de la Démarche d'Étude) :**
    - Discuter avec le formateur ou l'apprenant pour décider quelles sources approfondir (recherche d'une réponse directe vs assimilation des bases nécessaires pour concevoir la brique).
