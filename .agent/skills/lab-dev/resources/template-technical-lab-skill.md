@@ -1,13 +1,16 @@
-# Gabarit : Modèle de Skill Technique pour un Lab
+# Gabarit : Modèle de Skill Technique pour une Brique du Projet Fil Rouge
 
-Ce gabarit sert de base pour créer le **Skill Technique Dédié** associé à un Lab spécifique (ex: `lab-crud-laravel`, `lab-alpinejs`, `lab-preline-ui`, `lab-skill-engineering`). Il doit être conçu et validé avec le méta-skill **`plugin-dev`** selon les 10 rubriques normées d'Anthropic.
+Ce gabarit sert de base pour créer une **Compétence Technique Dédiée** (ex: `laravel-crud`, `alpine-components`, `preline-ui`, `architecture-skills`). Elle doit être conçue et validée avec le méta-skill **`skill-creator`** selon les 10 rubriques normées d'Anthropic.
+
+> [!IMPORTANT]
+> **Règle Inviolable de Nomenclature :** Le préfixe `lab-*` est strictement réservé aux répertoires de labs. Un skill technique ne doit JAMAIS débuter par `lab-`.
 
 ---
 
 ```markdown
 ---
-name: lab-[nom-de-la-brique]
-description: Fournit l'assistance technique et applique les règles de développement pour le Lab [Nom du Lab] dans notre stack technique. À déclencher pour coder la solution du lab. Ne pas déclencher pour le cadrage méthodologique ou l'audit de présentation.
+name: [domaine]-[brique]
+description: Fournit l'expertise technique et applique les règles de développement pour la brique [Brique] dans notre stack technique pour l'agent AgentDev. À déclencher pour coder la solution de cette brique. Ne pas déclencher pour le cadrage méthodologique de lab ou pour concevoir de nouveaux skills.
 version: 1.0.0
 inspiration:
   source: "anthropic/claude-plugins-official"
@@ -16,16 +19,15 @@ inspiration:
 ---
 
 # 1. Mission
-Ce skill est l'expert technique dédié au Lab **[Nom du Lab]**. Sa mission est de guider l'apprenant dans la réalisation technique de la brique **[Brique]** au sein du Prototype du projet fil rouge, en appliquant les règles d'architecture de notre stack.
+Ce skill est l'expert technique dédié à la brique **[Brique]**. Sa mission est d'assister le développement du code au sein du Projet Fil Rouge opéré par l'agent **`AgentDev`**, en appliquant strictement les règles d'architecture de notre stack.
 
 # 2. Déclenchement & Limites
 - **Quand l'activer :**
-  - Rédaction de la solution technique du Lab [Nom du Lab].
-  - Écriture et structuration du code de la brique [Brique].
+  - Rédaction et structuration du code de la brique [Brique].
   - Résolution des bugs ou questions de syntaxe spécifiques à cette technologie.
 - **Quand NE PAS l'activer :**
   - Cadrage initial du lab, README et soutenance sprint ➔ Utiliser `lab-dev`.
-  - Création ou modification de nouveaux skills ➔ Utiliser `plugin-dev`.
+  - Création ou modification de nouveaux skills ➔ Utiliser `skill-creator`.
 
 # 3. Entrées & Ressources à Charger
 - **Priorité 1 :** `resources/regles-techniques.md` (Règles spécifiques à cette technologie).
@@ -49,13 +51,13 @@ Ce skill est l'expert technique dédié au Lab **[Nom du Lab]**. Sa mission est 
 - Si le code ne fonctionne pas : isoler l'erreur dans les logs avant de proposer une modification.
 
 # 7. Format de Sortie & Livrables
-- Snippets de code prêts à être intégrés et expliqués simplement.
+- Snippets de code propres et prêts à être intégrés.
 - Explication en français direct (phrases courtes) du fonctionnement du code.
 
 # 8. Contrôle Qualité (Checklist Binaire)
 - [ ] Le code respecte-t-il les conventions de notre stack ?
 - [ ] Les règles techniques inviolables sont-elles respectées ?
-- [ ] L'apprenant peut-il expliquer le code produit ?
+- [ ] L'apprenant peut-il expliquer le code produit lors de son sprint sans IA ?
 - [ ] Le test de bon fonctionnement est-il documenté ?
 
 # 9. Gestion des Erreurs Fréquentes
@@ -65,7 +67,6 @@ Ce skill est l'expert technique dédié au Lab **[Nom du Lab]**. Sa mission est 
 | [Erreur 2] | [Cause] | [Solution] |
 
 # 10. Exemples Concrets (Few-Shot)
-**Prompt Apprenant :** *"Comment implémenter [Fonctionnalité] selon nos règles ?"*
+**Prompt Développeur :** *"Comment implémenter [Fonctionnalité] selon nos règles ?"*
 **Réponse Attendue :** L'agent fournit le snippet propre, commente les lignes clés et rappelle la règle technique appliquée.
 ```
-
