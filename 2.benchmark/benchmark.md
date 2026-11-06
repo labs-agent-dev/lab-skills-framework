@@ -2,19 +2,19 @@
 marp: true
 theme: tech
 paginate: true
-header: "Lab Skills Framework — Veille Technologique"
+header: "Lab Skills Framework — État de l'Art & Benchmark"
 footer: "Solicode / AgentDev"
 ---
 
 <!-- _class: lead -->
-# Veille Technologique
+# État de l'Art & Benchmark
 ## Architecture & Organisation des Skills IA
 **Lab :** `lab-skills-framework`  
 **Étape 2 du Workflow** | Présentation Marp
 
 ---
 
-## 1. Contexte & Problématique de la Veille
+## 1. Contexte & Problématique du Benchmark
 - **Objectif :** Trouver et analyser les architectures de compétences IA existantes pour outiller **`AgentDev`**.
 - **Double Enjeu d'Apprentissage :**
   - *Réponse directe :* Identifier des skills immédiatement transposables.

@@ -1,6 +1,6 @@
 ---
 name: lab-dev
-description: Cadre, structure et valide la réalisation de Labs techniques pour les prototypes de projets fil rouge, organise le lab en 5 sous-dossiers concrets (1.besoin, 2.veille, 3.spec-skill, 4.realisation, 5.rapport-et-presentation), orchestre les skills de flux (w-veille, w-spec-skill, w-rapport) et le skill technique dédié, génère la présentation (page de garde et 3 phrases A1 par slide à compléter) et le fichier Todo.md, sans rédiger la solution à la place de l'apprenant.
+description: Cadre, structure et valide la réalisation de Labs techniques pour les prototypes de projets fil rouge, organise le lab en 5 sous-dossiers concrets (1.besoin, 2.benchmark, 3.spec-skill, 4.realisation, 5.rapport-et-presentation), orchestre les skills de flux (w-benchmark, w-spec-skill, w-rapport) et le skill technique dédié, génère la présentation (page de garde et 3 phrases A1 par slide à compléter) et le fichier Todo.md, sans rédiger la solution à la place de l'apprenant.
 ---
 
 # 1. Mission
@@ -13,8 +13,8 @@ Ce méta-skill cadre et valide l'organisation des **Labs techniques en 5 sous-do
 # 2. Déclenchement & Limites
 - **Quand l'activer :**
   - `/lab-dev init` : Vérification du `README.md` racine et proposition de flux de travail.
-  - `/lab-dev besoin` : Cadrage de `1.besoin/contexte-et-besoin.md`.
-  - `/lab-dev veille` : Cadrage de `2.veille/veille-technologique.md`.
+  - `/lab-dev besoin` : Cadrage de `1.besoin/besoin.md`.
+  - `/lab-dev benchmark` : Cadrage de `2.benchmark/benchmark.md`.
   - `/lab-dev rapport` : Cadrage des slides et du rapport dans `5.rapport-et-presentation/`.
   - `/lab-dev audit-sprint` : Contrôle binaire avant passage devant le formateur.
 - **Quand NE PAS l'activer :**
@@ -42,7 +42,7 @@ Ce méta-skill cadre et valide l'organisation des **Labs techniques en 5 sous-do
 2. **Étape 1 (Workflow & Todo) :** Générer ou mettre à jour `Todo.md` détaillant les jalons individuels. Faire valider le flux.
 3. **Étape 2 (Scaffolding 5 Dossiers) :**
    - Créer `1.besoin/besoin.md` (gabarit cadré).
-   - Créer `2.veille/README.md` et `2.veille/veille-technologique.md` (diaporama Marp et pistes de recherche).
+   - Créer `2.benchmark/README.md` et `2.benchmark/benchmark.md` (diaporama Marp et pistes de recherche).
    - Créer `4.realisation/README.md` (consignes du testbench étalon).
    - Créer `3.spec-skill/README.md` (consignes de spécification du skill final).
    - Créer `5.rapport-et-presentation/` (`Lab-[Sujet].md` et `Presentation-[Sujet].md` avec page de garde et 3 notes A1/slide à compléter).

@@ -1,11 +1,11 @@
 # Todo List : Lab Skills Framework (Architecture des Skills IA)
 
-## Phase 1 : Cadrage Commun (Besoin & Veille - Assisté par lab-dev)
+## Phase 1 : Cadrage Commun (Besoin & Benchmark - Assisté par lab-dev)
 - [x] **Concepts :** Différencier Plugin, Subagent, Workflow et Skill.
 - [x] **Règles Transversales :** Configurer `.agents/rules/` (`persona.md`, `lab-rules.md`, `stack-principles.md`, `skills-display.md`).
 - [x] **Besoin :** Cadrer `1.besoin/besoin.md` (expression du problème, 4 pistes exploratoires et démarche alternative).
-- [x] **Veille :** Explorer les références (GitHub Topics `coding-agent`, `skills.sh`), initialiser `2.veille/README.md` et le diaporama Marp `2.veille/veille-technologique.md`.
-- [x] **Consignes 2, 3 & 4 :** Initialiser les README de travail dans `2.veille/`, `3.spec-skill/` et `4.realisation/`.
+- [x] **Benchmark :** Explorer les références (GitHub Topics `coding-agent`, `skills.sh`), initialiser `2.benchmark/README.md` et le diaporama Marp `2.benchmark/benchmark.md`.
+- [x] **Consignes 2, 3 & 4 :** Initialiser les README de travail dans `2.benchmark/`, `3.spec-skill/` et `4.realisation/`.
 
 ## Phase 2 : Expérimentation & Tests Comparatifs (À Réaliser dans `4.realisation/`)
 - [ ] **Testbench :** Monter la Landing Page du Blog des Lauréats (Tailwind CSS, Alpine.js).

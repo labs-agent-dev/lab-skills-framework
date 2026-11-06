@@ -1,15 +1,15 @@
-# Guide Méthodologique : Qu'est-ce qu'une Veille Technologique et Comment la Réaliser ?
+# Guide Méthodologique : Qu'est-ce qu'un État de l'Art / Benchmark et Comment le Réaliser ?
 
 > **Portée :** Ce document est un guide méthodologique transversal (`docs/`). Il est **universel et applicable à l'ensemble des labs techniques** du référentiel, quel que soit le domaine abordé (backend, frontend réactif, design system, persistance, architecture logicielle ou ingénierie agentique).
 
 ---
 
-## 1. Définition & Finalité d'une Veille dans un Lab
+## 1. Définition & Finalité du Benchmark dans un Lab
 
-Dans tout lab technique, la **veille technologique** (Étape 2 du workflow) constitue la phase d'investigation et d'état de l'art préalable à toute écriture de code :
+Dans tout lab technique, l'**état de l'art et le benchmark des solutions** (Étape 2 du workflow) constitue la phase d'investigation préalable à toute écriture de code :
 - **Ne jamais réinventer la roue :** Avant de concevoir une brique logicielle ou une compétence IA, cartographier l'existant pour réutiliser les standards éprouvés par l'écosystème open-source.
 - **Identifier les meilleures pratiques :** Analyser les conventions de conception, les patterns d'implémentation et les limites des bibliothèques ou compétences existantes sur le sujet étudié.
-- **Formuler les hypothèses de réalisation :** Une veille rigoureuse n'est pas un résumé passif ; elle débouche obligatoirement sur des hypothèses techniques concrètes et comparables qui seront testées sur le banc d'essai étalon (`4.realisation/`).
+- **Formuler les hypothèses de réalisation :** Un benchmark rigoureux n'est pas un résumé passif ; il débouche obligatoirement sur des hypothèses techniques concrètes et comparables qui seront testées sur le banc d'essai étalon (`4.realisation/`).
 
 ---
 
