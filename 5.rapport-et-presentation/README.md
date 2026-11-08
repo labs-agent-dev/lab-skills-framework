@@ -52,3 +52,4 @@ Le support de présentation doit respecter strictement le standard de soutenance
 - [ ] La présentation `Presentation-[Sujet].md` comporte sa page de garde réglementaire.
 - [ ] Chaque slide contient exactement 3 phrases orales de niveau A1 rédigées par l'apprenant.
 - [ ] L'apprenant est prêt à démontrer le prototype en live coding direct sans IA.
+

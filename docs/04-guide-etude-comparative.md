@@ -1,6 +1,6 @@
 # Guide Méthodologique : Qu'est-ce qu'une Étude Comparative / État de l'Art et Comment la Réaliser ?
 
-> **Portée :** Ce document est un guide méthodologique transversal (`docs/`). Il est **universel et applicable à l'ensemble des labs techniques** du référentiel, quel que soit le domaine abordé (backend, frontend réactif, design system, persistance, architecture logicielle ou ingénierie agentique).
+> **Portée :** Ce document est un guide méthodologique transversal (`docs/`). Il est **universel et applicable à l'ensemble des labs techniques** du référentiel Solicode / AgentDev, quel que soit le domaine abordé (backend, frontend réactif, design system, persistance, architecture logicielle ou ingénierie agentique).
 
 ---
 
@@ -8,8 +8,8 @@
 
 Dans tout lab technique, l'**état de l'art et l'étude comparative des solutions** (Étape 2 du workflow) constitue la phase d'investigation préalable à toute écriture de code :
 - **Ne jamais réinventer la roue :** Avant de concevoir une brique logicielle ou une compétence IA, cartographier l'existant pour réutiliser les standards éprouvés par l'écosystème open-source.
-- **Identifier les meilleures pratiques :** Analyser les conventions de conception, les patterns d'implémentation et les limites des bibliothèques ou compétences existantes sur le sujet étudié.
-- **Formuler les hypothèses de réalisation :** Une étude comparative rigoureuse n'est pas un résumé passif ; elle débouche obligatoirement sur des hypothèses techniques concrètes et comparables qui seront testées sur le banc d'essai étalon (`4.realisation/`).
+- **Identifier les meilleures pratiques :** Analyser les conventions de conception, les patterns d'implémentation et les limites des bibliothèques ou plugins existants sur le sujet étudié.
+- **Recommander le plugin ou patron de référence :** Une étude comparative rigoureuse n'est pas un résumé passif ; elle débouche obligatoirement sur la recommandation d'un plugin ou d'une démarche de référence, et sur des hypothèses techniques concrètes qui seront testées sur le banc d'essai étalon (`4.realisation/`).
 
 ---
 
@@ -20,15 +20,15 @@ Face aux références recensées lors de la veille, le binôme **formateur / app
 ```mermaid
 flowchart TD
     SOURCE["Ressources & Références Identifiées<br/>(Dépôts open-source, catalogues de skills, docs officielles)"]
-    SOURCE --> A["<b>Voie A : Recherche d'une Réponse Directe</b><br/>• Brique ou solution existante prête à l'emploi<br/>• Transposition ou adaptation immédiate<br/>• Objectif : Productivité et intégration rapide"]
+    SOURCE --> A["<b>Voie A : Recherche d'une Réponse Directe</b><br/>• Brique, pattern ou plugin prêt à l'emploi<br/>• Transposition ou adaptation immédiate<br/>• Objectif : Productivité et intégration rapide"]
     SOURCE --> B["<b>Voie B : Assimilation des Fondamentaux</b><br/>• Compréhension approfondie des mécanismes<br/>• Montée en compétences sur l'architecture<br/>• Objectif : Concevoir soi-même une solution sur-mesure"]
-    A --> DECIS["Arbitrage Concerté Formateur / Apprenant<br/>(Sélection des lectures prioritaires)"]
+    A --> DECIS["Arbitrage Concerté Formateur / Apprenant<br/>(Sélection du plugin / patron candidat)"]
     B --> DECIS
-    DECIS --> TEST["Hypothèses d'Expérimentation pour 4.realisation/"]
+    DECIS --> TEST["Recommandation & Hypothèses pour le Banc d'Essai (4.realisation/)"]
 ```
 
 1. **Voie A (Réponse Directe) :**
-   - *Quand la mobiliser :* Lorsqu'une bibliothèque, un patron ou un skill public résout déjà fidèlement la problématique posée.
+   - *Quand la mobiliser :* Lorsqu'une bibliothèque, un patron ou un plugin public résout déjà fidèlement la problématique posée.
    - *Intérêt :* Valider la capacité à intégrer et adapter rapidement une solution tierce au sein de notre stack.
 2. **Voie B (Assimilation des Fondamentaux) :**
    - *Quand la mobiliser :* Lorsqu'aucune solution prête à l'emploi ne respecte nos contraintes architecturales (ex: couplage excessif, complexité inutile, consommation de tokens disproportionnée, non-conformité avec nos versions de stack).
@@ -57,8 +57,8 @@ Chaque lab mobilise des gisements documentaires adaptés à son sujet technique,
 - **Sources :** Portails officiels de nos briques techniques (PHP / Laravel, JavaScript / Alpine.js, Tailwind CSS, Preline UI, moteurs de base de données).
 - **Objectif :** Disposer de la source unique de vérité sur les APIs, les versions ciblées, la sécurité et les bonnes pratiques canoniques.
 
-### Pilier 4 : Guides Pédagogiques & Retours d'Expérience
-- **Sources :** Articles d'architecture, benchmarks de performance, cas d'école.
+### Pilier 4 : Retours d'Expérience & Études de Performance
+- **Sources :** Articles d'architecture, comparatifs de performance, cas d'école industriels.
 - **Objectif :** Anticiper les pièges fréquents et nourrir la réflexion critique de l'apprenant.
 
 ---
@@ -76,10 +76,10 @@ Chaque lab mobilise des gisements documentaires adaptés à son sujet technique,
      - *Conformité Stack :* S'intègre-t-il proprement sans conflit de version ni dépendance superflue ?
      - *Sobriété & Empreinte Contextuelle :* Est-il léger, modulaire et économe en tokens/ressources ?
      - *Maintenabilité :* Est-il facilement compréhensible et explicable par l'apprenant lors du sprint sans IA ?
-4. **Étape 4 - Arbitrage avec le Formateur :**
-   - Présenter les pistes retenues et décider des lectures approfondies (part de réponse directe vs part d'apprentissage des bases).
+4. **Étape 4 - Arbitrage avec le Formateur & Recommandation :**
+   - Présenter les pistes retenues, arbitrer entre Voie A et Voie B, et recommander le plugin ou pattern de référence.
 5. **Étape 5 - Formulation des Hypothèses pour le Banc d'Essai :**
-   - Formuler au minimum 2 hypothèses concrètes à départager lors de l'étape 3 (`4.realisation/`) (ex: comparer une approche issue de la veille brute contre une approche adaptée sur-mesure).
+   - Formuler les hypothèses concrètes à tester sur le cas étalon de l'étape 3 (`4.realisation/`) pour préparer la déduction finale pour `AgentDev`.
 
 ---
 
@@ -93,4 +93,4 @@ Quel que soit le sujet du lab, le résultat de l'étude comparative est obligato
   - **Slide 2 :** Problématique technique et objectifs de l'étude comparative pour le prototype.
   - **Slide 3 :** Panorama des références et dépôts explorés (avec liens vérifiables).
   - **Slide 4 :** Tableau comparatif multicritères des solutions étudiées.
-  - **Slide 5 :** Synthèse d'arbitrage et hypothèses d'expérimentation pour l'étape 3 (`4.realisation/`).
+  - **Slide 5 :** Synthèse d'arbitrage, recommandation du plugin et hypothèses d'expérimentation pour l'étape 3 (`4.realisation/`).
