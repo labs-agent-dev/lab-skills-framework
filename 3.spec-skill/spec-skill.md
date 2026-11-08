@@ -1,6 +1,6 @@
-# Spécification Technique : Skill `architecture-skills` & Décision d'Architecture (ADR)
+# Spécification Technique : Skill `architecture-skills` & Décisions d'Architecture (ADR)
 
-> **Document de Spécification Référent (Gate 4) :** Formalisation de l'ingénierie du skill cible pour l'agent `AgentDev`, consécutive aux mesures du banc d'essai de `4.realisation/`.
+> **Document de Spécification Référent (Gate 4) :** Formalisation de l'ingénierie de l'agent `AgentDev` et de ses compétences, appuyée sur le modèle Playbook d'Addy Osmani (`skills.addy.ie`) et l'analyse comparative des 4 philosophies d'agents de Martin Jordanovski.
 
 ---
 
@@ -8,59 +8,53 @@
 
 - **Nom Normé :** `architecture-skills` (sans préfixe `lab-*`, conforme à la convention `[domaine]-[brique]`).
 - **Emplacement Cible :** `.agents/skills/architecture-skills/SKILL.md`.
-- **Rôle Principal :** Réaliser l'ingénierie des compétences IA (Skill Engineering) à partir de notre stack technique (PHP 8.2+ / Laravel 12, Alpine.js réactif, Tailwind CSS, Preline UI) et de notre flux de travail. Cartographier, concevoir et arbitrer la granularité des compétences pour l'agent `AgentDev`.
+- **Rôle Principal :** Concevoir et orchestrer l'architecture globale des compétences de l'agent **`AgentDev`**. Structurer les règles selon le **Playbook SDLC en 6 phases** et les adapter à notre stack : PHP 8.2+ / Laravel 12 avec Service Layer, DTOs, Form Requests, et Alpine.js réactif.
 - **Conditions de Déclenchement (Triggers) :**
-  - Conception de l'architecture des compétences d'un agent de développement.
-  - Arbitrage de granularité (par techno, par couche MVC, par workflow ou mono-skill).
-  - Cartographie des compétences pour un nouveau projet ou un sprint fil rouge.
+  - Conception ou refonte de l'architecture des compétences d'un agent de développement.
+  - Arbitrage entre les grands paradigmes d'agents (Playbook, Pipeline, Toolkit, OS).
+  - Découpage des responsabilités techniques pour un nouveau sprint ou projet fil rouge.
 - **Conditions de Non-Déclenchement :**
   - Cadrage méthodologique d'un lab (mobiliser `lab-dev`).
-  - Validation syntaxique et normalisation des 10 rubriques (mobiliser `skill-creator`).
-  - Écriture de code métier opérationnel.
+  - Validation déterministe de syntaxe (mobiliser `skill-creator`).
+  - Écriture de code métier unitaire.
 
 ---
 
-## 2. Décision d'Architecture : ADR-001 (Architecture Hybride Modulaire)
+## 2. Décisions d'Architecture (ADRs)
 
-### Contexte
-Pour permettre à l'agent `AgentDev` de produire du code conforme à notre stack sans dérive ni saturation de contexte, quatre pistes d'organisation ont été confrontées lors du benchmark (`2.benchmark/`) et éprouvées sur le banc d'essai concret du CRUD des Catégories (`4.realisation/`) :
-1. *Par Technologie* (`alpine-crud`, `laravel-controller`, `tailwind-forms`)
-2. *Par Layer MVC* (`model-eloquent`, `blade-views`, `category-controller`)
-3. *Par Workflow* (`w-spec`, `w-crud-scaffold`, `w-code-review`)
-4. *Mono-Skill Polyvalent* (`fullstack-tall-dev`)
+### 📌 ADR-001 : Architecture Hybride Modulaire (Backend P0 + Frontend Réactif)
+- **Contexte :** Confrontation des pistes mono-skill vs par technologie vs par couche.
+- **Décision :** Adopter un découpage modulaire qui sépare un socle backend P0 (contrôleurs fins, Eloquent sans $N+1$) d'un module d'interactions réactives Alpine.js.
 
-### Décision Retenue
-Nous adoptons formellement une **Architecture Hybride Modulaire** qui articule :
-- **Un socle Backend P0 inspiré des standards industriels (`HoangNguyen0403/agent-skills-standard`) :** Règles strictes de contrôleurs fins, Form Requests isolées et requêtes Eloquent optimisées avec `withCount` (prévention N+1).
-- **Un module Frontend Réactif Dédié :** Règles ciblées pour les interactions Alpine.js 3.x (`x-data`, `x-model`, modals réactifs) et Tailwind CSS / Preline UI.
-- **Une gouvernance de flux par skills préfixés `w-*` :** Orchestration séquentielle du travail (`w-benchmark`, `w-spec-skill`, `w-rapport`).
-
-### Justification par les Métriques Mesurées (`4.realisation/rapport-test-hybride.md`)
-- **Économie de Tokens (-45 %) :** Élimination de l'effet "méga-prompt" du mono-skill. Les règles ne sont injectées qu'au moment précis où la couche correspondante est traitée.
-- **Conformité Stack (100 %) :** Zéro hallucination de bibliothèques tierces obsolètes (jQuery/Axios), respect scrupuleux de la séparation des responsabilités.
-- **Maîtrise en Soutenance :** L'étudiant peut reproduire et expliquer l'architecture en direct sans IA devant le formateur grâce à la lisibilité des blocs autonomes.
+### 📌 ADR-002 : Paradigme Playbook SDLC (Addy Osmani) comme Modèle d'Agent
+- **Contexte :** D'après l'analyse de Martin Jordanovski, quatre philosophies d'agents coexistent :
+  1. *Le Playbook* ([`skills.addy.ie`](https://skills.addy.ie/) / Addy Osmani) : cycle SDLC complet (Define, Plan, Build, Verify, Review, Ship) avec garde-fous anti-bâclage.
+  2. *Le Pipeline* ([`obra/superpowers`](https://github.com/obra/superpowers) / Jesse Vincent) : boucle interne TDD rigide et sous-agents avec git worktrees.
+  3. *La Boîte à Outils* (`mattpocock/skills`) : outils chirurgicaux légers (`/grill-me`, `/diagnose`).
+  4. *Le Système d'Exploitation* (`ECC`) : couche système globale de session et de mémoire.
+- **Décision Retenue :** Consacrer **Le Playbook SDLC** comme paradigme fondamental pour `AgentDev`.
+- **Justification :**
+  - Le Playbook impose la discipline d'ingénierie là où les modèles d'IA coupent habituellement les virages (omission des tests, absence de DTO, logique mélangée dans les contrôleurs).
+  - Il fournit un cadre parfait pour implémenter un **Service Layer sous Laravel 12** de façon reproductible et mesurable.
 
 ---
 
-## 3. Matrice Stack x Workflow pour `AgentDev`
+## 3. Matrice Stack x Playbook SDLC pour `AgentDev`
 
-| Composant de la Stack | Responsabilité Technique | Type de Compétence Associée | Priorité |
-| :--- | :--- | :--- | :---: |
-| **Laravel 12 Core** | Routage, Contrôleurs fins, Injection de dépendances | P0 Backend (`laravel-architecture`) | Indispensable |
-| **Eloquent ORM** | Relations, eager loading, scopes, `$fillable` | P0 Persistance (`laravel-eloquent`) | Indispensable |
-| **Validation & Sécurité** | Form Requests, Policies, protection CSRF | P0 Sécurité (`laravel-security`) | Indispensable |
-| **Alpine.js 3.x** | Gestion d'état local, modals, recherche instantanée | Module Frontend Réactif (`alpine-reactive`) | Indispensable |
-| **Tailwind CSS & Preline** | Layout responsive, design system, composants UI | Module Design (`tailwind-components`) | Complémentaire |
-| **Tests & SDLC** | Feature tests Pest / PHPUnit avec `RefreshDatabase` | P1 Qualité (`laravel-testing`) | Recommandé |
+| Phase Playbook | Rôle Méthodologique | Compétence Technique `AgentDev` | Artefact Produit |
+| :--- | :--- | :--- | :--- |
+| **1. DEFINE** | Cadrer le besoin et les critères d'acceptation | `w-spec` & `architecture-skills` | Fiche de spécification & interfaces (`CategoryServiceInterface`). |
+| **2. PLAN** | Modéliser les flux et l'architecture logicielle | `laravel-architecture` | Diagramme de flux MVC ➔ DTO ➔ Service ➔ Eloquent. |
+| **3. BUILD** | Coder les composants étanches | `laravel-service-layer`, `laravel-dto`, `alpine-reactive` | `CategoryService.php`, `CategoryData.php`, `index.html`. |
+| **4. VERIFY** | Écrire et exécuter les tests automatisés | `laravel-testing` (Pest / PHPUnit) | `CategoryServiceTest.php` avec contrôle anti-$N+1$. |
+| **5. REVIEW** | Auditer le code et traquer les rationalisations | `code-reviewer` & anti-rationalization guards | Grille d'audit de simplification et de gating qualité. |
+| **6. SHIP** | Préparer la livraison et l'évaluation | `w-rapport` | Déploiement et protocole de live coding direct sans IA. |
 
 ---
 
-## 4. Contrat d'Interface & Règles Inviolables du Skill
+## 4. Contrats d'Interface & Règles Inviolables
 
-1. **Règle d'Or SSOT / DRY :** Aucune duplication de règles de stack. Les principes invariants résident dans `.agents/rules/stack-principles.md` ; les directives unitaires sont chargées à la demande.
-2. **Nomenclature Stricte :**
-   - Compétences de workflow : préfixe `w-*` (ex: `w-benchmark`, `w-spec-skill`, `w-rapport`).
-   - Compétences techniques : `[domaine]-[brique]` (ex: `architecture-skills`, `alpine-components`).
-   - Interdiction formelle du préfixe `lab-*` sur tout skill.
-3. **Format Standard Anthropic :** Respect impératif des 10 rubriques normées validées par `validate-skills.cjs`.
-
+1. **Règle d'Or du Service Layer :** Les contrôleurs HTTP sont strictement des passe-plats. Toute écriture en base de données doit passer par le Service Layer encapsulé dans une transaction (`DB::transaction()`).
+2. **Typage Strict & Immutabilité :** Utilisation systématique de DTOs en PHP 8.2+ (`readonly class`).
+3. **Zéro Régression Frontend :** Les composants d'interface utilisent exclusivement Alpine.js 3.x, Tailwind CSS et Preline UI. Interdiction formelle de jQuery.
+4. **Validation Déterministe :** Tout skill créé doit respecter les 10 rubriques d'Anthropic et être validé par `validate-skills.cjs`.

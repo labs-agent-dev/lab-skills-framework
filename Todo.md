@@ -1,26 +1,29 @@
-# Todo List : Lab Skills Framework (Architecture des Skills IA)
+# Todo List : Lab Skills Framework (Architecture & Playbook SDLC des Agents IA)
 
 ## Phase 1 : Cadrage Commun (Besoin & Benchmark - Assisté par lab-dev)
 - [x] **Concepts :** Différencier Plugin, Subagent, Workflow et Skill.
 - [x] **Règles Transversales :** Configurer `.agents/rules/` (`persona.md`, `lab-rules.md`, `stack-principles.md`, `skills-display.md`).
-- [x] **Besoin :** Cadrer `1.besoin/besoin.md` (expression du problème, 4 pistes exploratoires et démarche alternative).
-- [x] **Benchmark :** Explorer les références (GitHub Topics `coding-standards`, `coding-agent`, `agent-skills`, standard `HoangNguyen0403`, `skills.sh`), initialiser `2.benchmark/README.md` et finaliser le diaporama Marp `2.benchmark/benchmark.md` (Gate 2 franchie).
+- [x] **Besoin :** Cadrer `1.besoin/besoin.md` (de l'agent naïf à l'Agent Architecte outillé selon le Playbook SDLC).
+- [x] **Benchmark :** Explorer les 4 Philosophies d'Agents (Martin Jordanovski : Playbook vs Pipeline vs Toolkit vs OS), sourcing actif (`skills.addy.ie`, `obra/superpowers`, `HoangNguyen0403`) et diaporama Marp `2.benchmark/benchmark.md` (Gate 2 franchie).
 - [x] **Consignes 2, 3 & 4 :** Initialiser les README de travail dans `2.benchmark/`, `3.spec-skill/` et `4.realisation/`.
 
-## Phase 2 : Expérimentation & Tests Pratiques (Réalisé dans `4.realisation/`)
-- [x] **Testbench CRUD Catégories :** Interface réactive complète montée dans `4.realisation/index.html` (Alpine.js 3.x, Tailwind CSS, Preline UI).
-- [x] **Approche Retenue (Test 2) :** Implémentation du socle backend P0 Laravel (`CategoryController.php`, `StoreCategoryRequest.php`, `Category.php`) inspiré de `HoangNguyen0403`.
-- [x] **Rapport d'Évaluation :** Fiche de mesure rédigée dans `4.realisation/rapport-test-hybride.md` (vitesse, économie de tokens, conformité stack, préparation live coding sans IA - Gate 3 franchie).
+## Phase 2 : Expérimentation Pratique : Le Playbook en 6 Phases (Réalisé dans `4.realisation/`)
+- [x] **1. Define :** Spécification fonctionnelle et contrat `CategoryServiceInterface` dans `1-define/`.
+- [x] **2. Plan :** Architecture Service Layer et flux de données DTO dans `2-plan/`.
+- [x] **3. Build :** Code complet du Service Layer (`CategoryService.php`, `CategoryData.php`, `CategoryController.php`, `Category.php`) et interface réactive Alpine.js dans `3-build/`.
+- [x] **4. Verify :** Tests unitaires Pest / PHPUnit et vérification anti-$N+1$ dans `4-verify/`.
+- [x] **5. Review :** Audit de simplification de code et garde-fous anti-rationalisation dans `5-review/`.
+- [x] **6. Ship :** Fiche de livraison et protocole de démonstration en direct dans `6-ship/` (Gate 3 franchie).
 
 ## Phase 3 : Spécification Technique & Finalisation du Skill (Réalisé dans `3.spec-skill/`)
-- [x] **Arbitrage ADR :** Décision d'Architecture formelle (ADR-001) actant l'approche Hybride Modulaire rédigée dans `3.spec-skill/spec-skill.md`.
-- [x] **Spécification :** Fiche de spécification et matrice Stack x Workflow formalisées dans `3.spec-skill/spec-skill.md` (Gate 4 franchie).
+- [x] **Arbitrage ADR :** Décisions d'Architecture formelles (ADR-001 Hybride Modulaire & ADR-002 Paradigme Playbook SDLC Addy Osmani) rédigées dans `3.spec-skill/spec-skill.md`.
+- [x] **Spécification :** Matrice Stack x Playbook SDLC pour `AgentDev` formalisée dans `3.spec-skill/spec-skill.md` (Gate 4 franchie).
 - [x] **Validation du skill :** Conformité déterministe validée via `skill-creator` (100 % conforme, 0 erreur bloquante) :
   ```powershell
   node .agents/skills/skill-creator/scripts/validate-skills.cjs
   ```
 
 ## Phase 4 : Soutenance Sprint Formateur (Réalisé dans `5.rapport-et-presentation/`)
-- [x] **Rapport :** Rapport technique finalisé dans `5.rapport-et-presentation/Lab-Skill-Engineering.md`.
+- [x] **Rapport :** Rapport technique consolidant les 4 philosophies et le Playbook dans `5.rapport-et-presentation/Lab-Skill-Engineering.md`.
 - [x] **Présentation :** Diapositives finalisées avec page de garde réglementaire et exactement 3 phrases orales A1 par slide dans `5.rapport-et-presentation/Presentation-Skill-Engineering.md`.
-- [x] **Live Coding sans IA :** Préparation au mini-défi formateur (ajout de champ dynamique dans Alpine.js et contrôle N+1 dans Laravel) - Gate 5 franchie.
+- [x] **Live Coding sans IA :** Préparation au mini-défi formateur (explication du Service Layer, withCount et manipulation Alpine.js) - Gate 5 franchie.

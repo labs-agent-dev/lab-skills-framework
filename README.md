@@ -17,7 +17,18 @@
 node .agent/skills/skill-creator/scripts/validate-skills.cjs
 ```
 
-## 4. Références 
+## 4. Références - v2
+- https://medium.com/@martin.jordanovski/
+- https://skills.addy.ie/
+  - https://github.com/addyosmani/agent-skills
+- https://github.com/obra/superpowers
+- https://www.aihero.dev/skills
+  - https://github.com/mattpocock/skills
+- https://ecc.tools/
+  - https://github.com/affaan-m/ECC
+  
+
+## 4. Références - v1
 - https://github.com/anthropics/claude-plugins-official
 - https://github.com/anthropics/skills
 - https://www.skills.sh/

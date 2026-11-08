@@ -1,5 +1,5 @@
 ---
-marp: flase
+marp: true
 theme: tech
 paginate: true
 header: "Lab Skills Framework — État de l'Art & Benchmark"
@@ -8,70 +8,81 @@ footer: "Solicode / AgentDev"
 
 <!-- _class: lead -->
 # État de l'Art & Étude Comparative
-## Benchmark des Solutions d'Architecture de Skills IA
+## Benchmark des Solutions & Philosophies d'Agents IA
 **Lab :** `lab-skills-framework` | **Étape 2 du Workflow**  
 **Agent Final :** `AgentDev` (Projet Fil Rouge 100 % IA)  
-**Prototype :** Live coding direct sans IA devant le formateur  
+**Paradigme de Référence :** Playbook SDLC (inspiré d'Addy Osmani) adapté à Laravel Service Layer  
 *Promotion Solicode 2026*
 
 ---
 
 ## 1. Problématique & Objectifs du Benchmark
 
-- **Constat Initial :** Un modèle d'IA généraliste produit du code désorganisé qui s'éloigne de notre stack (PHP 8.2+ / Laravel 12, Alpine.js réactif, Tailwind CSS, Preline UI) et mélange la logique métier aux templates.
+- **Constat Initial :** Un modèle d'IA généraliste produit du code désorganisé qui s'éloigne de notre stack (PHP 8.2+ / Laravel 12 avec Service Layer, Alpine.js, Tailwind CSS) et mélange la logique métier aux contrôleurs.
 - **Mission du Benchmark :** 
-  - Cartographier comment la communauté open-source structure les compétences d'agents de code.
-  - Évaluer les approches candidates avant d'écrire la moindre ligne de code.
+  - Comparer les grands paradigmes d'organisation d'agents de code dans l'écosystème open-source.
+  - Sélectionner la philosophie architecturale optimale pour guider l'agent `AgentDev`.
 - **Cas d'Usage Étalon Commun :** 
-  - CRUD des Catégories avec notre stack (PHP 8.2+ / Laravel 12, Alpine.js réactif, Tailwind CSS, Preline UI).
+  - CRUD des Catégories avec Laravel 12 (Service Layer, DTOs, Form Requests) et Alpine.js réactif.
 
 ---
 
-## 2. Sourcing & Références Open-Source (Recherche Active & Topics)
+## 2. Les 4 Philosophies d'Agents IA (Martin Jordanovski)
+
+| Philosophie | Dépôt de Référence | Approche & Fonctionnement | Cas d'Usage Idéal |
+| :--- | :--- | :--- | :--- |
+| **1. Le Playbook** | **[Addy Osmani](https://skills.addy.ie/)** (`agent-skills`) | Cycle SDLC complet en 6 phases (Define ➔ Plan ➔ Build ➔ Verify ➔ Review ➔ Ship). Garde-fous anti-bâclage. | 🎯 **Projets d'ingénierie complets avec validation humaine.** |
+| **2. Le Pipeline** | **[Jesse Vincent](https://github.com/obra/superpowers)** (`superpowers`) | Boucle interne rigide (TDD first), sous-agents avec isolation git-worktree. Exécution autonome sans saut d'étape. | ⚙️ Tâches complexes et autonomes de longue durée. |
+| **3. La Boîte à Outils** | **Matt Pocock** (`skills`) | Outils chirurgicaux légers au service direct du dev (`/grill-me`, `/tdd`, `/diagnose`). Le dev reste au volant. | 🛠️ Itérations rapides et debugging quotidien. |
+| **4. Le Système d'Exploitation** | **ECC** (`everything-claude-code`) | Couche environnementale globale : hooks de session, mémoire persistante de projet et scans de sécurité. | 🖥️ Socle d'infrastructure multi-agents. |
+
+---
+
+## 3. Sourcing & Références Open-Source (Recherche Active & Topics)
 
 | Catégorie & GitHub Topics | Références Majeures Identifiées | Apport Technique pour le CRUD Catégories |
 | :--- | :--- | :--- |
 | **Topics GitHub Clés** | [`coding-standards`](https://github.com/topics/coding-standards) • [`coding-agent`](https://github.com/topics/coding-agent) • [`agent-skills`](https://github.com/topics/agent-skills) | Panorama des normes de code, registres et spécifications de prompts pour agents. |
+| **Modèle Playbook SDLC** | [Addy Osmani](https://skills.addy.ie/) (`addyosmani/agent-skills`) | Méthodologie en 6 phases, anti-rationalisation, revues par personas et ADRs. |
 | **Standard Industriel Laravel** | [HoangNguyen0403/agent-skills-standard](https://github.com/HoangNguyen0403/agent-skills-standard)<br>*(dossier `skills/laravel`)* | Découpage P0 (`laravel-architecture`, `laravel-eloquent`, `laravel-security`) et P1 (`laravel-testing`). |
 | **Patterns TALL & Alpine.js** | [tott/laravel-tall-claude-ai-configs](https://github.com/tott/laravel-tall-claude-ai-configs)<br>[pekral/cursor-rules](https://github.com/pekral/cursor-rules) | Gestion d'état réactive Alpine.js (`x-data`, modals, validation) et composants Blade accessibles. |
-| **Gouvernance & SDLC** | [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills)<br>[addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | Standards d'ingénierie, gating qualité, réduction du bruit et prévention des hallucinations. |
 
 ---
 
-## 3. Grille d'Analyse Comparative des 4 Pistes Initiales
+## 4. Grille d'Analyse Comparative des Approches
 
-| Piste Candidate | Exemples Concrets (CRUD Catégories) | Adéquation Stack | Impact Tokens | Maintenabilité & Coordination |
+| Approche Candidate | Exemples Testés | Adéquation Stack Laravel | Impact Tokens | Maintenabilité & Gouvernance |
 | :--- | :--- | :---: | :---: | :--- |
-| **1. Par Technologie** | `alpine-crud`, `laravel-controller`, `tailwind-forms` | ⚠️ Partielle *(silos)* | 🟢 Faible | ⚠️ Éparpillée *(3 skills pour 1 CRUD)* |
-| **2. Par Layer / Domaine** | P0 `laravel-architecture` + `laravel-eloquent` | 🟢 Excellente *(backend)* | 🟡 Moyen | 🟢 Structurée *(mais omet le frontend)* |
-| **3. Par Workflow** | `w-spec`, `w-crud-scaffold`, `w-code-review` | ⚠️ Dépend des règles | 🟢 Faible | 🟢 Robuste *(cadre clair mais générique)* |
-| **4. Mono-Skill Polyvalent** | `fullstack-tall-dev`, `category-crud-agent` | 🟢 Bonne *(vision globale)* | 🔴 Élevé | 🔴 Risquée *(méga-prompt, prompt drift)* |
+| **1. Par Technologie** | `alpine-crud`, `laravel-service`, `tailwind-forms` | ⚠️ Partielle *(silos)* | 🟢 Faible | ⚠️ Éparpillée *(trop de skills à coordonner)* |
+| **2. Par Layer MVC** | `model-eloquent`, `blade-views`, `category-controller` | 🟢 Bonne *(MVC strict)* | 🟡 Moyen | ⚠️ Lourde *(sans vision de flux)* |
+| **3. Mono-Skill** | `fullstack-tall-dev`, `category-crud-agent` | 🟢 Bonne *(vision globale)* | 🔴 Élevé | 🔴 Risquée *(méga-prompt, prompt drift)* |
+| **4. Playbook SDLC (Retenu)** | **Addy Osmani adapté Service Layer** | 🟢 Excellente *(flux + stack)* | 🟢 Optimisé | 🟢 Maximale *(6 phases, anti-bâclage, checkpoints)* |
 
-- **Constat Analytique Clé :** Le découpage par domaine (P0) éprouvé dans `HoangNguyen0403` excelle sur le backend Laravel mais omet l'interaction réactive. Le mono-skill sature le contexte. Une articulation modulaire hybride s'impose.
+- **Constat Analytique Clé :** Le modèle Playbook d'Addy Osmani comble le vide entre les règles techniques isolées et la rigueur du flux de livraison logiciel.
 
 ---
 
-## 4. Démarche & Arbitrage Pédagogique : Voie A vs Voie B
+## 5. Démarche & Arbitrage Pédagogique : Voie A vs Voie B
 
 En concertation avec le formateur, l'analyse comparative débouche sur un arbitrage stratégique :
 
 - **Voie A (Réponse Directe — Prêt-à-l'emploi) :**
-  - *Apport :* Réutilisation immédiate des patterns backend industriels de `HoangNguyen0403` (P0 contrôleurs fins, Form Requests, scopes Eloquent).
-  - *Limite :* Aucun standard public ne fournit la brique d'interaction frontend (Alpine.js + Preline UI) adaptée à notre école.
+  - *Apport :* Réutilisation de la matrice SDLC d'Addy Osmani et des patterns P0 de `HoangNguyen0403`.
+  - *Limite :* Nécessite une traduction en français et une adaptation à notre **Service Layer**.
 - **Voie B (Assimilation des Fondamentaux — Sur-Mesure) :**
-  - *Apport :* Maîtrise des directives Alpine.js (`x-data`, `x-on`, transitions modals) et des conventions d'ingénierie Anthropic.
-- **Décision Retenue : Démarche Hybride Modulaire**
-  - Coupler les standards P0 Laravel (sécurité, architecture) avec un skill frontend dédié (`alpine-reactive-crud`) pour un résultat zéro-défaut.
+  - *Apport :* Compréhension des mécanismes de gating, des DTOs et des interactions réactives Alpine.js.
+- **Décision Retenue : Playbook Adapté à Laravel Service Layer**
+  - Adopter le Playbook en 6 phases (Define ➔ Plan ➔ Build ➔ Verify ➔ Review ➔ Ship) adapté à notre stack : **Contrôleur fin ➔ DTO ➔ Service Métier ➔ Eloquent sans N+1 ➔ Alpine.js réactif**.
 
 ---
 
-## 5. Synthèse & Orientation de Réalisation (Banc d'Essai)
+## 6. Synthèse & Feuille de Route Pratique (`4.realisation/`)
 
-Le banc d'essai étalon (**CRUD des Catégories**) est réalisé selon l'approche retenue :
+Le banc d'essai étalon (**CRUD des Catégories avec Service Layer**) exécute les 6 phases réelles du Playbook :
 
-- **Orientation Validée : Test 2 — Hybride Modulaire (P0 Laravel + Alpine.js)** :
-  - **Socle Backend P0 :** Contrôleur léger (`CategoryController`), validation dédiée (`StoreCategoryRequest`), requêtes Eloquent optimisées sans N+1 (`withCount('posts')`).
-  - **Module Frontend Alpine.js :** Composant réactif autonome (`x-data`, `x-model`, modals Preline UI / Tailwind CSS), filtrage et feedback dynamique.
-- **Bénéfices Clés :**
-  - Sobriété en tokens et élimination du prompt drift.
-  - Conformité stricte à notre stack et clarté maximale pour le live coding sans IA devant le formateur.
+1. **DÉFINIR (`Define`) :** Fiche de spécification fonctionnelle et contrat `CategoryServiceInterface`.
+2. **PLANIFIER (`Plan`) :** Architecture Service Layer, modélisation DTO (`CategoryData`) et routes.
+3. **CONSTRUIRE (`Build`) :** `CategoryService.php`, `CategoryController.php`, validation et vue Alpine.js.
+4. **VÉRIFIER (`Verify`) :** Tests unitaires Pest / PHPUnit du Service Layer et vérification anti-N+1.
+5. **RÉVISER (`Review`) :** Audit de simplification de code et contrôle de conformité de stack.
+6. **LIVRER (`Ship`) :** Préparation de la démonstration et maîtrise du code pour le live coding sans IA.
