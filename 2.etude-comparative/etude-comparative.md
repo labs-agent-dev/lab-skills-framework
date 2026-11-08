@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 theme: tech
 paginate: true
 header: "Lab Skills Framework — État de l'Art & Étude Comparative"
