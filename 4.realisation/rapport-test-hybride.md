@@ -1,7 +1,7 @@
 # Rapport d'Expérimentation : Test 2 (Approche Hybride Modulaire P0 + Alpine.js)
 
 ## 1. Contexte du Testbench
-Conformément à la décision prise à l'issue du benchmark (`2.benchmark/`), nous avons concentré les travaux pratiques de réalisation sur le **Test 2 : Approche Hybride Modulaire (Laravel P0 + Module Frontend Alpine.js)** appliqué au **CRUD des Catégories**.
+Conformément à la décision prise à l'issue de l'étude comparative (`2.etude-comparative/`), nous avons concentré les travaux pratiques de réalisation sur le **Test 2 : Approche Hybride Modulaire (Laravel P0 + Module Frontend Alpine.js)** appliqué au **CRUD des Catégories**.
 
 ---
 

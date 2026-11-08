@@ -2,13 +2,13 @@
 marp: true
 theme: tech
 paginate: true
-header: "Lab Skills Framework — État de l'Art & Benchmark"
+header: "Lab Skills Framework — État de l'Art & Étude Comparative"
 footer: "Solicode / AgentDev"
 ---
 
 <!-- _class: lead -->
 # État de l'Art & Étude Comparative
-## Benchmark des Solutions & Philosophies d'Agents IA
+## Étude Comparative des Solutions & Philosophies d'Agents IA
 **Lab :** `lab-skills-framework` | **Étape 2 du Workflow**  
 **Agent Final :** `AgentDev` (Projet Fil Rouge 100 % IA)  
 **Paradigme de Référence :** Playbook SDLC (inspiré d'Addy Osmani) adapté à Laravel Service Layer  
@@ -16,10 +16,10 @@ footer: "Solicode / AgentDev"
 
 ---
 
-## 1. Problématique & Objectifs du Benchmark
+## 1. Problématique & Objectifs de l'Étude Comparative
 
 - **Constat Initial :** Un modèle d'IA généraliste produit du code désorganisé qui s'éloigne de notre stack (PHP 8.2+ / Laravel 12 avec Service Layer, Alpine.js, Tailwind CSS) et mélange la logique métier aux contrôleurs.
-- **Mission du Benchmark :** 
+- **Mission de l'Étude Comparative :** 
   - Comparer les grands paradigmes d'organisation d'agents de code dans l'écosystème open-source.
   - Sélectionner la philosophie architecturale optimale pour guider l'agent `AgentDev`.
 - **Cas d'Usage Étalon Commun :** 

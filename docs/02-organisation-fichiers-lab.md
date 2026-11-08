@@ -4,7 +4,7 @@
 1. **Pilotage (Racine) :** `README.md` (contexte général) et `Todo.md` (suivi des tâches).
 2. **Livrables Apprenant (5 Sous-Dossiers) :**
    - `1.besoin/` : Problématique technique et expression du besoin (`besoin.md`).
-   - `2.benchmark/` : État de l'art, références et diaporama Marp (`benchmark.md`).
+   - `2.etude-comparative/` : État de l'art, étude comparative et diaporama Marp (`etude-comparative.md`).
    - `3.spec-skill/` : Spécification technique du skill de l'approche retenue (`spec-skill.md`).
    - `4.realisation/` : Expérimentation et tests comparatifs (code, maquettes ou configurations testées).
    - `5.rapport-et-presentation/` : `Lab-[Sujet].md` et `Presentation-[Sujet].md` (slides A1).
@@ -17,9 +17,9 @@ mon-lab/
 ├── README.md
 ├── Todo.md
 ├── 1.besoin/besoin.md
-├── 2.benchmark/
+├── 2.etude-comparative/
 │   ├── README.md
-│   └── benchmark.md (Marp)
+│   └── etude-comparative.md (Marp)
 ├── 3.spec-skill/spec-skill.md
 ├── 4.realisation/[code ou livrable testé]
 ├── 5.rapport-et-presentation/

@@ -1,15 +1,15 @@
-# Guide Méthodologique : Qu'est-ce qu'un État de l'Art / Benchmark et Comment le Réaliser ?
+# Guide Méthodologique : Qu'est-ce qu'une Étude Comparative / État de l'Art et Comment la Réaliser ?
 
 > **Portée :** Ce document est un guide méthodologique transversal (`docs/`). Il est **universel et applicable à l'ensemble des labs techniques** du référentiel, quel que soit le domaine abordé (backend, frontend réactif, design system, persistance, architecture logicielle ou ingénierie agentique).
 
 ---
 
-## 1. Définition & Finalité du Benchmark dans un Lab
+## 1. Définition & Finalité de l'Étude Comparative dans un Lab
 
-Dans tout lab technique, l'**état de l'art et le benchmark des solutions** (Étape 2 du workflow) constitue la phase d'investigation préalable à toute écriture de code :
+Dans tout lab technique, l'**état de l'art et l'étude comparative des solutions** (Étape 2 du workflow) constitue la phase d'investigation préalable à toute écriture de code :
 - **Ne jamais réinventer la roue :** Avant de concevoir une brique logicielle ou une compétence IA, cartographier l'existant pour réutiliser les standards éprouvés par l'écosystème open-source.
 - **Identifier les meilleures pratiques :** Analyser les conventions de conception, les patterns d'implémentation et les limites des bibliothèques ou compétences existantes sur le sujet étudié.
-- **Formuler les hypothèses de réalisation :** Un benchmark rigoureux n'est pas un résumé passif ; il débouche obligatoirement sur des hypothèses techniques concrètes et comparables qui seront testées sur le banc d'essai étalon (`4.realisation/`).
+- **Formuler les hypothèses de réalisation :** Une étude comparative rigoureuse n'est pas un résumé passif ; elle débouche obligatoirement sur des hypothèses techniques concrètes et comparables qui seront testées sur le banc d'essai étalon (`4.realisation/`).
 
 ---
 
@@ -85,12 +85,12 @@ Chaque lab mobilise des gisements documentaires adaptés à son sujet technique,
 
 ## 5. Restitution Standardisée : Le Diaporama Marp
 
-Quel que soit le sujet du lab, le résultat de la veille technologique est obligatoirement restitué sous la forme d'un **diaporama Marp** (`2.veille/veille-technologique.md`) :
+Quel que soit le sujet du lab, le résultat de l'étude comparative est obligatoirement restitué sous la forme d'un **diaporama Marp** (`2.etude-comparative/etude-comparative.md`) :
 - **Rôle du format :** Offrir un support de synthèse visuel, professionnel et concis, exécutable dans le navigateur ou exportable en PDF/HTML.
 - **Outillage :** Mobiliser le skill **`marp-slide`** pour appliquer un thème soigné (`tech`, `business` ou `minimal`).
 - **Gabarit standard en 5 diapositives pour tout lab :**
-  - **Slide 1 :** Page de garde (Titre du lab, sujet technique de la veille, apprenant, date).
-  - **Slide 2 :** Problématique technique et objectifs de la veille pour le prototype.
+  - **Slide 1 :** Page de garde (Titre du lab, sujet technique de l'étude comparative, apprenant, date).
+  - **Slide 2 :** Problématique technique et objectifs de l'étude comparative pour le prototype.
   - **Slide 3 :** Panorama des références et dépôts explorés (avec liens vérifiables).
   - **Slide 4 :** Tableau comparatif multicritères des solutions étudiées.
   - **Slide 5 :** Synthèse d'arbitrage et hypothèses d'expérimentation pour l'étape 3 (`4.realisation/`).

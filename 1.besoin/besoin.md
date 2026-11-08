@@ -1,16 +1,18 @@
 # Expression du Besoin : Conception des Skills IA
 
 ## 1. Problématique Technique
-Sans encadrement méthodologique ni règles d'architecture rigoureuses, un modèle d'IA générique produit du code désorganisé : il mélange la logique métier aux contrôleurs HTTP, oublie les tests unitaires et s'écarte de notre stack (PHP 8.2+ / Laravel 12 avec Service Layer, DTOs, Alpine.js réactif, Tailwind CSS, Preline UI). 
+Sans encadrement explicite ni règles d'architecture rigoureuses, un modèle d'IA générique produit du code désorganisé qui s'écarte de notre stack (PHP 8.2+ / Laravel 12, Alpine.js réactif, Tailwind CSS, Preline UI) et ne respecte pas la séparation des responsabilités. 
 
-Pour guider l'agent **`AgentDev`** vers un code maintenable et strictement conforme, nous devons dépasser le simple prompt naïf pour concevoir une architecture de compétences professionnelles basée sur un **Playbook de développement logiciel (SDLC)**.
+Pour guider l'agent **`AgentDev`** vers un code maintenable et strictement conforme, nous devons structurer son outillage de compétences.
 
-## 2. Pistes d'Architecture Exploratoires & Paradigmes d'Agents
-Pour structurer l'agent `AgentDev`, l'état de l'art met en concurrence quatre grands paradigmes d'agents (Playbook, Pipeline, Toolkit, Système d'exploitation) et quatre organisations de compétences :
+## 2. Pistes d'Architecture Exploratoires
+Pour organiser les compétences IA, quatre pistes initiales sont soumises à l'expérimentation :
 1. **Par Technologie :** un skill par outil (`alpine-components`, `laravel-crud`, `preline-ui`).
-2. **Par Layer Logiciel :** un skill par couche (`ui-views`, `controllers`, `services`, `data-repositories`).
+2. **Par Layer :** un skill par couche logicielle (`ui-views`, `controllers`, `services`, `data-repositories`).
 3. **Par Phase de Flux (Workflow) :** un skill par étape de travail (`flow-analyse`, `flow-conception`, `flow-dev`, `flow-test`).
-4. **Playbook SDLC Intégré :** un modèle complet inspiré d'Addy Osmani (`skills.addy.ie`), articulé en 6 phases (Define, Plan, Build, Verify, Review, Ship) et adapté à notre architecture **Laravel Service Layer**.
+4. **Un Seul Skill :** un agent-développeur polyvalent unique (`fullstack-developer`).
+
+> **Ouverture sur d'autres démarches :** Le résultat du lab n'est pas restreint à ces 4 choix stricts. L'état de l'art et l'expérimentation peuvent aboutir à **une autre démarche** ou à une architecture hybride (par exemple combinant méta-gouvernance méthodologique et compétences modulaires par domaine technique ou métier) plus adaptée aux contraintes réelles du projet fil rouge.
 
 ## 3. Besoin Concret du Lab
 1. **Concevoir les compétences de l'agent :** Structurer le modèle de compétences permettant à `AgentDev` de produire du code maintenable et fidèle à nos règles architecturales.

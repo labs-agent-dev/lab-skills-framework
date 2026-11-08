@@ -1,11 +1,11 @@
 # Todo List : Lab Skills Framework (Architecture & Playbook SDLC des Agents IA)
 
-## Phase 1 : Cadrage Commun (Besoin & Benchmark - Assisté par lab-dev)
+## Phase 1 : Cadrage Commun (Besoin & Étude Comparative - Assisté par lab-dev)
 - [x] **Concepts :** Différencier Plugin, Subagent, Workflow et Skill.
 - [x] **Règles Transversales :** Configurer `.agents/rules/` (`persona.md`, `lab-rules.md`, `stack-principles.md`, `skills-display.md`).
-- [x] **Besoin :** Cadrer `1.besoin/besoin.md` (de l'agent naïf à l'Agent Architecte outillé selon le Playbook SDLC).
-- [x] **Benchmark :** Explorer les 4 Philosophies d'Agents (Martin Jordanovski : Playbook vs Pipeline vs Toolkit vs OS), sourcing actif (`skills.addy.ie`, `obra/superpowers`, `HoangNguyen0403`) et diaporama Marp `2.benchmark/benchmark.md` (Gate 2 franchie).
-- [x] **Consignes 2, 3 & 4 :** Initialiser les README de travail dans `2.benchmark/`, `3.spec-skill/` et `4.realisation/`.
+- [x] **Besoin :** Cadrer `1.besoin/besoin.md` (expression du problème, 4 pistes exploratoires et démarche alternative).
+- [x] **Étude Comparative :** Explorer les 4 Philosophies d'Agents (Martin Jordanovski : Playbook vs Pipeline vs Toolkit vs OS), sourcing actif (`skills.addy.ie`, `obra/superpowers`, `HoangNguyen0403`) et diaporama Marp `2.etude-comparative/etude-comparative.md` (Gate 2 franchie).
+- [x] **Consignes 2, 3 & 4 :** Initialiser les README de travail dans `2.etude-comparative/`, `3.spec-skill/` et `4.realisation/`.
 
 ## Phase 2 : Expérimentation Pratique : Le Playbook en 6 Phases (Réalisé dans `4.realisation/`)
 - [x] **1. Define :** Spécification fonctionnelle et contrat `CategoryServiceInterface` dans `1-define/`.

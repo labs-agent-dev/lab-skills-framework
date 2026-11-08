@@ -12,7 +12,7 @@ Le développement d'un Lab s'articule autour de **5 étapes ordonnées**, matér
 flowchart TD
     subgraph WFL["Cycle de Vie d'un Lab"]
         G0["Porte 0 : Initialisation<br/>README.md & Todo.md"] --> E1["Étape 1 : Cadrage du Besoin<br/><b>1.besoin/</b><br/>Livrable : besoin.md<br/><i>Skill : lab-dev</i>"]
-        E1 -->|Gate 1 Validée| E2["Étape 2 : État de l'Art & Benchmark<br/><b>2.benchmark/</b><br/>Livrable : benchmark.md (Marp)<br/><i>Skill : w-benchmark + marp-slide</i>"]
+        E1 -->|Gate 1 Validée| E2["Étape 2 : État de l'Art & Étude Comparative<br/><b>2.etude-comparative/</b><br/>Livrable : etude-comparative.md (Marp)<br/><i>Skill : w-etude-comparative + marp-slide</i>"]
         E2 -->|Gate 2 Validée| E3["Étape 3 : Réalisation & Testbench<br/><b>4.realisation/</b><br/>Livrable : Banc d'essai étalon & Mesures<br/><i>Skill : [skill-technique] (socle minimal)</i>"]
         E3 -->|Gate 3 Validée| E4["Étape 4 : Spécification Technique du Skill<br/><b>3.spec-skill/</b><br/>Livrable : spec-skill.md + SKILL.md final<br/><i>Skill : w-spec-skill (+ skill-creator)</i>"]
         E4 -->|Gate 4 Validée| E5["Étape 5 : Rapport & Soutenance Sprint<br/><b>5.rapport-et-presentation/</b><br/>Livrables : Lab-*.md + Presentation-*.md (A1)<br/><i>Skill : w-rapport</i>"]
@@ -34,13 +34,13 @@ flowchart TD
 
 ---
 
-### Étape 2 : État de l'Art & Benchmark (`2.benchmark/`)
+### Étape 2 : État de l'Art & Étude Comparative (`2.etude-comparative/`)
 - **Objectif :** Établir l'état de l'art, analyser les composants et compétences disponibles sur les dépôts de référence (notamment [`https://github.com/topics/coding-agent`](https://github.com/topics/coding-agent), `skills.sh`, dépôts officiels Anthropic, et documentations de notre stack).
 - **Livrables attendus :**
-  - `2.benchmark/README.md` : consignes et critères de recherche pour l'apprenant.
-  - `2.benchmark/benchmark.md` : diaporama rédigé au format **Marp** (thème `tech` ou `business`).
-- **Guide méthodologique associé :** [`docs/04-guide-benchmark-solutions.md`](./04-guide-benchmark-solutions.md).
-- **Compétences IA associées :** **`w-benchmark`** (Skill de flux) combiné avec le skill installé **`marp-slide`**.
+  - `2.etude-comparative/README.md` : consignes et critères de recherche pour l'apprenant.
+  - `2.etude-comparative/etude-comparative.md` : diaporama rédigé au format **Marp** (thème `tech` ou `business`).
+- **Guide méthodologique associé :** [`docs/04-guide-etude-comparative.md`](./04-guide-etude-comparative.md).
+- **Compétences IA associées :** **`w-etude-comparative`** (Skill de flux) combiné avec le skill installé **`marp-slide`**.
 
 ---
 
@@ -81,7 +81,7 @@ flowchart TD
 | :--- | :--- | :--- | :--- |
 | **Méta-Gouvernance** | `lab-dev` | Interne | Initialisation du lab, gestion de `Todo.md`, cadrage du besoin (`besoin.md`), validation des portes. |
 | **Méta-Standard** | `skill-creator` | Interne | Conception et validation déterministe des skills selon le standard Anthropic (10 rubriques). |
-| **Skills de Flux** | `w-benchmark` | `w-*` (Interne) | Accompagnement de l'état de l'art, du benchmark et génération du diaporama Marp (`2.benchmark/`). |
+| **Skills de Flux** | `w-etude-comparative` | `w-*` (Interne) | Accompagnement de l'état de l'art, de l'étude comparative et génération du diaporama Marp (`2.etude-comparative/`). |
 | **Skills de Flux** | `w-spec-skill` | `w-*` (Interne) | Spécification technique, rédaction de l'ADR et pilotage de la finalisation du skill (`3.spec-skill/`). |
 | **Skills de Flux** | `w-rapport` | `w-*` (Interne) | Rédaction du rapport, calibration des slides A1 et préparation de la soutenance (`5.rapport-et-presentation/`). |
 | **Skill Outil Installé** | `marp-slide` | Externe (`skills-lock.json`) | Moteur de génération des diapositives professionnelles au format Marp. |
@@ -95,7 +95,7 @@ flowchart TD
 | :---: | :--- | :--- | :--- |
 | **Gate 0** | Racine | `README.md` complété + `Todo.md` initialisé. | Arrêt immédiat tant que le `README.md` n'est pas renseigné. |
 | **Gate 1** | 1.besoin | Problématique claire, pas de répétition de contexte, ouverture sur alternatives (`besoin.md`). | Reformuler `besoin.md`. |
-| **Gate 2** | 2.benchmark | Sources identifiées (GitHub Topics, catalogues), présentation Marp générée (`benchmark.md`). | Compléter le diaporama de benchmark. |
+| **Gate 2** | 2.etude-comparative | Sources identifiées (GitHub Topics, catalogues), présentation Marp générée (`etude-comparative.md`). | Compléter le diaporama de l'étude comparative. |
 | **Gate 3** | 4.realisation | Testbench fonctionnel monté, métriques comparatives collectées. | Interdiction de valider le skill technique sans banc d'essai. |
 | **Gate 4** | 3.spec-skill | `spec-skill.md` rédigé + `validate-skills.cjs` affiche 0 erreur. | Corriger les rubriques ou YAML du skill. |
 | **Gate 5** | 5.rapport | Page de garde présente + 3 notes A1/slide + prêt pour le live coding sans IA. | Refus de validation de soutenance. |
